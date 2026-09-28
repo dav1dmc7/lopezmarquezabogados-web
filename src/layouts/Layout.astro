@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+import { site } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+const { title, description, canonical = site.url + Astro.url.pathname, noindex = false } = Astro.props;
+const canonicalUrl = canonical.replace(/\/$/, '') || site.url;
+const pageTitle = title.includes('López Márquez') ? title : `${title} | López Márquez Abogados`;
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LegalService', 'LocalBusiness'],
+  '@id': `${site.url}#legal-service`,
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  telephone: site.phone,
+  email: site.email,
+  image: `${site.url}/og-image.svg`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    postalCode: site.address.postalCode,
+    addressCountry: site.address.country
+  },
+  areaServed: 'España',
+  knowsAbout: ['Derecho laboral', 'Despidos laborales', 'Extranjería', 'Nacionalidad española por residencia', 'Asesoramiento laboral a empresas'],
+  sameAs: [site.instagram],
+  hasMap: site.maps
+};
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
+    <meta name="theme-color" content="#15261f" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${site.url}/og-image.svg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{pageTitle}</title>
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />}
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="/" aria-label={site.name}>
+            <span class="brand-mark" aria-hidden="true">LM</span>
+            <span class="brand-text"><strong>LÓPEZ MÁRQUEZ</strong><em>ABOGADOS</em></span>
+          </a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
+          <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+            <a href="/laboral">Laboral</a>
+            <a href="/extranjeria">Extranjería</a>
+            <a href="/empresas">Empresas</a>
+            <a href="/otras-areas">Otras áreas</a>
+            <a href="/recursos">Recursos</a>
+            <a href="/sobre-nosotros">Despacho</a>
+            <a href="/contacto" class="nav-cta">Hablar con el despacho</a>
+          </nav>
+        </div>
+      </header>
+      <main id="contenido"><slot /></main>
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <div class="footer-brand">LÓPEZ MÁRQUEZ<br /><span>ABOGADOS</span></div>
+            <p class="footer-note">Derecho Laboral · Extranjería · Empresas</p>
+          </div>
+          <div>
+            <p class="footer-label">Despacho</p>
+            <a href={site.maps} target="_blank" rel="noopener noreferrer">{site.address.street}<br />{site.address.postalCode} {site.address.locality}</a>
+            <a href={site.phoneHref}>{site.phone}</a>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </div>
+          <div>
+            <p class="footer-label">Principales servicios</p>
+            {site.areas.map((area) => <a href={area.href}>{area.title}</a>)}
+            <a href="/preguntas-frecuentes">Preguntas frecuentes</a>
+            <a href="/contacto">Contacto</a>
+          </div>
+        </div>
+        <div class="container footer-bottom">
+          <span>© {new Date().getFullYear()} {site.name}</span>
+          <span class="footer-legal-links"><a href="/aviso-legal">Aviso legal</a><a href="/privacidad">Privacidad</a><a href="/cookies">Cookies</a></span>
+        </div>
+      </footer>
+      <a class="floating-wa" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+    </div>
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('#main-nav');
+      if (toggle && nav) toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+      });
+    </script>
+  </body>
+</html>

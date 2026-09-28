@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+---
+<Layout title="Otras áreas jurídicas" description="Áreas jurídicas complementarias de López Márquez Abogados: Civil, Penal y Administrativo, según disponibilidad y encaje del asunto.">
+<PageHero eyebrow="Otras áreas" title="No todo asunto debe entrar en la misma caja." description="Mantenemos áreas complementarias para atender asuntos que encajan con la práctica del despacho o derivarlos a colaboraciones adecuadas cuando sea necesario." />
+<section class="section section-paper"><div class="container cards"><a class="card" href="/civil"><div><span class="card-kicker">Complementaria</span><h3>Civil</h3><p>Reclamaciones y cuestiones civiles concretas.</p></div><span class="link-arrow">Ver Civil →</span></a><a class="card" href="/penal"><div><span class="card-kicker">Complementaria</span><h3>Penal</h3><p>Valoración inicial de asuntos penales y conexión con situaciones laborales cuando proceda.</p></div><span class="link-arrow">Ver Penal →</span></a><a class="card" href="/administrativo"><div><span class="card-kicker">Administrativo</span><h3>Administrativo</h3><p>Consultas y recursos frente a actuaciones administrativas.</p></div><span class="link-arrow">Ver Administrativo →</span></a></div></section>
+<CTA title="¿No sabes a qué área pertenece tu asunto?" text="Cuéntanos los hechos; primero identificaremos el encaje." label="Contactar" />
+</Layout>

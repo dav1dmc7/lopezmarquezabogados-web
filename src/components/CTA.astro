@@ -1,0 +1,6 @@
+---
+import { site } from '../lib/site';
+interface Props { title?: string; text?: string; label?: string; href?: string; }
+const { title='Hablemos de su caso', text='Explíquenos brevemente su situación y le indicaremos el siguiente paso.', label='Contactar', href='/contacto' } = Astro.props;
+---
+<section class="section tight"><div class="container"><div class="cta"><div><h2>{title}</h2><p>{text}</p></div><div class="hero-actions compact"><a class="btn btn-dark" href={href}>{label}</a><a class="btn btn-outline" href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></div></section>

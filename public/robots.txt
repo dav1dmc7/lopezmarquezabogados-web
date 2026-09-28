@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /aviso-legal
+Disallow: /privacidad
+Disallow: /cookies
+
+Sitemap: https://lopezmarquezabogados.com/sitemap.xml

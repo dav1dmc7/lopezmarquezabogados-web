@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Preguntas frecuentes" description="Preguntas frecuentes sobre despidos, Extranjería, empresas y cómo iniciar una consulta con López Márquez Abogados.">
+<PageHero eyebrow="Preguntas frecuentes" title="Preguntas que suelen aparecer antes de tomar una decisión." description="Estas respuestas son generales. Un asunto jurídico concreto debe revisarse con sus documentos y fechas." />
+<section class="section"><div class="container faq">
+<details><summary>¿Qué hago si me acaban de despedir?</summary><p>Conserva la carta de despido, el finiquito y las últimas nóminas. Anota la fecha de notificación y consulta cuanto antes el plazo aplicable. En España, la acción de despido está sujeta al plazo legal de 20 días hábiles.</p></details>
+<details><summary>¿Firmar la carta significa que acepto el despido?</summary><p>La firma de un documento puede tener distintos efectos según lo que indique y el contexto. Es importante leerlo completo y, cuando exista una discrepancia, dejar constancia adecuada antes de firmar.</p></details>
+<details><summary>¿Cuántos años tengo que llevar en España para pedir la nacionalidad?</summary><p>Depende de tu supuesto jurídico. La regla general es de 10 años de residencia legal y continuada, pero existen plazos reducidos para determinadas situaciones y nacionalidades.</p></details>
+<details><summary>¿El arraigo sigue exigiendo tres años?</summary><p>No como regla general en el régimen vigente de 2026. Las modalidades que exigen permanencia contemplan, con carácter general, dos años; el arraigo familiar tiene un régimen diferente.</p></details>
+<details><summary>¿Puedo consultar por WhatsApp?</summary><p>Sí. El canal de WhatsApp permite iniciar el contacto y explicar brevemente el asunto. Los documentos y datos sensibles deben compartirse solo por canales adecuados y siguiendo las indicaciones del despacho.</p></details>
+<details><summary>¿Dónde está el despacho?</summary><p>La oficina figura en Carrer dels Madrazo, 6, Barcelona. Puedes consultar la ubicación en Google Maps o utilizar el teléfono y el correo publicados en esta web.</p></details>
+</div></section>
+<section class="section section-paper"><div class="container"><div class="callout"><strong>¿Quieres hablar del caso?</strong><p class="small">{site.phone} · {site.email}</p><a class="link-arrow" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp →</a></div></div></section>
+</Layout>

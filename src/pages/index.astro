@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import CTA from '../components/CTA.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Abogados en Barcelona: Laboral, Extranjería y Empresas" description="Despacho de abogados en Barcelona especializado en Derecho Laboral, Extranjería y asesoramiento jurídico a empresas.">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow">Barcelona · Derecho práctico</span>
+        <h1>Cuando una decisión legal importa, necesitas saber qué hacer.</h1>
+        <p class="lead">López Márquez Abogados acompaña a trabajadores, personas extranjeras y empresas con una forma de trabajar basada en hechos, plazos claros y comunicación directa.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/contacto">Cuéntanos tu caso</a><a class="btn btn-ghost" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div>
+      </div>
+      <aside class="hero-panel" aria-label="Áreas principales del despacho">
+        <span class="card-kicker">Áreas principales</span>
+        <strong>Laboral · Extranjería · Empresas</strong>
+        <p>Consulta, estrategia y defensa jurídica con foco en asuntos concretos y en el siguiente paso que realmente necesitas.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-paper"><div class="container"><SectionIntro eyebrow="Cómo trabajamos" title="La primera tarea es entender el problema. La segunda, ordenar lo importante." text="Antes de hablar de soluciones, ponemos en orden hechos, documentos y fechas. Así podemos explicar qué vías existen, qué plazos importan y qué información falta."/><div class="cards">
+    <a class="card" href="/laboral"><div><span class="card-kicker">Trabajadores · Empresas</span><h3>Derecho Laboral</h3><p>Despidos, indemnizaciones, salarios, conflictos, accidentes y prevención jurídica para empresas.</p></div><span class="link-arrow">Ver área Laboral →</span></a>
+    <a class="card" href="/extranjeria"><div><span class="card-kicker">Personas · Familias</span><h3>Extranjería</h3><p>Arraigo, residencia, nacionalidad y reagrupación con información revisada y rutas comprensibles.</p></div><span class="link-arrow">Ver área Extranjería →</span></a>
+    <a class="card" href="/empresas"><div><span class="card-kicker">PYMES · Dirección</span><h3>Empresas</h3><p>Asesoramiento laboral recurrente para prevenir riesgos y decidir antes de que llegue el conflicto.</p></div><span class="link-arrow">Ver área Empresas →</span></a>
+  </div></div></section>
+
+  <section class="section"><div class="container split"><div><span class="eyebrow">Lo urgente</span><h2>En derecho, una fecha puede cambiarlo todo.</h2><p class="small">Por eso la web no promete respuestas mágicas: ayuda a identificar el dato que debemos comprobar y el siguiente paso.</p></div><div class="number-list"><div class="number-item"><span class="number">01</span><div><h3>Hechos</h3><p>Qué ha ocurrido, cuándo, quién ha comunicado qué y qué documentos tienes.</p></div></div><div class="number-item"><span class="number">02</span><div><h3>Plazos</h3><p>Qué fechas son relevantes y qué actuación puede interrumpir o preservar un plazo.</p></div></div><div class="number-item"><span class="number">03</span><div><h3>Vía de actuación</h3><p>Consulta, negociación, trámite administrativo o defensa judicial según el caso.</p></div></div></div></div></section>
+
+  <section class="section section-dark"><div class="container"><SectionIntro eyebrow="Una firma preparada para lo digital" title="La tecnología debe quitar fricción, no sustituir el criterio jurídico." text="La nueva infraestructura permite contenidos más útiles, formularios más sencillos y mejor seguimiento. La relación profesional sigue siendo directa."/><div class="metric-strip"><div class="metric"><strong>Local</strong><span>Barcelona y atención telemática.</span></div><div class="metric"><strong>Directo</strong><span>Canales claros para iniciar una consulta.</span></div><div class="metric"><strong>Verificable</strong><span>Contenido jurídico con fuentes oficiales cuando el dato lo exige.</span></div></div></div></section>
+  <CTA title="¿Necesitas orientación sobre un asunto concreto?" text="Cuéntanos brevemente qué ha sucedido. Empezaremos por los hechos y las fechas relevantes." label="Contactar con el despacho" />
+</Layout>

@@ -1,0 +1,5 @@
+---
+interface Props { eyebrow?: string; title: string; description: string; }
+const { eyebrow='López Márquez Abogados', title, description } = Astro.props;
+---
+<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="/">Inicio</a><span>·</span><span>{eyebrow}</span></div><span class="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>

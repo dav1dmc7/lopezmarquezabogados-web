@@ -1,0 +1,23 @@
+# Legacy Spanish URLs from the Netlify site.
+/es/index.html /
+/es/about.html /sobre-nosotros
+/es/servicios.html /otras-areas
+/es/laboral.html /laboral
+/es/extranjeria.html /extranjeria
+/es/civil.html /civil
+/es/penal.html /penal
+/es/administrativo.html /administrativo
+/es/contact.html /contacto
+/es/faqs.html /preguntas-frecuentes
+
+# Legacy English URLs currently retained as redirects until an English section is rebuilt.
+/en/index_en.html /
+/en/about_en.html /sobre-nosotros
+/en/servicios_en.html /otras-areas
+/en/laboral_en.html /laboral
+/en/extranjeria_en.html /extranjeria
+/en/civil_en.html /civil
+/en/penal_en.html /penal
+/en/administrativo_en.html /administrativo
+/en/contact_en.html /contacto
+/en/faqs_en.html /preguntas-frecuentes
