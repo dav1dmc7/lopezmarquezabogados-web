@@ -4,31 +4,99 @@ import SectionIntro from '../components/SectionIntro.astro';
 import CTA from '../components/CTA.astro';
 import { site } from '../lib/site';
 ---
-<Layout title="Abogados en Barcelona: Laboral, Extranjería y Empresas" description="Despacho de abogados en Barcelona especializado en Derecho Laboral, Extranjería y asesoramiento jurídico a empresas.">
-  <section class="hero">
+<Layout title="Abogados en Barcelona | Laboral, Extranjería y Empresas" description="López Márquez Abogados en Barcelona. Derecho Laboral, Extranjería y asesoramiento laboral a empresas. Información clara, estrategia y contacto directo.">
+  <section class="hero hero-home">
     <div class="container hero-inner">
-      <div>
-        <span class="eyebrow">Barcelona · Derecho práctico</span>
-        <h1>Cuando una decisión legal importa, necesitas saber qué hacer.</h1>
-        <p class="lead">López Márquez Abogados acompaña a trabajadores, personas extranjeras y empresas con una forma de trabajar basada en hechos, plazos claros y comunicación directa.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="/contacto">Cuéntanos tu caso</a><a class="btn btn-ghost" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div>
+      <div class="hero-copy">
+        <span class="eyebrow">Barcelona · Atención presencial y telemática</span>
+        <h1>El derecho importa. <span>La siguiente decisión, también.</span></h1>
+        <p class="lead">López Márquez Abogados trabaja en tres frentes donde los hechos, la documentación y los plazos cambian el resultado: <strong>Derecho Laboral, Extranjería y asesoramiento a empresas.</strong></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contacto">Cuéntanos tu caso</a>
+          <a class="btn btn-ghost" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+        </div>
+        <p class="hero-note">No necesitas saber qué procedimiento corresponde. Empieza contándonos qué ha ocurrido.</p>
       </div>
-      <aside class="hero-panel" aria-label="Áreas principales del despacho">
-        <span class="card-kicker">Áreas principales</span>
-        <strong>Laboral · Extranjería · Empresas</strong>
-        <p>Consulta, estrategia y defensa jurídica con foco en asuntos concretos y en el siguiente paso que realmente necesitas.</p>
+      <aside class="hero-panel hero-panel-premium" aria-label="Rutas principales de consulta">
+        <span class="card-kicker">Empieza por tu situación</span>
+        <div class="route-list">
+          <a href="/laboral/despidos"><span>01</span><strong>Me han despedido</strong><small>Despido · finiquito · indemnización · plazo</small></a>
+          <a href="/extranjeria"><span>02</span><strong>Necesito resolver Extranjería</strong><small>Arraigo · residencia · nacionalidad · familia</small></a>
+          <a href="/empresas"><span>03</span><strong>Dirijo una empresa</strong><small>Prevención · consultas laborales · decisiones sensibles</small></a>
+        </div>
       </aside>
+    </div>
+    <div class="container proof-line" aria-label="Principios de trabajo">
+      <span>Hechos antes que etiquetas</span><span>Plazos visibles</span><span>Comunicación directa</span><span>Fuentes oficiales</span>
     </div>
   </section>
 
-  <section class="section section-paper"><div class="container"><SectionIntro eyebrow="Cómo trabajamos" title="La primera tarea es entender el problema. La segunda, ordenar lo importante." text="Antes de hablar de soluciones, ponemos en orden hechos, documentos y fechas. Así podemos explicar qué vías existen, qué plazos importan y qué información falta."/><div class="cards">
-    <a class="card" href="/laboral"><div><span class="card-kicker">Trabajadores · Empresas</span><h3>Derecho Laboral</h3><p>Despidos, indemnizaciones, salarios, conflictos, accidentes y prevención jurídica para empresas.</p></div><span class="link-arrow">Ver área Laboral →</span></a>
-    <a class="card" href="/extranjeria"><div><span class="card-kicker">Personas · Familias</span><h3>Extranjería</h3><p>Arraigo, residencia, nacionalidad y reagrupación con información revisada y rutas comprensibles.</p></div><span class="link-arrow">Ver área Extranjería →</span></a>
-    <a class="card" href="/empresas"><div><span class="card-kicker">PYMES · Dirección</span><h3>Empresas</h3><p>Asesoramiento laboral recurrente para prevenir riesgos y decidir antes de que llegue el conflicto.</p></div><span class="link-arrow">Ver área Empresas →</span></a>
-  </div></div></section>
+  <section class="section section-paper">
+    <div class="container">
+      <SectionIntro eyebrow="Áreas de foco" title="Tres puertas de entrada. Una misma forma de trabajar." text="La especialización ayuda a ordenar la consulta desde el principio. Las áreas complementarias siguen disponibles cuando el asunto lo requiere."/>
+      <div class="cards">
+        <a class="card card-featured" href="/laboral">
+          <div><span class="card-kicker">01 · Laboral</span><h3>Trabajadores y empresas</h3><p>Despidos, indemnizaciones, salarios, conflictos y decisiones laborales que conviene revisar antes de actuar.</p></div>
+          <span class="link-arrow">Explorar Derecho Laboral →</span>
+        </a>
+        <a class="card" href="/extranjeria">
+          <div><span class="card-kicker">02 · Extranjería</span><h3>Expedientes con ruta clara</h3><p>Arraigo, residencia, nacionalidad y reagrupación familiar con revisión de requisitos y documentación.</p></div>
+          <span class="link-arrow">Explorar Extranjería →</span>
+        </a>
+        <a class="card" href="/empresas">
+          <div><span class="card-kicker">03 · Empresas</span><h3>Asesoramiento antes del conflicto</h3><p>Un canal jurídico recurrente para consultas, prevención y decisiones laborales del día a día.</p></div>
+          <span class="link-arrow">Explorar Empresas →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <section class="section"><div class="container split"><div><span class="eyebrow">Lo urgente</span><h2>En derecho, una fecha puede cambiarlo todo.</h2><p class="small">Por eso la web no promete respuestas mágicas: ayuda a identificar el dato que debemos comprobar y el siguiente paso.</p></div><div class="number-list"><div class="number-item"><span class="number">01</span><div><h3>Hechos</h3><p>Qué ha ocurrido, cuándo, quién ha comunicado qué y qué documentos tienes.</p></div></div><div class="number-item"><span class="number">02</span><div><h3>Plazos</h3><p>Qué fechas son relevantes y qué actuación puede interrumpir o preservar un plazo.</p></div></div><div class="number-item"><span class="number">03</span><div><h3>Vía de actuación</h3><p>Consulta, negociación, trámite administrativo o defensa judicial según el caso.</p></div></div></div></div></section>
+  <section class="section section-ink-soft">
+    <div class="container split split-wide">
+      <div>
+        <span class="eyebrow">Cuando el caso es urgente</span>
+        <h2>La primera consulta debe servir para ordenar el problema.</h2>
+        <p class="small light-copy">No empezamos por una promesa. Empezamos por aquello que podemos verificar: qué ha ocurrido, qué documentos existen y qué fechas condicionan la actuación.</p>
+      </div>
+      <div class="number-list number-list-light">
+        <div class="number-item"><span class="number">01</span><div><h3>Fecha</h3><p>Identificamos la fecha que activa o condiciona un plazo.</p></div></div>
+        <div class="number-item"><span class="number">02</span><div><h3>Documento</h3><p>Revisamos cartas, resoluciones, contratos o justificantes antes de valorar el siguiente paso.</p></div></div>
+        <div class="number-item"><span class="number">03</span><div><h3>Vía</h3><p>Determinamos si procede una consulta, negociación, trámite administrativo o actuación judicial.</p></div></div>
+      </div>
+    </div>
+  </section>
 
-  <section class="section section-dark"><div class="container"><SectionIntro eyebrow="Una firma preparada para lo digital" title="La tecnología debe quitar fricción, no sustituir el criterio jurídico." text="La nueva infraestructura permite contenidos más útiles, formularios más sencillos y mejor seguimiento. La relación profesional sigue siendo directa."/><div class="metric-strip"><div class="metric"><strong>Local</strong><span>Barcelona y atención telemática.</span></div><div class="metric"><strong>Directo</strong><span>Canales claros para iniciar una consulta.</span></div><div class="metric"><strong>Verificable</strong><span>Contenido jurídico con fuentes oficiales cuando el dato lo exige.</span></div></div></div></section>
-  <CTA title="¿Necesitas orientación sobre un asunto concreto?" text="Cuéntanos brevemente qué ha sucedido. Empezaremos por los hechos y las fechas relevantes." label="Contactar con el despacho" />
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="Para empresas" title="La mejor intervención jurídica muchas veces ocurre antes del problema." text="El asesoramiento recurrente permite consultar decisiones de contratación, organización, disciplina, conflictos y extinciones sin esperar a que la situación escale."/>
+      <div class="business-grid">
+        <div class="business-panel"><span class="card-kicker">Prevención</span><h3>Decidir con contexto</h3><p>Revisión de la situación y de la documentación antes de ejecutar una medida sensible.</p><a class="link-arrow" href="/empresas/asesoramiento-laboral">Ver asesoramiento laboral →</a></div>
+        <div class="business-panel"><span class="card-kicker">Continuidad</span><h3>Un canal jurídico estable</h3><p>Un perímetro de servicio definido para las consultas laborales recurrentes de la empresa.</p><a class="link-arrow" href="/empresas/iguala-laboral">Ver iguala laboral →</a></div>
+        <div class="business-panel business-panel-accent"><span class="card-kicker">Criterio</span><h3>Menos fricción</h3><p>Información ordenada, respuestas documentadas y una vía clara para escalar cuando el asunto requiere un encargo específico.</p><a class="link-arrow" href="/empresas">Conocer el área Empresas →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="container editorial-grid">
+      <div>
+        <span class="eyebrow">Recursos jurídicos</span>
+        <h2>Entender lo esencial también forma parte del servicio.</h2>
+      </div>
+      <div class="resource-preview">
+        <a href="/recursos/despido-20-dias-habiles"><span class="card-kicker">Laboral</span><strong>Despido y plazo de impugnación</strong><span>Qué revisar primero y dónde está el plazo de 20 días hábiles.</span></a>
+        <a href="/recursos/arraigo-dos-anos-2026"><span class="card-kicker">Extranjería</span><strong>Arraigo y permanencia continuada</strong><span>Guía sobre el requisito general de permanencia según la normativa vigente.</span></a>
+        <a href="/recursos/nacionalidad-espanola-plazos"><span class="card-kicker">Nacionalidad</span><strong>Plazos de residencia</strong><span>Cómo identificar el periodo aplicable antes de preparar el expediente.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark trust-section">
+    <div class="container trust-grid">
+      <div><span class="eyebrow">El despacho</span><h2>Una firma pequeña puede trabajar con estándares grandes.</h2></div>
+      <div class="trust-copy"><p>La tecnología organiza el trabajo; no sustituye el criterio profesional. Por eso la nueva web está construida para explicar mejor, reducir pasos innecesarios y facilitar el contacto.</p><div class="pill-row"><span class="pill">Barcelona</span><span class="pill">Atención telemática</span><span class="pill">Laboral</span><span class="pill">Extranjería</span><span class="pill">Empresas</span></div><a class="btn btn-ghost" href="/sobre-nosotros">Conocer el despacho</a></div>
+    </div>
+  </section>
+
+  <CTA title="¿Quieres empezar por tu situación concreta?" text="Cuéntanos brevemente qué ha ocurrido, la fecha relevante y el área que crees que puede estar implicada." label="Contactar con el despacho" />
 </Layout>

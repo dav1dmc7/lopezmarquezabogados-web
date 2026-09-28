@@ -22,8 +22,10 @@ En Cloudflare: Workers & Pages → Create application → Import a repository. C
 Build command:
 
 ```text
-npm run check && npm run audit && npm run build
+npm run verify
 ```
+
+Node: use the version declared in `.nvmrc`. The repository also contains a GitHub Actions workflow that runs the same verification sequence on pushes and pull requests.
 
 Deploy command:
 

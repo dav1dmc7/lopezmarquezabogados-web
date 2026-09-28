@@ -20,7 +20,7 @@ const businessSchema = {
   description: site.description,
   telephone: site.phone,
   email: site.email,
-  image: `${site.url}/og-image.svg`,
+  image: `${site.url}/og-image.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,
@@ -32,7 +32,29 @@ const businessSchema = {
   areaServed: 'España',
   knowsAbout: ['Derecho laboral', 'Despidos laborales', 'Extranjería', 'Nacionalidad española por residencia', 'Asesoramiento laboral a empresas'],
   sameAs: [site.instagram],
-  hasMap: site.maps
+  hasMap: site.maps,
+  serviceType: ['Derecho Laboral', 'Extranjería', 'Asesoramiento laboral a empresas'],
+  availableLanguage: ['es']
+};
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}#website`,
+  name: site.name,
+  url: site.url,
+  inLanguage: 'es-ES',
+  publisher: { '@id': `${site.url}#legal-service` }
+};
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: pageTitle,
+  description,
+  inLanguage: 'es-ES',
+  isPartOf: { '@id': `${site.url}#website` },
+  about: { '@id': `${site.url}#legal-service` }
 };
 ---
 <html lang="es">
@@ -41,6 +63,7 @@ const businessSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
+    <meta name="author" content={site.name} />
     <meta name="theme-color" content="#15261f" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonicalUrl} />
@@ -50,10 +73,14 @@ const businessSchema = {
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={`${site.url}/og-image.svg`} />
+    <meta property="og:image" content={`${site.url}/og-image.png`} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{pageTitle}</title>
-    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />}
+    {!noindex && <>
+      <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+      <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
+      <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    </>}
     <slot name="head" />
   </head>
   <body>

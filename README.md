@@ -1,25 +1,37 @@
 # López Márquez Abogados — Web 2026
 
-Nueva web estática con Astro sobre Cloudflare Workers Static Assets.
+Sitio corporativo de López Márquez Abogados construido con Astro y preparado para Cloudflare Workers.
 
-## Comandos
+## Objetivos
+
+- Arquitectura orientada a intención de búsqueda.
+- SEO técnico y datos estructurados.
+- Accesibilidad y rendimiento.
+- Conversión directa a WhatsApp, teléfono y formulario.
+- Contenido jurídico revisable con fuentes oficiales.
+- Redirecciones de URLs legacy.
+- Despliegue reproducible en Cloudflare Workers.
+
+## Desarrollo y verificación
 
 ```bash
-nvm use
 npm install
-npm run check
-npm run audit
-npm run build
+npm run verify
+npm run dev
 ```
 
-## Deploy
+`npm run verify` ejecuta `astro check`, la auditoría estructural y el build de producción en ese orden.
 
-La salida de Astro es `dist/`. El proyecto está preparado para Cloudflare Workers Static Assets mediante `wrangler.jsonc`.
+Node: ver `.nvmrc`.
 
-## Principios
+## Producción
 
-- Sin dependencias visuales externas para el frontend.
-- SEO técnico por página.
-- Contenido jurídico verificable y con fuentes oficiales.
-- No se publican promesas de resultados, reseñas inventadas ni datos jurídicos sin verificar.
-- Formulario de contacto sin almacenamiento propio: la interacción se deriva a WhatsApp.
+La web antigua de `LMpruebas` se mantiene como respaldo. Este repositorio es la nueva línea de producción.
+
+Flujo objetivo:
+
+`GitHub → Cloudflare Workers Builds → verify → deploy`
+
+## Estrategia de negocio
+
+El mapa interno de prácticas rentables está en `docs/strategy/revenue-areas-2026.md`. No debe publicarse como contenido comercial sin validación profesional.
