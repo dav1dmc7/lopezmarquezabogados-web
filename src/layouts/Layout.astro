@@ -11,6 +11,12 @@ interface Props {
 const { title, description, canonical = site.url + Astro.url.pathname, noindex = false } = Astro.props;
 const canonicalUrl = canonical.replace(/\/$/, '') || site.url;
 const pageTitle = title.includes('López Márquez') ? title : `${title} | López Márquez Abogados`;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');
+const effectiveNoindex = noindex || isWorkersDev;
+const isNavActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
+const whatsappLink = `${site.whatsapp}?text=${encodeURIComponent('Hola, he visto la web de López Márquez Abogados y quisiera hacer una consulta.')}`;
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LegalService', 'LocalBusiness'],
@@ -62,7 +68,7 @@ const webPageSchema = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
+    <meta name="robots" content={effectiveNoindex ? 'noindex,follow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'} />
     <meta name="author" content={site.name} />
     <meta name="theme-color" content="#15261f" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -74,9 +80,10 @@ const webPageSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={`${site.url}/og-image.png`} />
+    <meta property="og:image:alt" content={site.name} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{pageTitle}</title>
-    {!noindex && <>
+    {!effectiveNoindex && <>
       <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
       <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
       <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
@@ -89,18 +96,18 @@ const webPageSchema = {
       <header class="site-header">
         <div class="container nav-wrap">
           <a class="brand" href="/" aria-label={site.name}>
-            <span class="brand-mark" aria-hidden="true">LM</span>
             <span class="brand-text"><strong>LÓPEZ MÁRQUEZ</strong><em>ABOGADOS</em></span>
           </a>
           <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
           <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
-            <a href="/laboral">Laboral</a>
-            <a href="/extranjeria">Extranjería</a>
-            <a href="/empresas">Empresas</a>
-            <a href="/otras-areas">Otras áreas</a>
-            <a href="/recursos">Recursos</a>
-            <a href="/sobre-nosotros">Despacho</a>
-            <a href="/contacto" class="nav-cta">Hablar con el despacho</a>
+            <a href="/laboral" aria-current={isNavActive('/laboral') ? 'page' : undefined}>Laboral</a>
+            <a href="/extranjeria" aria-current={isNavActive('/extranjeria') ? 'page' : undefined}>Extranjería</a>
+            <a href="/empresas" aria-current={isNavActive('/empresas') ? 'page' : undefined}>Empresas</a>
+            <a href="/otras-areas" aria-current={isNavActive('/otras-areas') ? 'page' : undefined}>Otras áreas</a>
+            <a href="/recursos" aria-current={isNavActive('/recursos') ? 'page' : undefined}>Recursos</a>
+            <a href="/sobre-nosotros" aria-current={isNavActive('/sobre-nosotros') ? 'page' : undefined}>Despacho</a>
+            <a href={site.phoneHref} class="nav-phone" data-track="phone_click">{site.phone}</a>
+            <a href="/contacto" class="nav-cta" aria-current={isNavActive('/contacto') ? 'page' : undefined}>Hablar con el despacho</a>
           </nav>
         </div>
       </header>
@@ -129,16 +136,8 @@ const webPageSchema = {
           <span class="footer-legal-links"><a href="/aviso-legal">Aviso legal</a><a href="/privacidad">Privacidad</a><a href="/cookies">Cookies</a></span>
         </div>
       </footer>
-      <a class="floating-wa" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+      <a class="floating-wa" href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" data-track="whatsapp_click">WhatsApp</a>
     </div>
-    <script>
-      const toggle = document.querySelector('.nav-toggle');
-      const nav = document.querySelector('#main-nav');
-      if (toggle && nav) toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('is-open', !open);
-      });
-    </script>
-  </body>
+    <script src="/site.js" defer></script>
+</body>
 </html>

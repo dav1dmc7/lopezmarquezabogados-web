@@ -3,9 +3,9 @@ export const site = {
   shortName: 'López Márquez',
   url: 'https://lopezmarquezabogados.com',
   description: 'Despacho de abogados en Barcelona especializado en Derecho Laboral, Extranjería y asesoramiento jurídico a empresas.',
-  phone: '+34 695 802 513',
-  phoneHref: 'tel:+34695802513',
-  whatsapp: 'https://wa.me/34695802513',
+  phone: '+34 695 385 198',
+  phoneHref: 'tel:+34695385198',
+  whatsapp: 'https://wa.me/34695385198',
   email: 'lopezmarquezabogados@gmail.com',
   address: {
     street: 'Carrer dels Madrazo, 6',

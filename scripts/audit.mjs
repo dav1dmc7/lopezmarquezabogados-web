@@ -28,6 +28,20 @@ const knownRoutes = new Set(pageFiles.map(routeFromFile));
 const errors = [];
 const warnings = [];
 
+const siteConfig = readFileSync(join(sourceRoot, 'lib/site.ts'), 'utf8');
+const layoutSource = readFileSync(join(sourceRoot, 'layouts/Layout.astro'), 'utf8');
+const contactSource = readFileSync(join(pagesRoot, 'contacto.astro'), 'utf8');
+const headersSource = readFileSync(join(root, 'public/_headers'), 'utf8');
+
+if (!siteConfig.includes("phone: '+34 695 385 198'")) errors.push('site.ts: expected production phone +34 695 385 198');
+if (siteConfig.includes('695 802 513') || siteConfig.includes('34695802513')) errors.push('site.ts: old phone still present');
+if (contactSource.includes('695 802 513') || contactSource.includes('34695802513')) errors.push('contacto.astro: old phone still present');
+if (/https:\/\/wa\.me\/3469\d{6,}/.test(contactSource) && !contactSource.includes('site.whatsapp')) warnings.push('contacto.astro: hardcoded WhatsApp URL; prefer site.whatsapp');
+if (layoutSource.includes('<script>')) errors.push('Layout.astro: inline script detected');
+if (!layoutSource.includes('/site.js')) errors.push('Layout.astro: external site.js missing');
+if (!headersSource.includes('https://:version.:subdomain.workers.dev/*')) errors.push('public/_headers: workers.dev noindex rule missing');
+
+
 for (const file of sourceFiles) {
   const source = readFileSync(file, 'utf8');
   const rel = file.replace(root, '');

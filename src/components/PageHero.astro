@@ -1,5 +1,85 @@
 ---
-interface Props { eyebrow?: string; title: string; description: string; }
-const { eyebrow='López Márquez Abogados', title, description } = Astro.props;
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  note?: string;
+}
+
+const {
+  eyebrow = 'López Márquez Abogados',
+  title,
+  description,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  note
+} = Astro.props;
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const parents: Record<string, { href: string; label: string }> = {
+  '/laboral/despidos': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/indemnizacion-despido': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/reclamacion-salarios': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/accidentes-laborales': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/penal-laboral': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/asesoramiento-empresas': { href: '/laboral', label: 'Derecho Laboral' },
+  '/extranjeria/arraigo': { href: '/extranjeria', label: 'Extranjería' },
+  '/extranjeria/nacionalidad-espanola': { href: '/extranjeria', label: 'Extranjería' },
+  '/extranjeria/residencia': { href: '/extranjeria', label: 'Extranjería' },
+  '/extranjeria/reagrupacion-familiar': { href: '/extranjeria', label: 'Extranjería' },
+  '/empresas/asesoramiento-laboral': { href: '/empresas', label: 'Empresas' },
+  '/empresas/iguala-laboral': { href: '/empresas', label: 'Empresas' },
+  '/recursos/despido-20-dias-habiles': { href: '/recursos', label: 'Recursos' },
+  '/recursos/arraigo-dos-anos-2026': { href: '/recursos', label: 'Recursos' },
+  '/recursos/nacionalidad-espanola-plazos': { href: '/recursos', label: 'Recursos' }
+};
+
+const parent = parents[pathname];
+const breadcrumbItems = [
+  { name: 'Inicio', item: '/' },
+  ...(parent ? [{ name: parent.label, item: parent.href }] : []),
+  { name: eyebrow, item: pathname }
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: new URL(item.item, Astro.url.origin).toString()
+  }))
+};
 ---
-<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="/">Inicio</a><span>·</span><span>{eyebrow}</span></div><span class="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      {breadcrumbItems.map((item, index) => (
+        index < breadcrumbItems.length - 1
+          ? <><a href={item.item}>{item.name}</a><span aria-hidden="true">·</span></>
+          : <span aria-current="page">{item.name}</span>
+      ))}
+    </nav>
+
+    <span class="eyebrow">{eyebrow}</span>
+    <h1>{title}</h1>
+    <p>{description}</p>
+
+    {(primaryLabel || secondaryLabel) && (
+      <div class="hero-actions page-hero-actions">
+        {primaryLabel && primaryHref && <a class="btn btn-dark" href={primaryHref}>{primaryLabel}</a>}
+        {secondaryLabel && secondaryHref && <a class="btn btn-outline" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+    )}
+
+    {note && <p class="hero-note-light">{note}</p>}
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</section>

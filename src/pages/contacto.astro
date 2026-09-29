@@ -5,20 +5,52 @@ import { site } from '../lib/site';
 ---
 <Layout title="Contacto y consulta" description="Contacta con López Márquez Abogados en Barcelona por teléfono, email, WhatsApp o formulario de consulta.">
 <PageHero eyebrow="Contacto" title="Cuéntanos qué ha ocurrido. Empezaremos por lo esencial." description="No necesitas conocer la calificación jurídica de tu problema para escribirnos. Indica qué ha pasado y la fecha relevante." />
-<section class="section"><div class="container contact-grid"><div><div class="contact-card"><span class="eyebrow">Directo</span><h3>WhatsApp</h3><p>Canal rápido para iniciar una consulta.</p><a class="link-arrow" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp →</a></div><div class="contact-card"><span class="eyebrow">Ubicación</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer">Abrir Google Maps →</a></div><div class="contact-card"><span class="eyebrow">Teléfono</span><h3>{site.phone}</h3><a href={site.phoneHref}>Llamar →</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div><div class="contact-card"><h2>Consulta inicial</h2><form id="consulta-form"><div class="form-grid"><div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required /></div><div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" /></div><div class="field"><label for="area">Área</label><select id="area" name="area"><option>Laboral</option><option>Extranjería</option><option>Empresas</option><option>Civil</option><option>Penal</option><option>Administrativo</option><option>No lo sé</option></select></div><div class="field"><label for="fecha">Fecha relevante</label><input id="fecha" name="fecha" placeholder="Ej. 25/09/2026" /></div><div class="field full"><label for="mensaje">¿Qué ha ocurrido?</label><textarea id="mensaje" name="mensaje" required></textarea></div><div class="field full"><label class="checkbox"><input id="privacy" type="checkbox" required /> <span>He leído la <a href="/privacidad">política de privacidad</a> y acepto el tratamiento necesario para responder a mi consulta.</span></label></div><div class="field full"><button class="btn btn-dark" type="submit">Continuar por WhatsApp</button><p class="small">Este formulario no crea por sí mismo un expediente ni sustituye a una comunicación formal.</p></div></div></form></div></div></section>
-<script>
-  const form = document.querySelector<HTMLFormElement>('#consulta-form');
-  form?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const text = [
-      `Hola, soy ${data.get('nombre') || ''}.`,
-      `Área: ${data.get('area') || ''}.`,
-      `Fecha relevante: ${data.get('fecha') || 'No indicada'}.`,
-      `Teléfono: ${data.get('telefono') || 'No indicado'}.`,
-      `Situación: ${data.get('mensaje') || ''}`
-    ].join('\n');
-    window.open('https://wa.me/34695802513?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
-  });
-</script>
+<section class="section"><div class="container contact-grid"><div><div class="contact-card"><span class="eyebrow">Directo</span><h3>WhatsApp</h3><p>Canal rápido para iniciar una consulta.</p><a class="link-arrow" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Escribir por WhatsApp →</a></div><div class="contact-card"><span class="eyebrow">Ubicación</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer">Abrir Google Maps →</a></div><div class="contact-card"><span class="eyebrow">Teléfono</span><h3>{site.phone}</h3><a href={site.phoneHref}>Llamar →</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div><div class="contact-card"><h2>Consulta inicial</h2><form id="consulta-form" data-whatsapp={site.whatsapp}>
+  <div class="form-grid">
+    <div class="field">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" autocomplete="name" maxlength="120" required />
+    </div>
+
+    <div class="field">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" />
+    </div>
+
+    <div class="field">
+      <label for="area">Área</label>
+      <select id="area" name="area">
+        <option>Laboral</option>
+        <option>Extranjería</option>
+        <option>Empresas</option>
+        <option>Civil</option>
+        <option>Penal</option>
+        <option>Administrativo</option>
+        <option>No lo sé</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="fecha">Fecha relevante</label>
+      <input id="fecha" name="fecha" placeholder="Ej. 25/09/2026" maxlength="30" />
+    </div>
+
+    <div class="field full">
+      <label for="mensaje">¿Qué ha ocurrido?</label>
+      <textarea id="mensaje" name="mensaje" maxlength="4000" required></textarea>
+    </div>
+
+    <div class="field full">
+      <label class="checkbox">
+        <input id="privacy" type="checkbox" required />
+        <span>He leído la <a href="/privacidad">política de privacidad</a> y acepto el tratamiento necesario para responder a mi consulta.</span>
+      </label>
+    </div>
+
+    <div class="field full">
+      <button class="btn btn-dark" type="submit">Continuar por WhatsApp</button>
+      <p class="small">Este formulario no crea por sí mismo un expediente ni sustituye a una comunicación formal.</p>
+    </div>
+  </div>
+</form></div></div></section>
 </Layout>
