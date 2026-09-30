@@ -8,6 +8,7 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
 }
+
 const { title, description, canonical = site.url + Astro.url.pathname, noindex = false } = Astro.props;
 const canonicalUrl = canonical.replace(/\/$/, '') || site.url;
 const pageTitle = title.includes('López Márquez') ? title : `${title} | López Márquez Abogados`;
@@ -16,7 +17,7 @@ const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');
 const effectiveNoindex = noindex || isWorkersDev;
 const isNavActive = (href: string) =>
   href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
-const whatsappLink = `${site.whatsapp}?text=${encodeURIComponent('Hola, he visto la web de López Márquez Abogados y quisiera hacer una consulta.')}`;
+
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LegalService', 'LocalBusiness'],
@@ -36,12 +37,19 @@ const businessSchema = {
     addressCountry: site.address.country
   },
   areaServed: 'España',
-  knowsAbout: ['Derecho laboral', 'Despidos laborales', 'Extranjería', 'Nacionalidad española por residencia', 'Asesoramiento laboral a empresas'],
+  knowsAbout: [
+    'Derecho laboral',
+    'Despidos laborales',
+    'Extranjería',
+    'Nacionalidad española por residencia',
+    'Asesoramiento laboral a empresas'
+  ],
   sameAs: [site.instagram],
   hasMap: site.maps,
   serviceType: ['Derecho Laboral', 'Extranjería', 'Asesoramiento laboral a empresas'],
   availableLanguage: ['es']
 };
+
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -51,6 +59,7 @@ const webSiteSchema = {
   inLanguage: 'es-ES',
   publisher: { '@id': `${site.url}#legal-service` }
 };
+
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
@@ -81,7 +90,13 @@ const webPageSchema = {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={`${site.url}/og-image.png`} />
     <meta property="og:image:alt" content={site.name} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site.url}/og-image.png`} />
     <title>{pageTitle}</title>
     {!effectiveNoindex && <>
       <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
@@ -95,23 +110,24 @@ const webPageSchema = {
     <div class="site-shell">
       <header class="site-header">
         <div class="container nav-wrap">
-          <a class="brand" href="/" aria-label={site.name}>
+          <a class="brand" href="/" aria-label={site.name} data-track="logo_click">
             <span class="brand-text"><strong>LÓPEZ MÁRQUEZ</strong><em>ABOGADOS</em></span>
           </a>
-          <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menú</button>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">Menú</button>
           <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
             <a href="/laboral" aria-current={isNavActive('/laboral') ? 'page' : undefined}>Laboral</a>
             <a href="/extranjeria" aria-current={isNavActive('/extranjeria') ? 'page' : undefined}>Extranjería</a>
             <a href="/empresas" aria-current={isNavActive('/empresas') ? 'page' : undefined}>Empresas</a>
-            <a href="/otras-areas" aria-current={isNavActive('/otras-areas') ? 'page' : undefined}>Otras áreas</a>
             <a href="/recursos" aria-current={isNavActive('/recursos') ? 'page' : undefined}>Recursos</a>
+            <a href="/actualidad-juridica" aria-current={isNavActive('/actualidad-juridica') ? 'page' : undefined}>Actualidad</a>
             <a href="/sobre-nosotros" aria-current={isNavActive('/sobre-nosotros') ? 'page' : undefined}>Despacho</a>
-            <a href={site.phoneHref} class="nav-phone" data-track="phone_click">{site.phone}</a>
-            <a href="/contacto" class="nav-cta" aria-current={isNavActive('/contacto') ? 'page' : undefined}>Hablar con el despacho</a>
+            <a href={site.emailHref} data-track="email_click" class="nav-cta">Enviar consulta</a>
           </nav>
         </div>
       </header>
+
       <main id="contenido"><slot /></main>
+
       <footer class="site-footer">
         <div class="container footer-grid">
           <div>
@@ -120,24 +136,35 @@ const webPageSchema = {
           </div>
           <div>
             <p class="footer-label">Despacho</p>
-            <a href={site.maps} target="_blank" rel="noopener noreferrer">{site.address.street}<br />{site.address.postalCode} {site.address.locality}</a>
-            <a href={site.phoneHref}>{site.phone}</a>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <a href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">
+              {site.address.street}<br />{site.address.postalCode} {site.address.locality}
+            </a>
+            <a href={site.phoneHref} data-track="phone_click">{site.phone}</a>
+            <a href={site.emailHref} data-track="email_click">{site.email}</a>
           </div>
           <div>
             <p class="footer-label">Principales servicios</p>
             {site.areas.map((area) => <a href={area.href}>{area.title}</a>)}
             <a href="/preguntas-frecuentes">Preguntas frecuentes</a>
+            <a href="/otras-areas">Otras áreas jurídicas</a>
             <a href="/contacto">Contacto</a>
           </div>
         </div>
         <div class="container footer-bottom">
           <span>© {new Date().getFullYear()} {site.name}</span>
-          <span class="footer-legal-links"><a href="/aviso-legal">Aviso legal</a><a href="/privacidad">Privacidad</a><a href="/cookies">Cookies</a></span>
+          <span class="footer-legal-links">
+            <a href="/aviso-legal">Aviso legal</a>
+            <a href="/privacidad">Privacidad</a>
+            <a href="/cookies">Cookies</a>
+          </span>
         </div>
       </footer>
-      <a class="floating-wa" href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" data-track="whatsapp_click">WhatsApp</a>
+
+      <a class="floating-contact" href={site.emailHref} aria-label="Enviar un email al despacho" data-track="email_click">
+        Enviar email
+      </a>
     </div>
+
     <script src="/site.js" defer></script>
-</body>
+  </body>
 </html>

@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add('js-enabled');
   const track = (name, details = {}) => {
     try {
       window.dataLayer = window.dataLayer || [];
@@ -11,31 +12,48 @@
         detail: { name, ...details }
       }));
     } catch (_) {
-      // Analytics is optional; navigation must never depend on it.
+      // Measurement must never block navigation or contact.
     }
   };
+
+  const header = document.querySelector('.site-header');
+  const updateHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('#main-nav');
 
   if (toggle && nav) {
-    const closeNav = () => {
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
+    const setMenu = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      nav.classList.toggle('is-open', open);
     };
 
+    setMenu(false);
+
     toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('is-open', !open);
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
     nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeNav);
+      link.addEventListener('click', () => setMenu(false));
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeNav();
+      if (event.key === 'Escape') setMenu(false);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Node)) return;
+      if (!nav.contains(event.target) && !toggle.contains(event.target)) setMenu(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) setMenu(false);
     });
   }
 
@@ -57,27 +75,47 @@
         return;
       }
 
-      const whatsapp = form.dataset.whatsapp;
-      if (!whatsapp) return;
+      const destination = form.dataset.email;
+      if (!destination) return;
 
       const data = new FormData(form);
-      const text = [
+      const area = String(data.get('area') || 'Consulta');
+
+      const body = [
         `Hola, soy ${data.get('nombre') || ''}.`,
-        `Área: ${data.get('area') || ''}.`,
+        `Área: ${area}.`,
         `Fecha relevante: ${data.get('fecha') || 'No indicada'}.`,
+        `Email: ${data.get('email') || 'No indicado'}.`,
         `Teléfono: ${data.get('telefono') || 'No indicado'}.`,
-        `Situación: ${data.get('mensaje') || ''}`
+        '',
+        'Situación:',
+        String(data.get('mensaje') || '')
       ].join('\n');
 
-      track('contact_submit', {
-        contact_area: String(data.get('area') || '')
-      });
+      track('contact_submit', { contact_area: area });
 
-      window.open(
-        `${whatsapp}?text=${encodeURIComponent(text)}`,
-        '_blank',
-        'noopener,noreferrer'
-      );
+      window.location.href =
+        `mailto:${destination}` +
+        `?subject=${encodeURIComponent(`Consulta web · ${area}`)}` +
+        `&body=${encodeURIComponent(body)}`;
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, current) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        current.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.08
+    });
+
+    document.querySelectorAll('[data-reveal]').forEach((element) => {
+      observer.observe(element);
     });
   }
 })();

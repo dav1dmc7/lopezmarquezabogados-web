@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+import { legalUpdates } from '../data/legalUpdates';
+---
+<Layout title="Actualidad jurídica · Laboral y Extranjería" description="Novedades jurídicas seleccionadas del BOE sobre Derecho Laboral, Extranjería y empresa, explicadas de forma práctica por López Márquez Abogados.">
+<PageHero eyebrow="Actualidad jurídica" title="Cambios jurídicos que pueden afectar a tu contrato, expediente o decisión." description="Seleccionamos novedades que pueden tener consecuencias prácticas para trabajadores, personas extranjeras y empresas. La idea no es que leas más normas, sino que detectes cuándo una novedad merece una revisión." primaryLabel="Consultar mi situación" primaryHref="/contacto" secondaryLabel="Ver recursos" secondaryHref="/recursos" note="Fuente primaria: Boletín Oficial del Estado. La publicación oficial prevalece sobre este resumen." />
+<section class="section section-paper" data-reveal><div class="container"><div class="section-head"><div><span class="eyebrow">Selección revisada · septiembre 2026</span><h2>Lo que puede cambiar y por qué importa</h2></div><p>Cada noticia incluye la norma oficial y una explicación breve de a quién puede interesar.</p></div><div class="legal-updates">
+{legalUpdates.map((item) => (
+  <article class="legal-update">
+    <div class="legal-update-meta"><span class="card-kicker">{item.category}</span><time datetime={item.date.split('/').reverse().join('-')}>{item.date}</time>{item.effectiveDate && <span>Entrada en vigor: {item.effectiveDate}</span>}</div>
+    <h3>{item.title}</h3>
+    <p>{item.summary}</p>
+    <p class="legal-update-impact"><strong>¿A quién puede afectar?</strong> {item.impact}</p>
+    <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{item.sourceLabel} · Ver fuente oficial →</a>
+  </article>
+))}
+</div></div></section>
+<section class="section"><div class="container split"><div><span class="eyebrow">Para saber si una novedad te afecta</span><h2>Lo importante es saber si cambia tu situación.</h2></div><div class="prose"><p>Las normas se publican con lenguaje jurídico y se aplican según el caso. Aquí encontrarás una síntesis para saber qué puede ser relevante antes de decidir qué hacer.</p><p>Cuando una novedad pueda cambiar un expediente, un contrato o una decisión laboral, la revisión debe hacerse sobre la norma vigente y las circunstancias concretas.</p><p><a href="https://www.boe.es/diario_boe/" target="_blank" rel="noopener noreferrer">Consultar el BOE completo →</a></p></div></div></section>
+<CTA title="¿Una novedad afecta a tu caso?" text="Cuéntanos la situación y comprobaremos qué norma y qué fecha son realmente relevantes." label="Consultar con el despacho" />
+</Layout>
+
+<style>
+.legal-updates{display:grid;gap:18px}
+.legal-update{padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.legal-update-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.78rem}
+.legal-update h3{margin:12px 0 10px;max-width:900px}
+.legal-update p{max-width:900px}
+.legal-update-impact{padding:14px 16px;border-left:2px solid var(--gold);background:var(--sand)}
+.legal-update a{text-decoration:underline;text-underline-offset:3px}
+</style>

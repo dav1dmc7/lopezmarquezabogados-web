@@ -1,0 +1,30 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  items?: string[];
+}
+
+const {
+  eyebrow = 'Antes de contactar',
+  title = 'Puedes empezar con muy poco.',
+  intro = 'No necesitas preparar un informe jurídico. Estos datos suelen bastar para orientar la primera conversación.',
+  items = []
+} = Astro.props;
+---
+<section class="section section-paper preparation" data-reveal aria-labelledby="preparation-title">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 id="preparation-title">{title}</h2>
+      <p>{intro}</p>
+    </div>
+    <div class="prose">
+      <ul>
+        {items.map((item) => <li>{item}</li>)}
+      </ul>
+      <p class="small">No envíes documentación sensible por un canal que el despacho no haya indicado expresamente.</p>
+    </div>
+  </div>
+</section>

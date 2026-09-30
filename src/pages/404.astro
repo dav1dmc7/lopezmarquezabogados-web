@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CTA from '../components/CTA.astro';
 ---
-<Layout title="Página no encontrada" description="La página solicitada no existe."><section class="page-hero"><div class="container"><span class="eyebrow">404</span><h1>Esta página no está aquí.</h1><p>Puede que la dirección haya cambiado. Te llevamos a las áreas principales del despacho.</p><div class="hero-actions"><a class="btn btn-dark" href="/">Ir al inicio</a><a class="btn btn-outline" href="/contacto">Contactar</a></div></div></section><CTA title="¿Buscabas un servicio concreto?" text="Laboral, Extranjería y Empresas son nuestras áreas principales." /></Layout>
+<Layout title="Página no encontrada" description="La página solicitada no existe o ha cambiado de ubicación.">
+<section class="page-hero"><div class="container"><span class="eyebrow">404</span><h1>La página que buscas no está aquí.</h1><p>Puede que la dirección haya cambiado. Continúa hacia el área que más se parezca a tu situación o escríbenos directamente.</p><div class="hero-actions page-hero-actions"><a class="btn btn-dark" href="/">Volver al inicio</a><a class="btn btn-outline" href="/contacto">Enviar consulta</a></div></div></section>
+<section class="section section-paper"><div class="container cards">
+<a class="card" href="/laboral"><div><span class="card-kicker">Laboral</span><h3>Despidos, salarios y conflictos</h3><p>Información para trabajadores y empresas.</p></div><span class="link-arrow">Ir a Laboral →</span></a>
+<a class="card" href="/extranjeria"><div><span class="card-kicker">Extranjería</span><h3>Residencia y nacionalidad</h3><p>Arraigo, residencia, nacionalidad y familia.</p></div><span class="link-arrow">Ir a Extranjería →</span></a>
+<a class="card" href="/empresas"><div><span class="card-kicker">Empresas</span><h3>Asesoramiento laboral</h3><p>Decisiones laborales puntuales y apoyo recurrente.</p></div><span class="link-arrow">Ir a Empresas →</span></a>
+</div></section>
+</Layout>

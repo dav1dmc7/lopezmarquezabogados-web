@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CTA from '../../components/CTA.astro';
+import PrepareConsultation from '../../components/PrepareConsultation.astro';
+---
+<Layout title="Qué hacer después de un despido | Primeras horas" description="Qué hacer durante las primeras horas tras un despido: documentos, fechas, finiquito, indemnización y primeros pasos para revisar el caso.">
+<PageHero eyebrow="Guía laboral" title="Te acaban de despedir: esto es lo que conviene hacer primero." description="No necesitas tener todas las respuestas hoy. Sí conviene conservar los documentos, identificar las fechas y no tomar decisiones importantes sin leer primero lo que te han entregado." primaryLabel="Quiero revisar mi despido" primaryHref="/laboral/despidos" secondaryLabel="Calcular indemnización" secondaryHref="/laboral/indemnizacion-despido" />
+<section class="section"><div class="container prose">
+<h2>1. Guarda la carta completa</h2><p>Conserva la carta y cualquier documento entregado junto a ella. No trabajes solo con una fotografía parcial o con una explicación verbal.</p>
+<h2>2. Anota dos fechas</h2><p>Apunta la fecha de notificación y la fecha de efectos. No des por hecho que son la misma.</p>
+<h2>3. Separa indemnización y finiquito</h2><p>Son conceptos diferentes. Guarda la propuesta económica completa antes de aceptar que una cifra es definitiva.</p>
+<h2>4. Conserva contrato y nóminas</h2><p>Guarda el contrato, anexos y nóminas disponibles. La composición de la retribución puede ser importante al revisar una liquidación.</p>
+<h2>5. No pierdas de vista el plazo</h2><p>La acción de despido está sujeta, con carácter general, a 20 días hábiles. La fecha exacta y las actuaciones realizadas deben revisarse en cada caso.</p>
+<p><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener noreferrer">Consultar el Estatuto de los Trabajadores en el BOE →</a></p>
+</div></section>
+<PrepareConsultation title="Qué conviene tener a mano" intro="No necesitas llegar a la consulta sabiendo si el despido es procedente o improcedente. Empieza por lo que ya tengas." items={['Carta de despido completa.','Fecha exacta de notificación y fecha de efectos.','Contrato y últimas nóminas disponibles.','Finiquito o propuesta de indemnización, si existe.']} />
+<section class="section section-paper"><div class="container cards"><a class="card" href="/laboral/indemnizacion-despido"><div><span class="card-kicker">Estimación</span><h3>¿Quieres saber qué indemnización podría resultar?</h3><p>Haz una primera estimación y úsala como punto de partida para revisar el caso.</p></div><span class="link-arrow">Calcular →</span></a><a class="card" href="/laboral/despidos"><div><span class="card-kicker">Asesoramiento</span><h3>Quiero que reviséis mi despido</h3><p>La carta, los hechos, la fecha y la documentación pueden cambiar el análisis.</p></div><span class="link-arrow">Ver cómo trabajamos →</span></a></div></section>
+<CTA title="¿Te han despedido hoy?" text="Escríbenos la fecha de notificación y qué documentos tienes. Empezaremos por lo esencial." label="Enviar consulta" />
+</Layout>

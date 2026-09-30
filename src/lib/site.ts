@@ -7,6 +7,7 @@ export const site = {
   phoneHref: 'tel:+34695385198',
   whatsapp: 'https://wa.me/34695385198',
   email: 'lopezmarquezabogados@gmail.com',
+  emailHref: 'mailto:lopezmarquezabogados@gmail.com',
   address: {
     street: 'Carrer dels Madrazo, 6',
     locality: 'Barcelona',
@@ -24,6 +25,8 @@ export const site = {
 } as const;
 
 export const indexableRoutes = [
+  '/recursos/primeras-horas-despido',
+  '/actualidad-juridica',
   '/', '/laboral', '/laboral/despidos', '/laboral/indemnizacion-despido', '/laboral/reclamacion-salarios',
   '/laboral/accidentes-laborales', '/laboral/penal-laboral', '/laboral/asesoramiento-empresas', '/extranjeria', '/extranjeria/arraigo',
   '/extranjeria/nacionalidad-espanola', '/extranjeria/residencia', '/extranjeria/reagrupacion-familiar',

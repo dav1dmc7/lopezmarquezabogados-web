@@ -1,0 +1,68 @@
+---
+import { site } from '../lib/site';
+const emailHref = site.emailHref;
+---
+<section class="section section-paper lm-tool" id="triaje-extranjeria" aria-labelledby="triaje-extranjeria-title">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">Orientador de Extranjería</span>
+      <h2 id="triaje-extranjeria-title">Responde unas preguntas y descubre qué camino merece la pena revisar.</h2>
+      <p class="small">Responde unas preguntas sencillas sobre tu situación. Obtendrás una orientación inicial para saber qué información y qué vía conviene revisar. No sustituye el estudio de tu expediente.</p>
+    </div>
+    <div class="lm-tool-card">
+      <form id="extranjeria-triage-form" data-email={site.email} data-mailto={emailHref}>
+        <fieldset>
+          <legend>1. ¿Dónde estás ahora?</legend>
+          <label><input type="radio" name="ubicacion" value="espana" required /> En España</label>
+          <label><input type="radio" name="ubicacion" value="fuera" /> Fuera de España</label>
+          <label><input type="radio" name="ubicacion" value="no-se" /> No lo tengo claro</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. ¿Qué necesitas resolver?</legend>
+          <label><input type="radio" name="objetivo" value="regularizar" required /> Regularizar mi situación</label>
+          <label><input type="radio" name="objetivo" value="residencia" /> Obtener, renovar o modificar una residencia</label>
+          <label><input type="radio" name="objetivo" value="nacionalidad" /> Nacionalidad española</label>
+          <label><input type="radio" name="objetivo" value="familia" /> Reagrupación o situación familiar</label>
+          <label><input type="radio" name="objetivo" value="otro" /> Otra situación</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. ¿Tienes actualmente una autorización o solicitud en curso?</legend>
+          <label><input type="radio" name="autorizacion" value="actual" required /> Sí, está vigente</label>
+          <label><input type="radio" name="autorizacion" value="tramite" /> Sí, está en trámite</label>
+          <label><input type="radio" name="autorizacion" value="caducada" /> Ha caducado o tengo dudas</label>
+          <label><input type="radio" name="autorizacion" value="no" /> No</label>
+          <label><input type="radio" name="autorizacion" value="ns" /> No lo sé</label>
+        </fieldset>
+        <fieldset>
+          <legend>4. ¿Cuánto tiempo llevas en España, aproximadamente?</legend>
+          <label><input type="radio" name="estancia" value="menos2" required /> Menos de 2 años</label>
+          <label><input type="radio" name="estancia" value="2omas" /> 2 años o más</label>
+          <label><input type="radio" name="estancia" value="fuera" /> Estoy fuera de España</label>
+          <label><input type="radio" name="estancia" value="ns" /> No lo sé / prefiero revisarlo</label>
+        </fieldset>
+        <fieldset>
+          <legend>5. ¿Hay una notificación, denegación o fecha límite que deba revisarse?</legend>
+          <label><input type="radio" name="urgencia" value="si" required /> Sí</label>
+          <label><input type="radio" name="urgencia" value="no" /> No</label>
+          <label><input type="radio" name="urgencia" value="ns" /> No lo sé</label>
+        </fieldset>
+        <fieldset>
+          <legend>6. ¿Tu situación está relacionada con un familiar español o ciudadano de la UE/EEE/Suiza?</legend>
+          <label><input type="radio" name="familiar_eu" value="si" required /> Sí</label>
+          <label><input type="radio" name="familiar_eu" value="no" /> No</label>
+          <label><input type="radio" name="familiar_eu" value="ns" /> No lo sé</label>
+        </fieldset>
+        <fieldset>
+          <legend>7. ¿Existe además otro vínculo familiar que pueda ser relevante?</legend>
+          <label><input type="radio" name="familia" value="si" required /> Sí</label>
+          <label><input type="radio" name="familia" value="no" /> No</label>
+          <label><input type="radio" name="familia" value="ns" /> No lo sé / prefiero revisarlo</label>
+        </fieldset>
+        <button class="btn btn-dark" type="submit">Orientar mi siguiente paso</button>
+        <p class="small lm-tool-note">No introduzcas DNI, NIE, pasaporte, número de expediente ni otros identificadores.</p>
+      </form>
+      <div id="extranjeria-triage-result" class="lm-tool-result" hidden aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+<script src="/extranjeria-triage.js" defer></script>

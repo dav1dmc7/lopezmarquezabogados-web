@@ -2,12 +2,24 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CTA from '../../components/CTA.astro';
+import PrepareConsultation from '../../components/PrepareConsultation.astro';
 import { site } from '../../lib/site';
 ---
 <Layout title="Abogado para despidos en Barcelona" description="Qué revisar ante un despido: carta, fecha de efectos, finiquito, indemnización y plazo de impugnación. Información general y contacto con López Márquez Abogados.">
 <PageHero eyebrow="Despidos" title="Te han despedido. Ahora importan los hechos y las fechas." description="Una carta de despido debe revisarse con calma, pero sin perder tiempo. La primera pregunta es cuándo se notificó y qué documentos se entregaron." primaryLabel="Quiero revisar mi despido" primaryHref="/contacto" secondaryLabel={site.phone} secondaryHref={site.phoneHref} note="Conserva la carta y anota la fecha exacta de notificación." />
 <section class="section"><div class="container split"><div><span class="eyebrow">Qué hacer hoy</span><h2>Antes de firmar o reclamar, reúne lo esencial.</h2></div><div class="prose"><ol><li><strong>Carta de despido:</strong> conserva el documento íntegro y anota cuándo te lo notificaron.</li><li><strong>Finiquito e indemnización:</strong> guarda la propuesta de liquidación y las últimas nóminas.</li><li><strong>Contrato:</strong> conserva contrato, anexos y comunicaciones relevantes.</li><li><strong>Plazo:</strong> la acción de despido está sujeta al plazo legal de 20 días hábiles.</li></ol><p>La conciliación previa tiene efectos sobre el cómputo en los términos legalmente previstos. Consulta el texto vigente del Estatuto antes de calcular una fecha por tu cuenta.</p><p><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430#a59" target="_blank" rel="noopener noreferrer">Consultar el artículo 59 del Estatuto de los Trabajadores en el BOE →</a></p></div></div></section>
+<PrepareConsultation
+  title="Qué conviene tener a mano"
+  intro="Para una primera revisión no necesitas saber si el despido es procedente o improcedente. Empieza por los documentos y fechas que ya tengas."
+  items={[
+    'La carta de despido completa.',
+    'La fecha exacta de notificación y, si aparece, la fecha de efectos.',
+    'Contrato y últimas nóminas disponibles.',
+    'Finiquito o propuesta de liquidación, si ya te la han entregado.'
+  ]}
+/>
 <section class="section section-paper"><div class="container"><div class="cards"><div class="card"><div><span class="card-kicker">Documento</span><h3>Carta</h3><p>Causa, fecha de efectos y forma de comunicación.</p></div></div><div class="card"><div><span class="card-kicker">Dinero</span><h3>Finiquito</h3><p>Liquidación de cantidades pendientes e indemnización, que no son lo mismo.</p></div></div><div class="card"><div><span class="card-kicker">Tiempo</span><h3>20 días hábiles</h3><p>No conviertas el plazo en una estimación: revisa la fecha exacta del caso.</p></div></div></div></div></section>
 <section class="section"><div class="container prose"><h2>Preguntas frecuentes sobre el despido</h2><h3>¿Puedo firmar?</h3><p>Lee primero el documento completo y, si existe discrepancia o no entiendes sus efectos, pide asesoramiento antes de asumir que una firma produce un único efecto jurídico.</p><h3>¿Y si no me han dado toda la documentación?</h3><p>Anota lo que se te ha entregado y conserva cualquier comunicación. La revisión puede comenzar con lo que ya tengas.</p><h3>¿Puedo esperar unos días?</h3><p>Los plazos pueden ser cortos. Una consulta temprana permite determinar qué fecha y qué documentos deben revisarse.</p></div></section>
+<section class="section"><div class="container prose"><p><span class="eyebrow">Guía inmediata</span></p><h2>¿Acaba de ocurrir?</h2><p><a href="/recursos/primeras-horas-despido">Lee qué hacer durante las primeras horas tras el despido →</a></p></div></section>
 <CTA title="¿Te han comunicado un despido?" text="Puedes empezar por indicarnos la fecha de notificación y qué documentos tienes." label="Contactar con el despacho" />
 </Layout>
