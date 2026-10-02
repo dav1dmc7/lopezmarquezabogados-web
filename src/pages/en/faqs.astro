@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { site } from '../../lib/site';
+---
+<Layout title="FAQs | López Márquez Abogados Barcelona" description="Frequently asked questions about employment and immigration legal matters, first contact and the López Márquez Abogados office in Barcelona.">
+<PageHero eyebrow="FAQs" title="Questions people often ask before contacting a lawyer in Spain." description="General information to help you prepare a first enquiry. Your documents, dates and personal circumstances may change the answer." primaryLabel="Contact the firm" primaryHref="/en/contact" />
+<section class="section"><div class="container faq">
+<details><summary>I have been dismissed. What should I do first?</summary><p>Keep the complete dismissal letter, settlement, recent payslips and relevant communications. Note the exact date the dismissal was notified. Employment claims can be time-sensitive, so the dates should be reviewed early.</p></details>
+<details><summary>Can I sign the dismissal letter or settlement?</summary><p>The effect depends on the document and the circumstances. Read the complete text before signing and ask for advice where you are unsure what the signature means or what you are accepting.</p></details>
+<details><summary>How long do I need to live in Spain before applying for Spanish nationality?</summary><p>There is a general residence period and reduced periods for certain applicants. Your nationality and circumstances determine which period is relevant. Review the current Ministry of Justice requirements for your situation.</p></details>
+<details><summary>Does arraigo still require three years?</summary><p>Not as a general rule. Under the current framework, some forms of arraigo linked to residence use a two-year threshold, while the precise route and additional requirements must still be checked.</p></details>
+<details><summary>Can I contact the firm in English?</summary><p>Yes. The English section of the website is designed for international clients seeking employment or immigration help in Barcelona and Spain.</p></details>
+<details><summary>What should I include in my first enquiry?</summary><p>Explain what happened, when it happened and what you need to resolve. You do not need to know the legal name of the procedure. Do not send passwords, bank details or unnecessary identification information.</p></details>
+<details><summary>Where is the office?</summary><p>The office is at {site.address.street}, {site.address.postalCode} {site.address.locality}, Spain. <a href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">Open the location in Google Maps →</a></p></details>
+</div></section>
+<section class="section section-paper"><div class="container"><div class="callout"><strong>Have a specific case?</strong><p>Tell us the essential facts, the relevant date and what you need to achieve or clarify.</p><p class="small">{site.email}</p><a class="link-arrow" href={site.emailHref} data-track="email_click">Email the firm →</a></div></div></section>
+</Layout>

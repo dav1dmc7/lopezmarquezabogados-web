@@ -11,6 +11,17 @@ export interface LegalUpdate {
 
 export const legalUpdates: LegalUpdate[] = [
   {
+    date: '30/09/2026',
+    effectiveDate: '01/10/2026',
+    category: 'Empresa',
+    title: 'Medidas laborales para determinadas empresas beneficiarias de ayudas',
+    summary: 'El Real Decreto-ley 25/2026 establece, en su artículo 36, una limitación temporal para determinadas empresas beneficiarias de ayudas directas: hasta el 31 de diciembre de 2026 no podrán realizar determinados despidos por fuerza mayor o por causas económicas, técnicas, organizativas o de producción vinculadas a la situación a la que responde la norma.',
+    impact: 'Solo afecta a empresas que estén dentro del supuesto previsto por la norma y a las causas y ayudas contempladas. Antes de adoptar una decisión conviene comprobar si la empresa está incluida y qué condiciones resultan aplicables.',
+    sourceLabel: 'BOE-A-2026-20265 · Real Decreto-ley 25/2026',
+    sourceUrl: 'https://www.boe.es/buscar/act.php?id=BOE-A-2026-20265'
+  },
+
+  {
     date: '15/09/2026',
     effectiveDate: '05/10/2026',
     category: 'Laboral',

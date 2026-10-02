@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { site } from '../../lib/site';
+---
+<Layout title="Contact an Employment or Immigration Lawyer | Barcelona" description="Contact López Márquez Abogados in Barcelona, Spain. Explain your employment or immigration matter by email, phone or WhatsApp and start with the essential facts.">
+<PageHero eyebrow="Contact" title="Need a lawyer in Barcelona? Start with the facts and the date that matters." description="You can write in your own words. You do not need to know the legal terminology before contacting us." primaryLabel="Start a contact enquiry" primaryHref="#consulta-form" secondaryLabel="Call +34 695 385 198" secondaryHref={site.phoneHref} note="English-language enquiries welcome · Barcelona · Spain · In person and online" />
+<section class="section"><div class="container contact-grid"><div>
+<div class="contact-card contact-primary"><span class="eyebrow">Email</span><h3>Explain the situation in writing</h3><p>Email is useful when the matter involves a dismissal letter, immigration notification, deadline or several documents that need to be understood together.</p><a class="link-arrow" href={site.emailHref} data-track="email_click">Send an email →</a></div>
+<div class="contact-card"><span class="eyebrow">Phone / WhatsApp</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Call the firm →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Write on WhatsApp →</a></div>
+<div class="contact-card"><span class="eyebrow">Barcelona office</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}, Spain</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">Open Google Maps →</a></div>
+</div>
+<div class="contact-card"><h2>Tell us the essential facts</h2><p id="consulta-nota" class="small">For a first enquiry, do not send your passport, NIE, bank details, passwords or other unnecessary sensitive information. Start with what happened, when and what you need to resolve.</p>
+<form id="consulta-form" data-email={site.email} data-locale="en" aria-describedby="consulta-nota" autocomplete="on"><div class="form-grid">
+<div class="field"><label for="nombre">Name</label><input id="nombre" name="nombre" autocomplete="name" maxlength="120" required placeholder="Your name" /></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="Your email" /></div>
+<div class="field"><label for="telefono">Phone <span class="small">(optional)</span></label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="If you prefer a call" /></div>
+<div class="field"><label for="area">What do you need help with?</label><select id="area" name="area"><option>Employment</option><option>Immigration</option><option>Business</option><option>Other</option><option>Not sure</option></select></div>
+<div class="field full"><label for="fecha">When did it happen or when were you notified?</label><input id="fecha" name="fecha" maxlength="40" placeholder="For example, 25/09/2026" /></div>
+<div class="field full"><label for="mensaje">What happened?</label><textarea id="mensaje" name="mensaje" maxlength="4000" required placeholder="Explain it in your own words."></textarea></div>
+<div class="field full"><label class="checkbox"><input id="privacy" name="privacy" type="checkbox" required /><span>I have read the <a href="/en/privacy">privacy policy</a> and agree to the processing necessary to respond to my enquiry.</span></label></div>
+<div class="field full"><button class="btn btn-dark" type="submit">Send my enquiry</button><p class="small">Your email application will open with a draft. Nothing is sent automatically.</p></div>
+</div></form></div></div></section>
+<section class="section section-paper"><div class="container split"><div><span class="eyebrow">Before you contact us</span><h2>Three details make a first review more useful.</h2></div><div class="prose"><ol><li><strong>The event:</strong> what happened?</li><li><strong>The date:</strong> when did it happen or when were you notified?</li><li><strong>The document:</strong> what letter, permit, contract or notification do you already have?</li></ol><p><a href="/en/faqs">Read common first-contact questions →</a></p></div></div></section>
+</Layout>

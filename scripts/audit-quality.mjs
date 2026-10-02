@@ -33,7 +33,12 @@ if (!hero.includes('{!isWorkersDev && <script type="application/ld+json"')) erro
 if (cta.includes('site.whatsapp')) errors.push('CTA.astro: global CTA still routes directly to WhatsApp');
 if (!contact.includes('data-email={site.email}')) errors.push('contacto.astro: data-email missing');
 if (!/name="email"/.test(contact)) errors.push('contacto.astro: email field missing');
-if (!contact.includes('Enviar consulta por email')) errors.push('contacto.astro: email CTA missing');
+if (
+  !contact.includes("data-track=\"email_click\"") &&
+  !contact.includes('href={site.emailHref}')
+) {
+  errors.push('contacto.astro: email CTA missing');
+}
 if (contact.includes('Continuar por WhatsApp')) errors.push('contacto.astro: old WhatsApp submit label remains');
 if (faq.includes('Continuar por WhatsApp') || faq.includes('site.whatsapp}')) errors.push('preguntas-frecuentes.astro: WhatsApp still used as primary CTA');
 if (!faq.includes('site.emailHref')) errors.push('preguntas-frecuentes.astro: email CTA missing');

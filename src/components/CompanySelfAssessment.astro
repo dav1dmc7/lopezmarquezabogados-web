@@ -1,56 +1,57 @@
 ---
 import { site } from '../lib/site';
 const emailHref = site.emailHref;
+const isEnglish = Astro.url.pathname.startsWith('/en');
 ---
 <section class="section section-paper lm-tool" id="autodiagnostico-empresa" aria-labelledby="autodiagnostico-title">
   <div class="container split">
     <div>
-      <span class="eyebrow">Revisión preventiva</span>
-      <h2 id="autodiagnostico-title">¿Qué decisiones laborales de tu empresa merece la pena revisar antes de ejecutarlas?</h2>
-      <p class="small">Responde unas preguntas sobre cómo se toman las decisiones laborales en tu empresa. No hay una puntuación: el resultado señala dónde puede ser útil una revisión jurídica.</p>
+      <span class="eyebrow">{isEnglish ? 'Preventive review' : 'Revisión preventiva'}</span>
+      <h2 id="autodiagnostico-title">{isEnglish ? 'Which employment decisions in your company are worth reviewing before you act?' : '¿Qué decisiones laborales de tu empresa merece la pena revisar antes de ejecutarlas?'}</h2>
+      <p class="small">{isEnglish ? 'Answer a few questions about how employment decisions are handled. There is no score: the result highlights where legal review may be useful.' : 'Responde unas preguntas sobre cómo se toman las decisiones laborales en tu empresa. No hay una puntuación: el resultado señala dónde puede ser útil una revisión jurídica.'}</p>
     </div>
     <div class="lm-tool-card">
-      <form id="empresa-autodiagnostico" data-email={site.email} data-mailto={emailHref}>
+      <form id="empresa-autodiagnostico" data-email={site.email} data-mailto={emailHref} data-locale={isEnglish ? 'en' : 'es'}>
         <fieldset>
-          <legend>1. ¿Cuántas personas trabajan en la empresa?</legend>
+          <legend>{isEnglish ? '1. How many people work in the company?' : '1. ¿Cuántas personas trabajan en la empresa?'}</legend>
           <label><input type="radio" name="plantilla" value="1-5" required /> 1–5</label>
           <label><input type="radio" name="plantilla" value="6-15" /> 6–15</label>
           <label><input type="radio" name="plantilla" value="16-49" /> 16–49</label>
-          <label><input type="radio" name="plantilla" value="50+" /> 50 o más</label>
+          <label><input type="radio" name="plantilla" value="50+" /> 50+</label>
         </fieldset>
         <fieldset>
-          <legend>2. ¿Con qué frecuencia aparecen decisiones laborales sensibles?</legend>
-          <label><input type="radio" name="frecuencia" value="ocasional" required /> Ocasionalmente</label>
-          <label><input type="radio" name="frecuencia" value="mensual" /> Varias veces al mes</label>
-          <label><input type="radio" name="frecuencia" value="frecuente" /> Con mucha frecuencia</label>
+          <legend>{isEnglish ? '2. How often do sensitive employment decisions arise?' : '2. ¿Con qué frecuencia aparecen decisiones laborales sensibles?'}</legend>
+          <label><input type="radio" name="frecuencia" value="ocasional" required /> {isEnglish ? 'Occasionally' : 'Ocasionalmente'}</label>
+          <label><input type="radio" name="frecuencia" value="mensual" /> {isEnglish ? 'Several times a month' : 'Varias veces al mes'}</label>
+          <label><input type="radio" name="frecuencia" value="frecuente" /> {isEnglish ? 'Very frequently' : 'Con mucha frecuencia'}</label>
         </fieldset>
         <fieldset>
-          <legend>3. Antes de ejecutar una decisión sensible, ¿alguien revisa hechos y documentación?</legend>
-          <label><input type="radio" name="revision" value="si" required /> Sí, de forma habitual</label>
-          <label><input type="radio" name="revision" value="a veces" /> Depende del caso</label>
-          <label><input type="radio" name="revision" value="no" /> Normalmente no</label>
+          <legend>{isEnglish ? '3. Before acting, does someone review the facts and documents?' : '3. Antes de ejecutar una decisión sensible, ¿alguien revisa hechos y documentación?'}</legend>
+          <label><input type="radio" name="revision" value="si" required /> {isEnglish ? 'Yes, routinely' : 'Sí, de forma habitual'}</label>
+          <label><input type="radio" name="revision" value="a veces" /> {isEnglish ? 'It depends on the case' : 'Depende del caso'}</label>
+          <label><input type="radio" name="revision" value="no" /> {isEnglish ? 'Usually not' : 'Normalmente no'}</label>
         </fieldset>
         <fieldset>
-          <legend>4. ¿Dónde se concentra hoy la mayor necesidad?</legend>
-          <label><input type="radio" name="necesidad" value="contratacion" required /> Contratación y cambios</label>
-          <label><input type="radio" name="necesidad" value="disciplina" /> Conflictos y medidas disciplinarias</label>
-          <label><input type="radio" name="necesidad" value="extinciones" /> Despidos y salidas</label>
-          <label><input type="radio" name="necesidad" value="prevencion" /> Prevención y consultas recurrentes</label>
+          <legend>{isEnglish ? '4. Where is the main need today?' : '4. ¿Dónde se concentra hoy la mayor necesidad?'}</legend>
+          <label><input type="radio" name="necesidad" value="contratacion" required /> {isEnglish ? 'Hiring and contract changes' : 'Contratación y cambios'}</label>
+          <label><input type="radio" name="necesidad" value="disciplina" /> {isEnglish ? 'Conflicts and disciplinary measures' : 'Conflictos y medidas disciplinarias'}</label>
+          <label><input type="radio" name="necesidad" value="extinciones" /> {isEnglish ? 'Dismissals and departures' : 'Despidos y salidas'}</label>
+          <label><input type="radio" name="necesidad" value="prevencion" /> {isEnglish ? 'Prevention and recurring advice' : 'Prevención y consultas recurrentes'}</label>
         </fieldset>
         <fieldset>
-          <legend>5. ¿La documentación laboral relevante está localizada y accesible?</legend>
-          <label><input type="radio" name="documentacion" value="si" required /> Sí</label>
-          <label><input type="radio" name="documentacion" value="parcial" /> Solo parcialmente</label>
-          <label><input type="radio" name="documentacion" value="no" /> Hay que reconstruirla caso por caso</label>
+          <legend>{isEnglish ? '5. Is relevant employment documentation easy to locate?' : '5. ¿La documentación laboral relevante está localizada y accesible?'}</legend>
+          <label><input type="radio" name="documentacion" value="si" required /> {isEnglish ? 'Yes' : 'Sí'}</label>
+          <label><input type="radio" name="documentacion" value="parcial" /> {isEnglish ? 'Only partly' : 'Solo parcialmente'}</label>
+          <label><input type="radio" name="documentacion" value="no" /> {isEnglish ? 'It must be reconstructed case by case' : 'Hay que reconstruirla caso por caso'}</label>
         </fieldset>
         <fieldset>
-          <legend>6. ¿Qué modelo de apoyo tendría más sentido?</legend>
-          <label><input type="radio" name="modelo" value="puntual" required /> Consultas puntuales</label>
-          <label><input type="radio" name="modelo" value="continuado" /> Canal jurídico recurrente</label>
-          <label><input type="radio" name="modelo" value="ambos" /> Una combinación de ambos</label>
+          <legend>{isEnglish ? '6. What type of support would be most useful?' : '6. ¿Qué modelo de apoyo tendría más sentido?'}</legend>
+          <label><input type="radio" name="modelo" value="puntual" required /> {isEnglish ? 'Ad-hoc advice' : 'Consultas puntuales'}</label>
+          <label><input type="radio" name="modelo" value="continuado" /> {isEnglish ? 'Recurring legal channel' : 'Canal jurídico recurrente'}</label>
+          <label><input type="radio" name="modelo" value="ambos" /> {isEnglish ? 'A combination of both' : 'Una combinación de ambos'}</label>
         </fieldset>
-        <button class="btn btn-dark" type="submit">Ver mis prioridades</button>
-        <p class="small lm-tool-note">No introduzcas nombres de trabajadores, DNI, NIE, nóminas ni otra información identificativa. Para esta primera orientación solo necesitamos el contexto de la empresa.</p>
+        <button class="btn btn-dark" type="submit">{isEnglish ? 'See my priorities' : 'Ver mis prioridades'}</button>
+        <p class="small lm-tool-note">{isEnglish ? 'Do not enter employee names, ID numbers, payslips or identifying information. This first orientation only needs company context.' : 'No introduzcas nombres de trabajadores, DNI, NIE, nóminas ni otra información identificativa. Para esta primera orientación solo necesitamos el contexto de la empresa.'}</p>
       </form>
       <div id="empresa-autodiagnostico-resultado" class="lm-tool-result" hidden aria-live="polite"></div>
     </div>

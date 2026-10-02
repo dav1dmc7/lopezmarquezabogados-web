@@ -4,21 +4,21 @@ import PageHero from '../components/PageHero.astro';
 import { site } from '../lib/site';
 ---
 <Layout title="Contacto | López Márquez Abogados" description="Contacta con López Márquez Abogados en Barcelona. Explica tu caso por email y descubre cuál es el siguiente paso.">
-<PageHero eyebrow="Contacto" title="Cuéntanos qué ha ocurrido. Empezaremos por lo esencial." description="Puedes escribir con tus propias palabras. No necesitas conocer el procedimiento ni utilizar lenguaje jurídico." primaryLabel="Enviar consulta por email" primaryHref="#consulta-form" secondaryLabel={site.email} secondaryHref={site.emailHref} note="También puedes llamar directamente o escribir por WhatsApp." />
+<PageHero eyebrow="Contacto" title="Cuéntanos qué ha ocurrido. Empezaremos por lo esencial." description="Puedes escribir con tus propias palabras. No necesitas conocer el procedimiento ni utilizar lenguaje jurídico." primaryLabel="Envíanos tu consulta" primaryHref="#consulta-form" secondaryLabel={site.email} secondaryHref={site.emailHref} note="También puedes llamar directamente o escribir por WhatsApp." />
 <section class="section"><div class="container contact-grid"><div>
 <div class="contact-card contact-primary"><span class="eyebrow">Canal principal</span><h3>Escríbenos por email</h3><p>Es la vía más cómoda para explicar lo ocurrido, indicar la fecha relevante y dejar por escrito los datos básicos del caso.</p><a class="link-arrow" href={site.emailHref} data-track="email_click">Enviar un email →</a></div>
 <div class="contact-card"><span class="eyebrow">También puedes</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Llamar al despacho →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Escribir por WhatsApp →</a></div>
 <div class="contact-card"><span class="eyebrow">Despacho</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">Abrir Google Maps →</a></div>
 </div>
 <div class="contact-card"><h2>Cuéntanos lo esencial</h2><p id="consulta-nota" class="small">Para una primera consulta no necesitas enviar DNI, NIE, pasaporte, contraseñas ni otros datos especialmente sensibles. Basta con explicar qué ha ocurrido, cuándo y qué necesitas resolver.</p>
-<form id="consulta-form" data-email={site.email} aria-describedby="consulta-nota"><div class="form-grid">
+<form id="consulta-form" data-email={site.email} data-locale="es" aria-describedby="consulta-nota" autocomplete="on"><div class="form-grid">
 <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" maxlength="120" required placeholder="¿Cómo te llamamos?" /></div>
 <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="Tu email" /></div>
 <div class="field"><label for="telefono">Teléfono <span class="small">(opcional)</span></label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="Por si prefieres que te llamemos" /></div>
 <div class="field"><label for="area">¿Sobre qué necesitas ayuda?</label><select id="area" name="area"><option>Laboral</option><option>Extranjería</option><option>Empresas</option><option>Civil</option><option>Penal</option><option>Administrativo</option><option>No lo sé</option></select></div>
 <div class="field full"><label for="fecha">¿Cuándo ocurrió o cuándo te notificaron?</label><input id="fecha" name="fecha" maxlength="40" placeholder="Por ejemplo, 25/09/2026" /></div>
 <div class="field full"><label for="mensaje">Cuéntanos qué ha ocurrido</label><textarea id="mensaje" name="mensaje" maxlength="4000" required placeholder="Escríbelo con tus propias palabras."></textarea></div>
-<div class="field full"><label class="checkbox"><input id="privacy" type="checkbox" required /><span>He leído la <a href="/privacidad">política de privacidad</a> y acepto el tratamiento necesario para responder a mi consulta.</span></label></div>
-<div class="field full"><button class="btn btn-dark" type="submit">Preparar email de consulta</button><p class="small">Se abrirá tu aplicación de correo con el mensaje preparado. Tú decides cuándo enviarlo.</p></div>
+<div class="field full"><label class="checkbox"><input id="privacy" name="privacy" type="checkbox" required /><span>He leído la <a href="/privacidad">política de privacidad</a> y acepto el tratamiento necesario para responder a mi consulta.</span></label></div>
+<div class="field full"><button class="btn btn-dark" type="submit">Envíanos tu consulta</button><p class="small">Se abrirá tu aplicación de correo con el mensaje preparado. Tú decides cuándo enviarlo.</p></div>
 </div></form></div></div></section>
 </Layout>

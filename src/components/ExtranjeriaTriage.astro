@@ -1,65 +1,66 @@
 ---
 import { site } from '../lib/site';
 const emailHref = site.emailHref;
+const isEnglish = Astro.url.pathname.startsWith('/en');
 ---
 <section class="section section-paper lm-tool" id="triaje-extranjeria" aria-labelledby="triaje-extranjeria-title">
   <div class="container split">
     <div>
-      <span class="eyebrow">Orientador de Extranjería</span>
-      <h2 id="triaje-extranjeria-title">Responde unas preguntas y descubre qué camino merece la pena revisar.</h2>
-      <p class="small">Responde unas preguntas sencillas sobre tu situación. Obtendrás una orientación inicial para saber qué información y qué vía conviene revisar. No sustituye el estudio de tu expediente.</p>
+      <span class="eyebrow">{isEnglish ? 'Immigration route finder' : 'Orientador de Extranjería'}</span>
+      <h2 id="triaje-extranjeria-title">{isEnglish ? 'Answer a few questions and see which immigration route is worth reviewing first.' : 'Responde unas preguntas y descubre qué camino merece la pena revisar.'}</h2>
+      <p class="small">{isEnglish ? 'This gives you an initial direction based on the facts you provide. It does not replace a review of your file.' : 'Responde unas preguntas sencillas sobre tu situación. Obtendrás una orientación inicial para saber qué información y qué vía conviene revisar. No sustituye el estudio de tu expediente.'}</p>
     </div>
     <div class="lm-tool-card">
-      <form id="extranjeria-triage-form" data-email={site.email} data-mailto={emailHref}>
+      <form id="extranjeria-triage-form" data-email={site.email} data-mailto={emailHref} data-locale={isEnglish ? 'en' : 'es'}>
         <fieldset>
-          <legend>1. ¿Dónde estás ahora?</legend>
-          <label><input type="radio" name="ubicacion" value="espana" required /> En España</label>
-          <label><input type="radio" name="ubicacion" value="fuera" /> Fuera de España</label>
-          <label><input type="radio" name="ubicacion" value="no-se" /> No lo tengo claro</label>
+          <legend>{isEnglish ? '1. Where are you now?' : '1. ¿Dónde estás ahora?'}</legend>
+          <label><input type="radio" name="ubicacion" value="espana" required /> {isEnglish ? 'In Spain' : 'En España'}</label>
+          <label><input type="radio" name="ubicacion" value="fuera" /> {isEnglish ? 'Outside Spain' : 'Fuera de España'}</label>
+          <label><input type="radio" name="ubicacion" value="no-se" /> {isEnglish ? 'Not sure' : 'No lo tengo claro'}</label>
         </fieldset>
         <fieldset>
-          <legend>2. ¿Qué necesitas resolver?</legend>
-          <label><input type="radio" name="objetivo" value="regularizar" required /> Regularizar mi situación</label>
-          <label><input type="radio" name="objetivo" value="residencia" /> Obtener, renovar o modificar una residencia</label>
-          <label><input type="radio" name="objetivo" value="nacionalidad" /> Nacionalidad española</label>
-          <label><input type="radio" name="objetivo" value="familia" /> Reagrupación o situación familiar</label>
-          <label><input type="radio" name="objetivo" value="otro" /> Otra situación</label>
+          <legend>{isEnglish ? '2. What do you need to resolve?' : '2. ¿Qué necesitas resolver?'}</legend>
+          <label><input type="radio" name="objetivo" value="regularizar" required /> {isEnglish ? 'Regularise my immigration status' : 'Regularizar mi situación'}</label>
+          <label><input type="radio" name="objetivo" value="residencia" /> {isEnglish ? 'Obtain, renew or modify a residence permit' : 'Obtener, renovar o modificar una residencia'}</label>
+          <label><input type="radio" name="objetivo" value="nacionalidad" /> {isEnglish ? 'Spanish nationality' : 'Nacionalidad española'}</label>
+          <label><input type="radio" name="objetivo" value="familia" /> {isEnglish ? 'Family reunification or a family-related matter' : 'Reagrupación o situación familiar'}</label>
+          <label><input type="radio" name="objetivo" value="otro" /> {isEnglish ? 'Another immigration matter' : 'Otra situación'}</label>
         </fieldset>
         <fieldset>
-          <legend>3. ¿Tienes actualmente una autorización o solicitud en curso?</legend>
-          <label><input type="radio" name="autorizacion" value="actual" required /> Sí, está vigente</label>
-          <label><input type="radio" name="autorizacion" value="tramite" /> Sí, está en trámite</label>
-          <label><input type="radio" name="autorizacion" value="caducada" /> Ha caducado o tengo dudas</label>
-          <label><input type="radio" name="autorizacion" value="no" /> No</label>
-          <label><input type="radio" name="autorizacion" value="ns" /> No lo sé</label>
+          <legend>{isEnglish ? '3. Do you currently have a permit or application?' : '3. ¿Tienes actualmente una autorización o solicitud en curso?'}</legend>
+          <label><input type="radio" name="autorizacion" value="actual" required /> {isEnglish ? 'Yes, it is valid' : 'Sí, está vigente'}</label>
+          <label><input type="radio" name="autorizacion" value="tramite" /> {isEnglish ? 'Yes, it is pending' : 'Sí, está en trámite'}</label>
+          <label><input type="radio" name="autorizacion" value="caducada" /> {isEnglish ? 'It has expired or I am unsure' : 'Ha caducado o tengo dudas'}</label>
+          <label><input type="radio" name="autorizacion" value="no" /> {isEnglish ? 'No' : 'No'}</label>
+          <label><input type="radio" name="autorizacion" value="ns" /> {isEnglish ? 'I do not know' : 'No lo sé'}</label>
         </fieldset>
         <fieldset>
-          <legend>4. ¿Cuánto tiempo llevas en España, aproximadamente?</legend>
-          <label><input type="radio" name="estancia" value="menos2" required /> Menos de 2 años</label>
-          <label><input type="radio" name="estancia" value="2omas" /> 2 años o más</label>
-          <label><input type="radio" name="estancia" value="fuera" /> Estoy fuera de España</label>
-          <label><input type="radio" name="estancia" value="ns" /> No lo sé / prefiero revisarlo</label>
+          <legend>{isEnglish ? '4. How long have you been in Spain, approximately?' : '4. ¿Cuánto tiempo llevas en España, aproximadamente?'}</legend>
+          <label><input type="radio" name="estancia" value="menos2" required /> {isEnglish ? 'Less than 2 years' : 'Menos de 2 años'}</label>
+          <label><input type="radio" name="estancia" value="2omas" /> {isEnglish ? '2 years or more' : '2 años o más'}</label>
+          <label><input type="radio" name="estancia" value="fuera" /> {isEnglish ? 'I am outside Spain' : 'Estoy fuera de España'}</label>
+          <label><input type="radio" name="estancia" value="ns" /> {isEnglish ? 'Not sure / I would like it reviewed' : 'No lo sé / prefiero revisarlo'}</label>
         </fieldset>
         <fieldset>
-          <legend>5. ¿Hay una notificación, denegación o fecha límite que deba revisarse?</legend>
-          <label><input type="radio" name="urgencia" value="si" required /> Sí</label>
-          <label><input type="radio" name="urgencia" value="no" /> No</label>
-          <label><input type="radio" name="urgencia" value="ns" /> No lo sé</label>
+          <legend>{isEnglish ? '5. Is there a refusal, notification or deadline to review?' : '5. ¿Hay una notificación, denegación o fecha límite que deba revisarse?'}</legend>
+          <label><input type="radio" name="urgencia" value="si" required /> {isEnglish ? 'Yes' : 'Sí'}</label>
+          <label><input type="radio" name="urgencia" value="no" /> {isEnglish ? 'No' : 'No'}</label>
+          <label><input type="radio" name="urgencia" value="ns" /> {isEnglish ? 'Not sure' : 'No lo sé'}</label>
         </fieldset>
         <fieldset>
-          <legend>6. ¿Tu situación está relacionada con un familiar español o ciudadano de la UE/EEE/Suiza?</legend>
-          <label><input type="radio" name="familiar_eu" value="si" required /> Sí</label>
-          <label><input type="radio" name="familiar_eu" value="no" /> No</label>
-          <label><input type="radio" name="familiar_eu" value="ns" /> No lo sé</label>
+          <legend>{isEnglish ? '6. Is your case connected to a Spanish or EU/EEA/Swiss family member?' : '6. ¿Tu situación está relacionada con un familiar español o ciudadano de la UE/EEE/Suiza?'}</legend>
+          <label><input type="radio" name="familiar_eu" value="si" required /> {isEnglish ? 'Yes' : 'Sí'}</label>
+          <label><input type="radio" name="familiar_eu" value="no" /> {isEnglish ? 'No' : 'No'}</label>
+          <label><input type="radio" name="familiar_eu" value="ns" /> {isEnglish ? 'Not sure' : 'No lo sé'}</label>
         </fieldset>
         <fieldset>
-          <legend>7. ¿Existe además otro vínculo familiar que pueda ser relevante?</legend>
-          <label><input type="radio" name="familia" value="si" required /> Sí</label>
-          <label><input type="radio" name="familia" value="no" /> No</label>
-          <label><input type="radio" name="familia" value="ns" /> No lo sé / prefiero revisarlo</label>
+          <legend>{isEnglish ? '7. Is there another family connection that may matter?' : '7. ¿Existe además otro vínculo familiar que pueda ser relevante?'}</legend>
+          <label><input type="radio" name="familia" value="si" required /> {isEnglish ? 'Yes' : 'Sí'}</label>
+          <label><input type="radio" name="familia" value="no" /> {isEnglish ? 'No' : 'No'}</label>
+          <label><input type="radio" name="familia" value="ns" /> {isEnglish ? 'Not sure / I would rather review it' : 'No lo sé / prefiero revisarlo'}</label>
         </fieldset>
-        <button class="btn btn-dark" type="submit">Orientar mi siguiente paso</button>
-        <p class="small lm-tool-note">No introduzcas DNI, NIE, pasaporte, número de expediente ni otros identificadores.</p>
+        <button class="btn btn-dark" type="submit">{isEnglish ? 'Show my next step' : 'Orientar mi siguiente paso'}</button>
+        <p class="small lm-tool-note">{isEnglish ? 'Do not enter your passport, NIE, case number or other identifiers.' : 'No introduzcas DNI, NIE, pasaporte, número de expediente ni otros identificadores.'}</p>
       </form>
       <div id="extranjeria-triage-result" class="lm-tool-result" hidden aria-live="polite"></div>
     </div>
