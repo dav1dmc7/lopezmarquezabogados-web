@@ -1,23 +1,26 @@
-# Legacy Spanish URLs from the Netlify site.
-/es/index.html /
-/es/about.html /sobre-nosotros
-/es/servicios.html /otras-areas
-/es/laboral.html /laboral
-/es/extranjeria.html /extranjeria
-/es/civil.html /civil
-/es/penal.html /penal
-/es/administrativo.html /administrativo
-/es/contact.html /contacto
-/es/faqs.html /preguntas-frecuentes
+# Legacy Spanish URLs from the former Netlify site.
+/es/index.html / 301
+/es/about.html /sobre-nosotros 301
+/es/servicios.html /otras-areas 301
+/es/laboral.html /laboral 301
+/es/extranjeria.html /extranjeria 301
+/es/civil.html /civil 301
+/es/penal.html /penal 301
+/es/administrativo.html /administrativo 301
+/es/contact.html /contacto 301
+/es/faqs.html /preguntas-frecuentes 301
 
-# Legacy English URLs currently retained as redirects until an English section is rebuilt.
-/en/index_en.html /
-/en/about_en.html /sobre-nosotros
-/en/servicios_en.html /otras-areas
-/en/laboral_en.html /laboral
-/en/extranjeria_en.html /extranjeria
-/en/civil_en.html /civil
-/en/penal_en.html /penal
-/en/administrativo_en.html /administrativo
-/en/contact_en.html /contacto
-/en/faqs_en.html /preguntas-frecuentes
+# Legacy English URLs: preserve the English intent rather than sending users into Spanish.
+/en/index_en.html /en 301
+/en/about_en.html /en/about 301
+/en/servicios_en.html /en 301
+/en/laboral_en.html /en/employment 301
+/en/extranjeria_en.html /en/immigration 301
+/en/civil_en.html /en 301
+/en/penal_en.html /en 301
+/en/administrativo_en.html /en 301
+/en/contact_en.html /en/contact 301
+/en/faqs_en.html /en/faqs 301
+
+# New information architecture: keep the old duplicate labour-company URL but consolidate it.
+/laboral/asesoramiento-empresas /empresas/asesoramiento-laboral 301

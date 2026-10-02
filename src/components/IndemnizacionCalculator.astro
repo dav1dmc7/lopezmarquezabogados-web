@@ -1,121 +1,43 @@
+---
+interface Props { lang?: 'es' | 'en'; }
+const isEnglish = Astro.props.lang === 'en' || Astro.url.pathname.startsWith('/en');
+---
 <section class="calculator-section" aria-labelledby="calculadora-titulo">
   <div class="container">
-    <div class="calculator-shell">
+    <div class="calculator-shell" data-locale={isEnglish ? 'en' : 'es'}>
       <div class="calculator-intro">
-        <span class="eyebrow">Herramienta orientativa</span>
-        <h2 id="calculadora-titulo">Calcula una estimación de indemnización por despido</h2>
-        <p>Introduce las fechas y un salario bruto anual de referencia. La herramienta compara dos escenarios económicos; no decide cuál corresponde jurídicamente a tu caso.</p>
+        <span class="eyebrow">{isEnglish ? 'Indicative tool' : 'Herramienta orientativa'}</span>
+        <h2 id="calculadora-titulo">{isEnglish ? 'Estimate dismissal severance compensation' : 'Calcula una estimación de indemnización por despido'}</h2>
+        <p>{isEnglish ? 'Enter the employment dates and an annual gross salary reference. The tool compares two economic scenarios; it does not decide which legal regime applies to your case.' : 'Introduce las fechas y un salario bruto anual de referencia. La herramienta compara dos escenarios económicos; no decide cuál corresponde jurídicamente a tu caso.'}</p>
       </div>
-
       <form class="calculator-form" id="indemnizacion-calculadora" novalidate>
         <div class="calculator-grid">
-          <div class="field">
-            <label for="calc-inicio">Fecha de inicio</label>
-            <input id="calc-inicio" name="inicio" type="date" required />
-            <span class="field-help">La fecha de inicio que figure para la relación laboral.</span>
-          </div>
-
-          <div class="field">
-            <label for="calc-fin">Fecha de despido</label>
-            <input id="calc-fin" name="fin" type="date" required />
-            <span class="field-help">La fecha efectiva del despido que quieres simular.</span>
-          </div>
-
-          <div class="field">
-            <label for="calc-salario">Salario bruto anual computable (€)</label>
-            <input id="calc-salario" name="salario" type="number" inputmode="decimal" min="1" step="0.01" placeholder="30000" required />
-            <span class="field-help">Usa un bruto anual de referencia. El salario regulador real puede requerir revisar conceptos retributivos, variables y otras partidas.</span>
-          </div>
-
-          <div class="field">
-            <label for="calc-escenario">Escenario a simular</label>
-            <select id="calc-escenario" name="escenario">
-              <option value="objective">Extinción por causas objetivas · 20 días/año</option>
-              <option value="unfair">Despido declarado improcedente · 33 días/año</option>
-            </select>
-            <span class="field-help">La herramienta no determina si un despido es procedente o improcedente.</span>
-          </div>
+          <div class="field"><label for="calc-inicio">{isEnglish ? 'Start date' : 'Fecha de inicio'}</label><input id="calc-inicio" name="inicio" type="date" required /><span class="field-help">{isEnglish ? 'Use the employment start date shown in the records.' : 'La fecha de inicio que figure para la relación laboral.'}</span></div>
+          <div class="field"><label for="calc-fin">{isEnglish ? 'Dismissal date' : 'Fecha de despido'}</label><input id="calc-fin" name="fin" type="date" required /><span class="field-help">{isEnglish ? 'The effective date you want to simulate.' : 'La fecha efectiva del despido que quieres simular.'}</span></div>
+          <div class="field"><label for="calc-salario">{isEnglish ? 'Annual gross salary reference (€)' : 'Salario bruto anual computable (€)'}</label><input id="calc-salario" name="salario" type="number" inputmode="decimal" min="1" step="0.01" placeholder="30000" required /><span class="field-help">{isEnglish ? 'The actual regulatory salary may require reviewing remuneration, variable pay and other items.' : 'Usa un bruto anual de referencia. El salario regulador real puede requerir revisar conceptos retributivos, variables y otras partidas.'}</span></div>
+          <div class="field"><label for="calc-escenario">{isEnglish ? 'Scenario' : 'Escenario a simular'}</label><select id="calc-escenario" name="escenario"><option value="objective">{isEnglish ? 'Objective dismissal · 20 days/year' : 'Extinción por causas objetivas · 20 días/año'}</option><option value="unfair">{isEnglish ? 'Unfair dismissal · 33 days/year' : 'Despido declarado improcedente · 33 días/año'}</option></select><span class="field-help">{isEnglish ? 'The tool does not determine whether a dismissal is lawful or unfair.' : 'La herramienta no determina si un despido es procedente o improcedente.'}</span></div>
         </div>
-
-        <div class="calculator-actions">
-          <button class="btn btn-dark" type="submit">Calcular estimación</button>
-          <p class="small">Resultado orientativo; revisa siempre la documentación y las fechas del caso.</p>
-        </div>
-
+        <div class="calculator-actions"><button class="btn btn-dark" type="submit">{isEnglish ? 'Calculate estimate' : 'Calcular estimación'}</button><p class="small">{isEnglish ? 'Indicative only; review the documents and dates of the case.' : 'Resultado orientativo; revisa siempre la documentación y las fechas del caso.'}</p></div>
         <p class="calculator-error" id="calculadora-error" role="alert" hidden></p>
       </form>
-
       <div class="calculator-result" id="calculadora-resultado" aria-live="polite" hidden>
-        <div class="calculator-result-main">
-          <span class="card-kicker">Estimación orientativa</span>
-          <p class="calculator-result-label">Indemnización estimada</p>
-          <strong id="calculadora-importe">0,00 €</strong>
-          <p id="calculadora-resumen"></p>
-        </div>
-
-        <div class="calculator-breakdown">
-          <div><span>Días de indemnización</span><strong id="calculadora-dias">0</strong></div>
-          <div><span>Antigüedad computada</span><strong id="calculadora-meses">0 meses</strong></div>
-          <div><span>Tope del escenario</span><strong id="calculadora-tope">—</strong></div>
-        </div>
-
-        <div class="notice calculator-notice">
-          <strong>Importante:</strong> esta cifra no incluye finiquito, salarios pendientes, vacaciones, preaviso, cantidades adicionales ni otros conceptos. Tampoco determina la validez del despido.
-        </div>
-
-        <div class="calculator-next-step">
-          <div>
-            <span class="eyebrow">Siguiente paso</span>
-            <h3>La cifra no es toda la historia</h3>
-            <p>La carta, los hechos, la fecha de notificación y la composición del salario pueden cambiar el análisis. Podemos revisar el despido contigo.</p>
-          </div>
-          <a class="btn btn-dark" href="/contacto" data-track="calculator_contact">Revisar mi situación</a><a class="btn btn-outline" id="calculadora-email" href="/contacto" data-track="calculator_email" hidden>Preparar email</a>
-        </div>
+        <div class="calculator-result-main"><span class="card-kicker">{isEnglish ? 'Indicative estimate' : 'Estimación orientativa'}</span><p class="calculator-result-label">{isEnglish ? 'Estimated severance' : 'Indemnización estimada'}</p><strong id="calculadora-importe">0,00 €</strong><p id="calculadora-resumen"></p></div>
+        <div class="calculator-breakdown"><div><span>{isEnglish ? 'Compensation days' : 'Días de indemnización'}</span><strong id="calculadora-dias">0</strong></div><div><span>{isEnglish ? 'Service period' : 'Antigüedad computada'}</span><strong id="calculadora-meses">0</strong></div><div><span>{isEnglish ? 'Statutory cap' : 'Tope del escenario'}</span><strong id="calculadora-tope">—</strong></div></div>
+        <div class="notice calculator-notice"><strong>{isEnglish ? 'Important:' : 'Importante:'}</strong> {isEnglish ? 'This figure excludes the final settlement, outstanding salary, holidays, notice pay and other possible amounts. It does not determine whether the dismissal is valid.' : 'esta cifra no incluye finiquito, salarios pendientes, vacaciones, preaviso, cantidades adicionales ni otros conceptos. Tampoco determina la validez del despido.'}</div>
+        <div class="calculator-next-step"><div><span class="eyebrow">{isEnglish ? 'Next step' : 'Siguiente paso'}</span><h3>{isEnglish ? 'The figure is not the whole story' : 'La cifra no es toda la historia'}</h3><p>{isEnglish ? 'The dismissal letter, facts, notification date and salary composition can change the analysis. We can review the dismissal with you.' : 'La carta, los hechos, la fecha de notificación y la composición del salario pueden cambiar el análisis. Podemos revisar el despido contigo.'}</p></div><a class="btn btn-dark" href={isEnglish ? '/en/contact' : '/contacto'} data-track="calculator_contact">{isEnglish ? 'Review my situation' : 'Revisar mi situación'}</a><a class="btn btn-outline" id="calculadora-email" href={isEnglish ? '/en/contact' : '/contacto'} data-track="calculator_email" hidden>{isEnglish ? 'Prepare email' : 'Preparar email'}</a></div>
       </div>
-
-      <div class="notice calculator-legal-disclaimer"><strong>Importante:</strong> la herramienta ofrece una estimación sobre un escenario económico concreto. No decide si el despido es procedente o improcedente, no calcula todos los conceptos de una liquidación y no sustituye el estudio profesional del expediente.</div>
-      <div class="calculator-source">
-        <p><strong>Base normativa:</strong> el Estatuto de los Trabajadores regula, entre otros supuestos, 20 días de salario por año para la extinción objetiva y 33 días de salario por año para el despido declarado improcedente, con los límites legales correspondientes. Para contratos formalizados antes del 12 de febrero de 2012 existen reglas transitorias específicas en caso de improcedencia.</p>
-        <a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener noreferrer">Consultar el Estatuto de los Trabajadores en el BOE →</a>
-      </div>
+      <div class="notice calculator-legal-disclaimer"><strong>{isEnglish ? 'Important:' : 'Importante:'}</strong> {isEnglish ? 'This is an estimate for a specific economic scenario. It does not decide whether the dismissal is lawful or unfair, does not calculate every settlement item and does not replace professional review.' : 'la herramienta ofrece una estimación sobre un escenario económico concreto. No decide si el despido es procedente o improcedente, no calcula todos los conceptos de una liquidación y no sustituye el estudio profesional del expediente.'}</div>
+      <div class="calculator-source"><p><strong>{isEnglish ? 'Legal basis:' : 'Base normativa:'}</strong> {isEnglish ? 'The Workers’ Statute provides, among other cases, 20 days of salary per year for objective termination and 33 days per year for unfair dismissal, with statutory caps. Contracts signed before 12 February 2012 may be subject to specific transitional rules for unfair dismissal.' : 'el Estatuto de los Trabajadores regula, entre otros supuestos, 20 días de salario por año para la extinción objetiva y 33 días de salario por año para el despido declarado improcedente, con los límites legales correspondientes. Para contratos formalizados antes del 12 de febrero de 2012 existen reglas transitorias específicas en caso de improcedencia.'}</p><a href="https://www.boe.es/eli/es/rdlg/2015/10/23/2/con" target="_blank" rel="noopener noreferrer">{isEnglish ? 'Read the Workers’ Statute at the BOE →' : 'Consultar el Estatuto de los Trabajadores en el BOE →'}</a><a class="calculator-source-link" href="https://www.poderjudicial.es/cgpj/es/Servicios/Utilidades/Calculo-de-indemnizaciones-por-extincion-de-contrato-de-trabajo/" target="_blank" rel="noopener noreferrer">{isEnglish ? 'Compare with the CGPJ calculator →' : 'Contrastar con la calculadora oficial del CGPJ →'}</a></div>
     </div>
   </div>
 </section>
-
 <style>
   .calculator-section{padding:0 0 95px;background:var(--paper)}
   .calculator-shell{border:1px solid var(--line);border-radius:26px;background:#fff;padding:34px;box-shadow:var(--shadow)}
-  .calculator-intro{max-width:820px;margin-bottom:30px}
-  .calculator-intro h2{margin-top:12px;margin-bottom:12px}
-  .calculator-intro p{margin:0;color:var(--muted)}
-  .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .calculator-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
-  .calculator-actions .small{margin:0}
-  .field-help{font-size:.78rem;line-height:1.45;color:var(--muted)}
-  .calculator-error{margin:18px 0 0;padding:12px 14px;border-left:2px solid #9f3f32;background:rgba(159,63,50,.08);color:#6b3028}
-  .calculator-result{margin-top:30px;border-top:1px solid var(--line);padding-top:30px}
-  .calculator-result-main{padding:30px;border-radius:20px;background:var(--ink);color:#fff}
-  .calculator-result-label{margin:12px 0 4px;color:rgba(255,255,255,.68);font-size:.9rem}
-  .calculator-result-main>strong{display:block;font:500 clamp(2.7rem,6vw,5rem)/.95 ui-serif,Georgia,serif;letter-spacing:-.04em;color:var(--sand)}
-  .calculator-result-main p:last-child{max-width:820px;margin:16px 0 0;color:rgba(255,255,255,.7)}
-  .calculator-breakdown{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;overflow:hidden}
-  .calculator-breakdown div{padding:18px 20px;background:#fff}
-  .calculator-breakdown div+div{border-left:1px solid var(--line)}
-  .calculator-breakdown span{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
-  .calculator-breakdown strong{display:block;margin-top:7px;font:600 1.25rem/1.1 ui-serif,Georgia,serif}
-  .calculator-notice{margin-top:18px}
-  .calculator-next-step{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin-top:24px;padding:26px;border-radius:18px;background:var(--sand)}
-  .calculator-next-step h3{margin:9px 0 8px}
-  .calculator-next-step p{margin:0;color:rgba(21,38,31,.72);max-width:650px}
-  .calculator-source{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-  .calculator-source p{margin:0 0 9px}
-  .calculator-source a{text-decoration:underline;text-underline-offset:3px}
-  @media(max-width:700px){
-    .calculator-shell{padding:22px}
-    .calculator-grid,.calculator-next-step{grid-template-columns:1fr}
-    .calculator-breakdown{grid-template-columns:1fr}
-    .calculator-breakdown div+div{border-left:0;border-top:1px solid var(--line)}
-  }
+  .calculator-intro{max-width:820px;margin-bottom:30px}.calculator-intro h2{margin-top:12px;margin-bottom:12px}.calculator-intro p{margin:0;color:var(--muted)}
+  .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.calculator-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}.calculator-actions .small{margin:0}.field-help{font-size:.78rem;line-height:1.45;color:var(--muted)}
+  .calculator-error{margin:18px 0 0;padding:12px 14px;border-left:2px solid #9f3f32;background:rgba(159,63,50,.08);color:#6b3028}.calculator-result{margin-top:30px;border-top:1px solid var(--line);padding-top:30px}.calculator-result-main{padding:30px;border-radius:20px;background:var(--ink);color:#fff}.calculator-result-label{margin:12px 0 4px;color:rgba(255,255,255,.68);font-size:.9rem}.calculator-result-main>strong{display:block;font:500 clamp(2.7rem,6vw,5rem)/.95 ui-serif,Georgia,serif;letter-spacing:-.04em;color:var(--sand)}.calculator-result-main p:last-child{max-width:820px;margin:16px 0 0;color:rgba(255,255,255,.7)}
+  .calculator-breakdown{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;border-radius:0 0 18px 18px;overflow:hidden}.calculator-breakdown div{padding:18px 20px;background:#fff}.calculator-breakdown div+div{border-left:1px solid var(--line)}.calculator-breakdown span{display:block;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}.calculator-breakdown strong{display:block;margin-top:7px;font:600 1.25rem/1.1 ui-serif,Georgia,serif}.calculator-notice{margin-top:18px}.calculator-next-step{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;margin-top:24px;padding:26px;border-radius:18px;background:var(--sand)}.calculator-next-step h3{margin:9px 0 8px}.calculator-next-step p{margin:0;color:rgba(21,38,31,.72);max-width:650px}.calculator-source{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}.calculator-source p{margin:0 0 9px}.calculator-source a{display:inline-block;margin-right:18px;text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:700px){.calculator-shell{padding:22px}.calculator-grid,.calculator-next-step{grid-template-columns:1fr}.calculator-breakdown{grid-template-columns:1fr}.calculator-breakdown div+div{border-left:0;border-top:1px solid var(--line)}}
 </style>
-
 <script src="/indemnizacion-calculator.js" defer></script>

@@ -183,7 +183,26 @@
 
 @media (max-width: 900px) {
   .main-nav { box-shadow: 0 18px 32px rgba(21,38,31,.08); }
-  .nav-cta { justify-content: center; }
+  .language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.language-switch:hover,
+.language-switch:focus-visible {
+  text-decoration: none;
+}
+
+.nav-cta { justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -207,4 +226,23 @@
   .contact-card {
     transition: none;
   }
+}
+
+
+/* Evita el scroll accidental del documento al abrir el menú móvil. */
+@media (max-width: 900px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+
+.site-footer a,
+.contact-card a {
+  overflow-wrap: anywhere;
+}
+
+button,
+a {
+  touch-action: manipulation;
 }
