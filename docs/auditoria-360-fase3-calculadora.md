@@ -28,3 +28,9 @@ La guía legal y jurisprudencial de la herramienta del CGPJ explica también el 
 - `calculator_complete`
 - `calculator_error`
 - `calculator_contact`
+
+
+## ZIP correction v2
+- Fixed duplicate localized-path key in `src/lib/site.ts`.
+- Fixed relative imports in the nested English resource pages.
+- Removed a stray full stop from the English arraigo resource title.

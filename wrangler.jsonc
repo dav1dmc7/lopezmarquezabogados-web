@@ -1,4 +1,5 @@
 {
+  "main": "./worker.ts",
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "lopezmarquezabogados",
   "compatibility_date": "2026-09-28",
@@ -6,6 +7,29 @@
   "assets": {
     "directory": "./dist",
     "html_handling": "drop-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "lopezmarquez_consultas",
+      "database_name": "lopezmarquez-consultas",
+      "database_id": "a4901a59-32b5-499d-a1d4-142c28d023de",
+      "remote": true
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_destination_addresses": [
+        "lopezmarquezabogados@gmail.com"
+      ],
+      "allowed_sender_addresses": [
+        "web@lopezmarquezabogados.com"
+      ]
+    }
+  ]
 }

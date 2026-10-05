@@ -2,20 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import SectionIntro from '../components/SectionIntro.astro';
 import CTA from '../components/CTA.astro';
-import { site } from '../lib/site';
 ---
 <Layout title="Abogados en Barcelona | Laboral, Extranjería y Empresas" description="López Márquez Abogados en Barcelona. Derecho Laboral, Extranjería y asesoramiento laboral a empresas. Explica tu situación y descubre qué conviene revisar.">
-  <section class="hero hero-home">
+  <section class="hero hero-home" data-reveal>
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow">Barcelona · Presencial y online</span>
-        <h1>Cuando un problema jurídico puede cambiar tu situación, <span>la siguiente decisión importa.</span></h1>
-        <p class="lead">Te ayudamos a entender qué está pasando, qué documentos importan y qué pasos merece la pena valorar en <strong>Derecho Laboral, Extranjería y asesoramiento a empresas.</strong></p>
+        <span class="eyebrow">López Márquez Abogados · Barcelona</span>
+        <h1>Derecho Laboral, Extranjería y Empresa en Barcelona. <span>Claridad para decisiones que importan.</span></h1>
+        <p class="lead">Analizamos los hechos, los documentos y las fechas relevantes para que entiendas <strong>qué conviene revisar, qué opciones existen y cuál puede ser el siguiente paso.</strong></p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/contacto">Cuéntanos tu caso</a>
-          <a class="btn btn-ghost" href={site.emailHref} data-track="email_click">Enviar una consulta por email</a>
+          <a class="btn btn-primary" href="/contacto" data-track="primary_cta_click">Cuéntanos tu caso</a>
+          <a class="btn btn-ghost" href="/laboral">Ver áreas de práctica</a>
         </div>
-        <p class="hero-note">No necesitas hablar como un abogado. Cuéntanos qué ha ocurrido y la fecha que te preocupa.</p>
+        <p class="hero-note">Barcelona · Atención presencial y online · Español e inglés.</p>
       </div>
       <aside class="hero-panel hero-panel-premium" aria-label="Situaciones principales">
         <span class="card-kicker">¿Cuál se parece más a tu situación?</span>
@@ -23,17 +22,18 @@ import { site } from '../lib/site';
           <a href="/laboral/despidos"><span>01</span><strong>Me han despedido</strong><small>Carta · finiquito · indemnización · plazo</small></a>
           <a href="/extranjeria"><span>02</span><strong>Necesito resolver Extranjería</strong><small>Arraigo · residencia · nacionalidad · familia</small></a>
           <a href="/empresas"><span>03</span><strong>Dirijo una empresa</strong><small>Contratación · disciplina · conflictos · extinciones</small></a>
+          <a href="/laboral/incapacidad-permanente"><span>04</span><strong>Mi salud afecta a mi trabajo</strong><small>Baja médica · incapacidad permanente · Seguridad Social</small></a>
         </div>
       </aside>
     </div>
     <div class="container proof-line" aria-label="Cómo trabajamos">
-      <span>Hechos antes que etiquetas</span><span>Fechas claras</span><span>Atención directa</span><span>Fuentes oficiales</span>
+      <span>Respuesta clara</span><span>Fechas claras</span><span>Atención directa</span><span>Fuentes oficiales</span>
     </div>
   </section>
 
   <section class="section section-paper" data-reveal>
     <div class="container">
-      <SectionIntro eyebrow="Áreas principales" title="Empieza por el problema que tienes delante." text="No necesitas saber qué área jurídica corresponde. Elige la situación que más se parezca a la tuya y desde ahí podrás profundizar."/>
+      <SectionIntro eyebrow="Áreas principales" title="Empieza por lo que te está pasando." text="No necesitas saber cómo se llama el procedimiento. Cuéntanos qué te está pasando y empieza por la situación que más se parezca a la tuya."/>
       <div class="cards">
         <a class="card card-featured" href="/laboral">
           <div><span class="card-kicker">01 · Laboral</span><h3>Despidos, salarios y conflictos</h3><p>Para trabajadores y empresas que necesitan revisar una decisión, un documento o una situación laboral.</p></div>
@@ -51,12 +51,12 @@ import { site } from '../lib/site';
     </div>
   </section>
 
-  <section class="section section-ink-soft">
+  <section class="section section-ink-soft" data-reveal>
     <div class="container split split-wide">
       <div>
         <span class="eyebrow">Cuando el tiempo importa</span>
-        <h2>Antes de decidir, identifica la fecha y el documento que pueden cambiar tus opciones.</h2>
-        <p class="small light-copy">Una primera revisión sirve para separar lo urgente de lo importante y detectar qué información puede cambiar el siguiente paso.</p>
+        <h2>Antes de decidir, aclara qué puede cambiar tu caso.</h2>
+        <p class="small light-copy">Una primera revisión ayuda a separar lo urgente de lo importante y a saber qué información necesitas tener clara antes de dar el siguiente paso.</p>
       </div>
       <div class="number-list number-list-light">
         <div class="number-item"><span class="number">01</span><div><h3>La fecha</h3><p>Notificación, efectos, impago o cualquier otra fecha que pueda activar un plazo.</p></div></div>
@@ -66,7 +66,7 @@ import { site } from '../lib/site';
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <SectionIntro eyebrow="Empresas" title="Las decisiones laborales importantes suelen empezar antes del conflicto." text="Un canal jurídico estable permite consultar contratación, cambios, medidas disciplinarias, conflictos y extinciones cuando todavía hay margen para decidir."/>
       <div class="business-grid">
@@ -77,11 +77,11 @@ import { site } from '../lib/site';
     </div>
   </section>
 
-  <section class="section section-paper">
+  <section class="section section-paper" data-reveal>
     <div class="container editorial-grid">
       <div>
         <span class="eyebrow">Información útil</span>
-        <h2>Antes de contratar un abogado, también necesitas entender qué está pasando.</h2>
+        <h2>Información útil para dar los primeros pasos con más claridad.</h2>
       </div>
       <div class="resource-preview">
         <a href="/recursos/primeras-horas-despido"><span class="card-kicker">Urgente</span><strong>Me acaban de despedir</strong><span>Qué guardar, qué fecha anotar y qué conviene revisar primero.</span></a>
@@ -92,10 +92,10 @@ import { site } from '../lib/site';
     </div>
   </section>
 
-  <section class="section section-dark trust-section">
+  <section class="section section-dark trust-section" data-reveal>
     <div class="container trust-grid">
-      <div><span class="eyebrow">El despacho</span><h2>Criterio jurídico. Atención directa.</h2></div>
-      <div class="trust-copy"><p>Estudiamos los hechos, los documentos y las fechas que pueden cambiar el caso. La tecnología ayuda a ordenar la información y a facilitar el contacto; la valoración jurídica sigue siendo personal y profesional.</p><div class="pill-row"><span class="pill">Barcelona</span><span class="pill">Presencial y online</span><span class="pill">Laboral</span><span class="pill">Extranjería</span><span class="pill">Empresas</span></div><a class="btn btn-ghost" href="/sobre-nosotros">Conocer el despacho</a></div>
+      <div><span class="eyebrow">El despacho</span><h2>Una atención jurídica cercana y directa.</h2></div>
+      <div class="trust-copy"><p>Estudiamos los hechos, los documentos y las fechas que pueden cambiar el caso. Te explicamos qué vemos, qué falta por comprobar y qué opciones merece la pena valorar.</p><div class="pill-row"><span class="pill">Barcelona</span><span class="pill">Presencial y online</span><span class="pill">Laboral</span><span class="pill">Extranjería</span><span class="pill">Empresas</span></div><a class="btn btn-ghost" href="/sobre-nosotros">Conocer el despacho</a></div>
     </div>
   </section>
 

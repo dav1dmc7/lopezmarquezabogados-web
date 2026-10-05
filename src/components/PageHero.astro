@@ -14,9 +14,12 @@ interface Props {
 
 const { eyebrow = 'López Márquez Abogados', title, description, primaryLabel, primaryHref, secondaryLabel, secondaryHref, note } = Astro.props;
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isEnglish = pathname.startsWith('/en');
 const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');
 
 const parents: Record<string, { href: string; label: string }> = {
+  '/laboral/incapacidad-temporal': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/incapacidad-permanente': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/despidos': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/indemnizacion-despido': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/reclamacion-salarios': { href: '/laboral', label: 'Derecho Laboral' },
@@ -35,9 +38,30 @@ const parents: Record<string, { href: string; label: string }> = {
   '/recursos/primeras-horas-despido': { href: '/recursos', label: 'Recursos' }
 };
 
-const parent = parents[pathname];
+const englishParents: Record<string, { href: string; label: string }> = {
+  '/en/employment/temporary-sickness-leave': { href: '/en/employment', label: 'Employment' },
+  '/en/employment/permanent-disability': { href: '/en/employment', label: 'Employment' },
+  '/en/employment-dismissal': { href: '/en/employment', label: 'Employment' },
+  '/en/employment-severance': { href: '/en/employment', label: 'Employment' },
+  '/en/employment-salary-claims': { href: '/en/employment', label: 'Employment' },
+  '/en/workplace-accidents': { href: '/en/employment', label: 'Employment' },
+  '/en/business/employment-advice': { href: '/en/business', label: 'Business' },
+  '/en/immigration/residency': { href: '/en/immigration', label: 'Immigration' },
+  '/en/immigration/regularisation': { href: '/en/immigration', label: 'Immigration' },
+  '/en/immigration/spanish-nationality': { href: '/en/immigration', label: 'Immigration' },
+  '/en/immigration/family-reunification': { href: '/en/immigration', label: 'Immigration' },
+  '/en/resources': { href: '/en', label: 'Resources' },
+  '/en/resources/first-hours-after-dismissal': { href: '/en/resources', label: 'Resources' },
+  '/en/resources/dismissal-deadline-spain': { href: '/en/resources', label: 'Resources' },
+  '/en/resources/permanent-disability-employment-2025': { href: '/en/resources', label: 'Resources' },
+  '/en/resources/arraigo-two-years-spain': { href: '/en/resources', label: 'Resources' },
+  '/en/resources/spanish-nationality-residence-period': { href: '/en/resources', label: 'Resources' },
+  '/en/legal-updates': { href: '/en', label: 'Legal updates' }
+};
+
+const parent = isEnglish ? englishParents[pathname] : parents[pathname];
 const breadcrumbItems = [
-  { name: 'Inicio', item: '/' },
+  { name: isEnglish ? 'Home' : 'Inicio', item: isEnglish ? '/en' : '/' },
   ...(parent ? [{ name: parent.label, item: parent.href }] : []),
   { name: eyebrow, item: pathname }
 ];
@@ -55,7 +79,7 @@ const breadcrumbSchema = {
 ---
 <section class="page-hero">
   <div class="container">
-    <nav class="breadcrumbs" aria-label="Migas de pan">
+    <nav class="breadcrumbs" aria-label={isEnglish ? 'Breadcrumbs' : 'Migas de pan'}>
       {breadcrumbItems.map((item, index) =>
         index < breadcrumbItems.length - 1
           ? <><a href={item.item}>{item.name}</a><span aria-hidden="true">·</span></>
@@ -67,8 +91,8 @@ const breadcrumbSchema = {
     <p>{description}</p>
     {(primaryLabel || secondaryLabel) && (
       <div class="hero-actions page-hero-actions">
-        {primaryLabel && primaryHref && <a class="btn btn-dark" href={primaryHref}>{primaryLabel}</a>}
-        {secondaryLabel && secondaryHref && <a class="btn btn-outline" href={secondaryHref}>{secondaryLabel}</a>}
+        {primaryLabel && primaryHref && <a class="btn btn-dark" href={primaryHref} data-track="primary_cta_click">{primaryLabel}</a>}
+        {secondaryLabel && secondaryHref && <a class="btn btn-outline" href={secondaryHref} data-track="secondary_cta_click">{secondaryLabel}</a>}
       </div>
     )}
     {note && <p class="hero-note-light">{note}</p>}

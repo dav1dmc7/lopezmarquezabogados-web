@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import CTA from '../components/CTA.astro';
+import { site } from '../lib/site';
+---
+<Layout title="Consulta enviada | López Márquez Abogados" description="Confirmación del envío de tu consulta a López Márquez Abogados." noindex={true}>
+<PageHero eyebrow="Consulta recibida" title="Hemos recibido tu consulta." description="La información se ha registrado correctamente. Te contactaremos utilizando los datos que has indicado." primaryLabel="Volver al inicio" primaryHref="/" secondaryLabel="WhatsApp" secondaryHref={site.whatsapp} note="No envíes documentación sensible adicional salvo que el despacho te indique el canal adecuado." />
+<section class="section"><div class="container prose"><h2>Mientras tanto</h2><p>Ten a mano cualquier carta, resolución, contrato o comunicación con una fecha relevante. No necesitas enviarlos ahora.</p><p><a href="/recursos">Consultar recursos jurídicos →</a></p></div></section>
+<CTA title="¿Necesitas añadir algo más?" text="Puedes volver a la página de contacto cuando necesites ampliar la información." label="Volver a contacto" href="/contacto" />
+</Layout>
