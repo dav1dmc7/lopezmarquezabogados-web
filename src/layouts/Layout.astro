@@ -17,6 +17,9 @@ const isEnglish = pathname.startsWith('/en');
 const pageLang = isEnglish ? 'en' : 'es';
 const hasLocalizedAlternate = Boolean(localizedPathMap[pathname]);
 const languageHref = localizedPathMap[pathname] || (isEnglish ? '/' : '/en');
+const xDefaultHref = hasLocalizedAlternate
+  ? (isEnglish ? new URL(languageHref, site.url).toString() : canonicalUrl)
+  : site.url;
 const languageLabel = isEnglish ? 'Español' : 'English';
 const languageAria = isEnglish
   ? (hasLocalizedAlternate ? 'Ver la versión en español de esta página' : 'Ver la página principal en español')
@@ -36,6 +39,7 @@ const businessSchema = {
   telephone: site.phone,
   email: site.email,
   image: `${site.url}/og-image.png`,
+  logo: `${site.url}/brand/logo.svg`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,
@@ -46,6 +50,7 @@ const businessSchema = {
   },
   areaServed: [
     { '@type': 'City', name: 'Barcelona' },
+    { '@type': 'AdministrativeArea', name: 'Catalonia' },
     { '@type': 'Country', name: isEnglish ? 'Spain' : 'España' }
   ],
   knowsAbout: isEnglish
@@ -117,7 +122,7 @@ const webPageSchema = {
     {!effectiveNoindex && hasLocalizedAlternate && <>
       <link rel="alternate" hreflang="es" href={isEnglish ? new URL(languageHref, site.url).toString() : canonicalUrl} />
       <link rel="alternate" hreflang="en" href={isEnglish ? canonicalUrl : new URL(languageHref, site.url).toString()} />
-      <link rel="alternate" hreflang="x-default" href={site.url} />
+      <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
     </>}
     {!effectiveNoindex && <>
       <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
@@ -125,15 +130,16 @@ const webPageSchema = {
       <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     </>}
     <slot name="head" />
-  </head>
+<script src="/analytics.js" defer></script>
+</head>
   <body>
+    <div class="lm-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#contenido">{isEnglish ? 'Skip to content' : 'Ir al contenido'}</a>
     <div class="site-shell">
+      <div class="scroll-progress" aria-hidden="true"></div>
       <header class="site-header">
         <div class="container nav-wrap">
-          <a class="brand" href={isEnglish ? '/en' : '/'} aria-label={isEnglish ? `${site.name} — home` : `${site.name} — inicio`} data-track="logo_click">
-            <span class="brand-text"><strong>LÓPEZ MÁRQUEZ</strong><em>ABOGADOS</em></span>
-          </a>
+          <a class="brand" href={isEnglish ? '/en' : '/'} aria-label={isEnglish ? `${site.name} — home` : `${site.name} — inicio`} data-track="logo_click"><img class="brand-logo" src="/brand/Logo_LM.png" width="168" height="48" alt={site.name} decoding="async" /></a>
           <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label={isEnglish ? 'Open menu' : 'Abrir menú'}>{isEnglish ? 'Menu' : 'Menú'}</button>
           <nav id="main-nav" class="main-nav" aria-label={isEnglish ? 'Primary navigation' : 'Navegación principal'}>
             {isEnglish ? (
@@ -142,6 +148,7 @@ const webPageSchema = {
                 <a href="/en/employment" aria-current={isNavActive('/en/employment') ? 'page' : undefined}>Employment</a>
                 <a href="/en/business" aria-current={isNavActive('/en/business') ? 'page' : undefined}>Business</a>
                 <a href="/en/about" aria-current={isNavActive('/en/about') ? 'page' : undefined}>About</a>
+                <a href="/en/resources" aria-current={isNavActive('/en/resources') ? 'page' : undefined}>Resources</a>
                 <a href="/en/contact" aria-current={isNavActive('/en/contact') ? 'page' : undefined}>Contact</a>
               </>
             ) : (
@@ -156,7 +163,7 @@ const webPageSchema = {
               </>
             )}
             <a class="language-switch" href={languageHref} aria-label={languageAria} data-track="language_switch_click">{languageLabel}</a>
-            <a href={site.emailHref} data-track="email_click" class="nav-cta">{isEnglish ? 'Email us' : 'Enviar consulta'}</a>
+            <a href={isEnglish ? '/en/contact' : '/contacto'} data-track="primary_cta_click" class="nav-cta">{isEnglish ? 'Contact the firm' : 'Enviar consulta'}</a>
           </nav>
         </div>
       </header>
@@ -166,7 +173,7 @@ const webPageSchema = {
       <footer class="site-footer">
         <div class="container footer-grid">
           <div>
-            <div class="footer-brand">LÓPEZ MÁRQUEZ<br /><span>ABOGADOS</span></div>
+            <img class="footer-logo" src="/brand/Logo_LM.png" width="170" height="60" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <p class="footer-note">{isEnglish ? 'Employment · Immigration · Business · Barcelona' : 'Derecho Laboral · Extranjería · Empresas · Barcelona'}</p>
           </div>
           <div>
@@ -199,7 +206,9 @@ const webPageSchema = {
 
       <a class="floating-contact" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={isEnglish ? 'Message López Márquez Abogados on WhatsApp' : 'Escribir por WhatsApp a López Márquez Abogados'} data-track="whatsapp_click">{isEnglish ? 'WhatsApp us' : 'WhatsApp'}</a>
     </div>
+      <div class="mobile-conversion-bar" aria-label={isEnglish ? 'Quick contact' : 'Contacto rápido'}><a class="primary" href={isEnglish ? '/en/contact' : '/contacto'} data-track="mobile_primary_cta">{isEnglish ? 'Start an enquiry' : 'Enviar consulta'}</a></div>
 
     <script src="/site.js" defer></script>
-  </body>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f6d617066f68494b9cb6908f20ba6764"}'></script>
+</body>
 </html>

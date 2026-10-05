@@ -1,0 +1,11 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CTA from '../../../components/CTA.astro';
+import { site } from '../../../lib/site';
+---
+<Layout title="Enquiry sent | López Márquez Abogados" description="Confirmation that your enquiry has been submitted to López Márquez Abogados." noindex={true}>
+<PageHero eyebrow="Enquiry received" title="Your enquiry has been received." description="The information has been registered successfully. We will contact you using the details provided." primaryLabel="Back to home" primaryHref="/en" secondaryLabel="WhatsApp" secondaryHref={site.whatsapp} note="Do not send additional sensitive documents unless the firm tells you which channel to use." />
+<section class="section"><div class="container prose"><h2>In the meantime</h2><p>Keep any letter, decision, contract or notification with an important date to hand. You do not need to send it now.</p><p><a href="/en/resources">Browse legal resources →</a></p></div></section>
+<CTA title="Need to add anything else?" text="You can return to the contact page whenever you need to provide more information." label="Back to contact" href="/en/contact" />
+</Layout>

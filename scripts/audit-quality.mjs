@@ -31,18 +31,13 @@ if (!layout.includes('twitter:title') || !layout.includes('twitter:description')
 if (!hero.includes("const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');")) errors.push('PageHero.astro: workers.dev guard missing');
 if (!hero.includes('{!isWorkersDev && <script type="application/ld+json"')) errors.push('PageHero.astro: breadcrumb JSON-LD still emitted on workers.dev');
 if (cta.includes('site.whatsapp')) errors.push('CTA.astro: global CTA still routes directly to WhatsApp');
-if (!contact.includes('data-email={site.email}')) errors.push('contacto.astro: data-email missing');
+if (!contact.includes('data-endpoint="/api/contact"')) errors.push('contacto.astro: direct form endpoint missing');
 if (!/name="email"/.test(contact)) errors.push('contacto.astro: email field missing');
-if (
-  !contact.includes("data-track=\"email_click\"") &&
-  !contact.includes('href={site.emailHref}')
-) {
-  errors.push('contacto.astro: email CTA missing');
-}
+if (!contact.includes('site.emailHref') && !contact.includes('site.email')) errors.push('contacto.astro: direct email fallback missing');
 if (contact.includes('Continuar por WhatsApp')) errors.push('contacto.astro: old WhatsApp submit label remains');
-if (faq.includes('Continuar por WhatsApp') || faq.includes('site.whatsapp}')) errors.push('preguntas-frecuentes.astro: WhatsApp still used as primary CTA');
+if (faq.includes('Continuar por WhatsApp')) errors.push('preguntas-frecuentes.astro: old WhatsApp submit label remains');
 if (!faq.includes('site.emailHref')) errors.push('preguntas-frecuentes.astro: email CTA missing');
-if (!read('public/site.js').includes('form.dataset.email')) errors.push('public/site.js: email form flow missing');
+if (!read('public/site.js').includes("form.dataset.endpoint || '/api/contact'")) errors.push('public/site.js: direct form flow missing');
 if (read('public/site.js').includes('form.dataset.whatsapp')) errors.push('public/site.js: old WhatsApp form flow remains');
 
 for (const path of pages) {

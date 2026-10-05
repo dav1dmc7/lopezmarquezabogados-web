@@ -7,15 +7,26 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check",
-    "audit": "node scripts/audit.mjs && node scripts/audit-production.mjs && node scripts/audit-lead-tools.mjs && node scripts/audit-quality.mjs && node scripts/audit-launch.mjs && node scripts/audit-international.mjs",
-    "verify": "npm run check && npm run audit && npm run build"
+    "check": "npm run generate-types && astro check",
+    "audit": "node scripts/audit.mjs && node scripts/audit-production.mjs && node scripts/audit-lead-tools.mjs && node scripts/audit-quality.mjs && node scripts/audit-launch.mjs && node scripts/audit-international.mjs && node scripts/audit-intent.mjs && node scripts/audit-ux.mjs && node scripts/audit-contact-backend.mjs && node scripts/audit-360-current.mjs && node scripts/audit-content-360.mjs && node scripts/audit-accessibility-source.mjs && node scripts/audit-analytics.mjs",
+    "verify": "npm run check && npm run audit && npm run build && npm run audit:live-integrity",
+    "dev:worker": "npm run build && wrangler dev",
+    "generate-types": "wrangler types",
+    "audit:production-live": "node scripts/audit-production-live.mjs",
+    "audit:dns-cutover": "node scripts/audit-dns-cutover.mjs",
+    "audit:seo-live": "node scripts/audit-seo-live.mjs",
+    "audit:performance-local": "node scripts/audit-performance-local.mjs",
+    "audit:assets-local": "node scripts/audit-assets-local.mjs",
+    "audit:observability": "node scripts/audit-observability.mjs",
+    "audit:brand-assets": "node scripts/audit-brand-assets.mjs",
+    "audit:live-integrity": "node scripts/audit-live-integrity.mjs"
   },
   "dependencies": {
     "astro": "7.3.5"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@types/node": "^26.6.4",
     "typescript": "6.0.3",
     "wrangler": "4.143.0"
   },

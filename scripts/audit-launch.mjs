@@ -44,7 +44,8 @@ if (!layout.includes('hreflang')) errors.push('Layout: hreflang missing');
 if (!layout.includes('language-switch')) errors.push('Layout: language switch missing');
 
 if (siteJs.includes('form.dataset.whatsapp')) errors.push('site.js: legacy WhatsApp form');
-if (!siteJs.includes('mailto:${destination}')) errors.push('site.js: email mailto flow missing');
+if (!siteJs.includes("fetch(form.dataset.endpoint || '/api/contact'")) errors.push('site.js: direct contact API flow missing');
+if (!site.includes("emailHref: 'mailto:lopezmarquezabogados@gmail.com'")) errors.push('site.ts: Gmail fallback missing');
 if (!siteJs.includes('prefers-reduced-motion')) errors.push('site.js: reduced-motion check missing');
 if (!siteJs.includes('is-scrolled')) errors.push('site.js: header scroll state missing');
 

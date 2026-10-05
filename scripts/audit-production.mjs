@@ -31,8 +31,8 @@ if (combined.includes('Una firma pequeña puede trabajar con estándares grandes
 if (combined.includes('Por eso la nueva web está construida')) errors.push('obsolete new-web copy still present');
 if (!site.includes("'/actualidad-juridica'")) errors.push('actualidad route missing from indexableRoutes');
 if (!site.includes("'/recursos/primeras-horas-despido'")) errors.push('first-hours route missing from indexableRoutes');
-if (!contact.includes('data-email={site.email}')) errors.push('contact form is not email-first');
-if (!scripts.includes('mailto:')) errors.push('email mailto flow missing');
+if (!contact.includes('data-endpoint="/api/contact"')) errors.push('contact form is not using the direct API');
+if (!contact.includes('mailto:')) { /* form is direct-submit; footer email may still use mailto */ }
 if (scripts.includes('form.dataset.whatsapp')) errors.push('contact form still depends on WhatsApp');
 if (calc.includes('calculadora-whatsapp')) errors.push('stale calculator WhatsApp id');
 

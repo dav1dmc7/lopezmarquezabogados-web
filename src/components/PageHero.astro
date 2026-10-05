@@ -18,6 +18,8 @@ const isEnglish = pathname.startsWith('/en');
 const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');
 
 const parents: Record<string, { href: string; label: string }> = {
+  '/laboral/incapacidad-temporal': { href: '/laboral', label: 'Derecho Laboral' },
+  '/laboral/incapacidad-permanente': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/despidos': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/indemnizacion-despido': { href: '/laboral', label: 'Derecho Laboral' },
   '/laboral/reclamacion-salarios': { href: '/laboral', label: 'Derecho Laboral' },
@@ -37,6 +39,8 @@ const parents: Record<string, { href: string; label: string }> = {
 };
 
 const englishParents: Record<string, { href: string; label: string }> = {
+  '/en/employment/temporary-sickness-leave': { href: '/en/employment', label: 'Employment' },
+  '/en/employment/permanent-disability': { href: '/en/employment', label: 'Employment' },
   '/en/employment-dismissal': { href: '/en/employment', label: 'Employment' },
   '/en/employment-severance': { href: '/en/employment', label: 'Employment' },
   '/en/employment-salary-claims': { href: '/en/employment', label: 'Employment' },
@@ -49,6 +53,7 @@ const englishParents: Record<string, { href: string; label: string }> = {
   '/en/resources': { href: '/en', label: 'Resources' },
   '/en/resources/first-hours-after-dismissal': { href: '/en/resources', label: 'Resources' },
   '/en/resources/dismissal-deadline-spain': { href: '/en/resources', label: 'Resources' },
+  '/en/resources/permanent-disability-employment-2025': { href: '/en/resources', label: 'Resources' },
   '/en/resources/arraigo-two-years-spain': { href: '/en/resources', label: 'Resources' },
   '/en/resources/spanish-nationality-residence-period': { href: '/en/resources', label: 'Resources' },
   '/en/legal-updates': { href: '/en', label: 'Legal updates' }

@@ -15,6 +15,7 @@ const redirects = read('public/_redirects');
 
 for (const required of [
   'src/pages/en/index.astro', 'src/pages/en/employment/index.astro', 'src/pages/en/immigration/index.astro',
+  'src/pages/en/employment/temporary-sickness-leave.astro', 'src/pages/en/employment/permanent-disability.astro',
   'src/pages/en/business/index.astro', 'src/pages/en/about.astro', 'src/pages/en/faqs.astro', 'src/pages/en/contact.astro',
   'src/pages/en/resources/index.astro', 'src/pages/en/resources/first-hours-after-dismissal.astro', 'src/pages/en/resources/dismissal-deadline-spain.astro', 'src/pages/en/resources/arraigo-two-years-spain.astro', 'src/pages/en/resources/spanish-nationality-residence-period.astro', 'src/pages/en/legal-updates.astro'
 ]) if (!existsSync(join(root, required))) errors.push(`missing English route: ${required}`);
