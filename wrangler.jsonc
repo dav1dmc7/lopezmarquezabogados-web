@@ -4,13 +4,17 @@
   "name": "lopezmarquezabogados",
   "compatibility_date": "2026-09-28",
   "workers_dev": true,
+  "routes": [
+    { "pattern": "lopezmarquezabogados.com", "custom_domain": true },
+    { "pattern": "www.lopezmarquezabogados.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page",
     "binding": "ASSETS",
     "run_worker_first": [
-      "/api/*"
+      "/*"
     ]
   },
   "d1_databases": [

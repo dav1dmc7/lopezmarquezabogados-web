@@ -9,6 +9,10 @@ const json = (body: Record<string, unknown>, status = 200) => new Response(JSON.
     'Cache-Control': 'no-store',
   },
 });
+const permanentRedirect = (url: URL, cacheControl: string) => new Response(null, {
+  status: 301,
+  headers: { Location: url.toString(), 'Cache-Control': cacheControl },
+});
 
 const clean = (value: unknown, max: number) => String(value ?? '').trim().slice(0, max);
 const validEmail = (value: string) => value.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -81,17 +85,13 @@ export default {
     const canonicalHost = new URL(site.url).hostname;
     if (url.hostname === `www.${canonicalHost}` && (request.method === 'GET' || request.method === 'HEAD')) {
       const canonicalUrl = new URL(`${url.pathname}${url.search}`, site.url);
-      const response = Response.redirect(canonicalUrl, 301);
-      response.headers.set('Cache-Control', 'public, max-age=86400');
-      return response;
+      return permanentRedirect(canonicalUrl, 'public, max-age=86400');
     }
 
     const legacyTarget = LEGACY_REDIRECTS.get(url.pathname);
     if (legacyTarget && (request.method === 'GET' || request.method === 'HEAD')) {
       const redirectUrl = new URL(legacyTarget, url);
-      const response = Response.redirect(redirectUrl, 301);
-      response.headers.set('Cache-Control', 'public, max-age=604800, immutable');
-      return response;
+      return permanentRedirect(redirectUrl, 'public, max-age=604800, immutable');
     }
 
     if (url.pathname === '/api/contact') {
