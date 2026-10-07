@@ -29,6 +29,7 @@
     const setMenu = (open, restoreFocus = false) => {
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? (isEnglish ? 'Close menu' : 'Cerrar menú') : (isEnglish ? 'Open menu' : 'Abrir menú'));
+      toggle.textContent = open ? '×' : (isEnglish ? 'Menu' : 'Menú');
       nav.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
       if (open) nav.querySelector('a')?.focus();
@@ -39,7 +40,7 @@
     toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
     nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setMenu(false, true);
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false, true);
     });
     document.addEventListener('click', (event) => {
       if (!(event.target instanceof Node)) return;
@@ -49,6 +50,19 @@
       if (window.innerWidth > 900) setMenu(false);
     });
   }
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest('a[href]');
+    if (!(link instanceof HTMLAnchorElement)) return;
+    const destination = new URL(link.href, window.location.href);
+    const contactPaths = ['/contacto', '/en/contact'];
+    if (contactPaths.includes(destination.pathname) && !contactPaths.includes(window.location.pathname)) {
+      destination.searchParams.set('origen', window.location.pathname);
+      link.href = destination.toString();
+    }
+  }, true);
 
   document.querySelectorAll('[data-track]').forEach((element) => {
     element.addEventListener('click', () => {
@@ -75,6 +89,13 @@
   window.addEventListener('load', measureScrollDepth);
 
   const scenarioLinks = document.querySelectorAll('[data-area]');
+  const areaSelect = document.querySelector('#area');
+  if (areaSelect instanceof HTMLSelectElement) {
+    const requestedArea = new URLSearchParams(window.location.search).get('area');
+    if (requestedArea && Array.from(areaSelect.options).some((option) => option.value === requestedArea)) {
+      areaSelect.value = requestedArea;
+    }
+  }
   scenarioLinks.forEach((link) => {
     link.addEventListener('click', () => {
       const area = link.getAttribute('data-area');
@@ -116,7 +137,7 @@
         message: String(data.get('mensaje') || ''),
         consent: data.get('privacy') === 'on',
         website: String(data.get('website') || ''),
-        sourcePath: window.location.pathname
+        sourcePath: String(data.get('sourcePath') || window.location.pathname)
       };
 
       try {
@@ -134,9 +155,19 @@
         if (button instanceof HTMLButtonElement) button.disabled = false;
         track('contact_error', { reason: error instanceof Error ? error.message : 'network' });
         if (status instanceof HTMLElement) {
-          status.textContent = isEnglish
+          const code = error instanceof Error ? error.message : 'network';
+          const messages = isEnglish
+            ? {
+                payload_too_large: 'Your message is too long. Shorten it and try again.',
+                rate_limited: 'A recent enquiry was already received. Please wait before trying again or call the firm.'
+              }
+            : {
+                payload_too_large: 'El mensaje es demasiado largo. Acórtalo e inténtalo de nuevo.',
+                rate_limited: 'Ya hemos recibido una consulta reciente. Espera antes de volver a intentarlo o llama al despacho.'
+              };
+          status.textContent = messages[code] || (isEnglish
             ? 'We could not send the enquiry right now. Please try again or call the firm.'
-            : 'No hemos podido enviar la consulta ahora mismo. Inténtalo de nuevo o llama al despacho.';
+            : 'No hemos podido enviar la consulta ahora mismo. Inténtalo de nuevo o llama al despacho.');
           status.classList.add('is-error');
           status.hidden = false;
         }
@@ -249,3 +280,22 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     revealItems.forEach((item) => observer.observe(item));
   }
+
+
+/* v30: query-driven area preselection and accessible invalid-field feedback. */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('form').forEach((form) => {
+    form.addEventListener('submit', () => {
+      const invalid = form.querySelector(':invalid');
+      if (invalid instanceof HTMLInputElement || invalid instanceof HTMLSelectElement || invalid instanceof HTMLTextAreaElement) {
+        invalid.setAttribute('aria-invalid', 'true');
+        invalid.focus({ preventScroll: true });
+        invalid.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }
+    }, true);
+    form.addEventListener('input', (event) => {
+      const field = event.target;
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) field.removeAttribute('aria-invalid');
+    });
+  });
+});

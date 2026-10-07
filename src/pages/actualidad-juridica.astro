@@ -3,17 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import CTA from '../components/CTA.astro';
 import { legalUpdates } from '../data/legalUpdates';
+
+const detailPaths: Record<string, string> = {
+  'Medidas laborales para determinadas empresas beneficiarias de ayudas': '/actualidad/medidas-laborales-ayudas-2026',
+  'Nuevas reglas sobre información y transparencia de las condiciones de trabajo': '/actualidad/transparencia-condiciones-trabajo-2026',
+  'Modificaciones relevantes del Reglamento de Extranjería': '/actualidad/reglamento-extranjeria-2026',
+  'Catálogo de Ocupaciones de Difícil Cobertura · tercer trimestre de 2026': '/actualidad/ocupaciones-dificil-cobertura-t3-2026'
+};
 ---
 <Layout title="Actualidad jurídica · Laboral y Extranjería" description="Novedades jurídicas seleccionadas del BOE sobre Derecho Laboral, Extranjería y empresa, explicadas de forma práctica por López Márquez Abogados.">
-<PageHero eyebrow="Actualidad jurídica" title="Cambios jurídicos explicados para saber si pueden afectarte." description="Seleccionamos novedades que pueden tener consecuencias prácticas para trabajadores, personas extranjeras y empresas. La idea no es que leas más normas, sino que detectes cuándo una novedad merece una revisión." primaryLabel="Consultar mi situación" primaryHref="/contacto" secondaryLabel="Ver recursos" secondaryHref="/recursos" note="Fuente primaria: Boletín Oficial del Estado. La publicación oficial prevalece sobre este resumen. Última revisión editorial: 1 de octubre de 2026." />
-<section class="section section-paper" data-reveal><div class="container"><div class="section-head"><div><span class="eyebrow">Revisión actual: 1 de octubre de 2026</span><h2>Lo que puede cambiar y por qué importa</h2></div><p>Cada noticia incluye la norma oficial y una explicación breve de a quién puede interesar.</p></div><div class="legal-updates">
+<PageHero eyebrow="Actualidad jurídica" title="Cambios jurídicos explicados para saber si pueden afectarte." description="Seleccionamos novedades que pueden tener consecuencias prácticas para trabajadores, personas extranjeras y empresas. La idea no es que leas más normas, sino que detectes cuándo una novedad merece una revisión." primaryLabel="Consultar mi situación" primaryHref="/contacto" secondaryLabel="Ver recursos" secondaryHref="/recursos" note="Fuente primaria: Boletín Oficial del Estado. La publicación oficial prevalece sobre este resumen. Última revisión editorial: 6 de octubre de 2026." />
+<section class="section section-paper" data-reveal><div class="container"><div class="section-head"><div><span class="eyebrow">Revisión actual: 6 de octubre de 2026</span><h2>Lo que puede cambiar y por qué importa</h2></div><p>Cada noticia incluye la norma oficial y una explicación breve de a quién puede interesar.</p></div><div class="legal-updates">
 {legalUpdates.map((item) => (
   <article class="legal-update">
     <div class="legal-update-meta"><span class="card-kicker">{item.category}</span><time datetime={item.date.split('/').reverse().join('-')}>{item.date}</time>{item.effectiveDate && <span>Entrada en vigor: {item.effectiveDate}</span>}</div>
     <h3>{item.title}</h3>
     <p>{item.summary}</p>
     <p class="legal-update-impact"><strong>¿A quién puede afectar?</strong> {item.impact}</p>
-    <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{item.sourceLabel} · Ver fuente oficial →</a>
+    <div class="legal-update-links"><a class="link-arrow" href={detailPaths[item.title]}>Leer análisis completo →</a><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">{item.sourceLabel} · Ver fuente oficial →</a></div>
   </article>
 ))}
 </div></div></section>

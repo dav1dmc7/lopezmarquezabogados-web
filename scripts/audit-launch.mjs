@@ -98,8 +98,8 @@ for (const reference of requiredOfficialUpdates) {
 }
 
 const actualidad = read('src/pages/actualidad-juridica.astro');
-if (!actualidad.includes('Revisión actual: 1 de octubre de 2026')) {
-  errors.push('actualidad: stale review date');
+if (!actualidad.includes('Revisión actual: 6 de octubre de 2026')) {
+  errors.push('actualidad: review date must match the latest editorial source check');
 }
 if (!actualidad.includes('La publicación oficial prevalece sobre este resumen.')) {
   errors.push('actualidad: official source notice missing');

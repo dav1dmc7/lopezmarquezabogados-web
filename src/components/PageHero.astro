@@ -35,6 +35,11 @@ const parents: Record<string, { href: string; label: string }> = {
   '/recursos/despido-20-dias-habiles': { href: '/recursos', label: 'Recursos' },
   '/recursos/arraigo-dos-anos-2026': { href: '/recursos', label: 'Recursos' },
   '/recursos/nacionalidad-espanola-plazos': { href: '/recursos', label: 'Recursos' },
+  '/recursos/incapacidad-permanente-ley-2025': { href: '/recursos', label: 'Recursos' },
+  '/actualidad/medidas-laborales-ayudas-2026': { href: '/actualidad-juridica', label: 'Actualidad jurídica' },
+  '/actualidad/transparencia-condiciones-trabajo-2026': { href: '/actualidad-juridica', label: 'Actualidad jurídica' },
+  '/actualidad/reglamento-extranjeria-2026': { href: '/actualidad-juridica', label: 'Actualidad jurídica' },
+  '/actualidad/ocupaciones-dificil-cobertura-t3-2026': { href: '/actualidad-juridica', label: 'Actualidad jurídica' },
   '/recursos/primeras-horas-despido': { href: '/recursos', label: 'Recursos' }
 };
 
@@ -56,14 +61,25 @@ const englishParents: Record<string, { href: string; label: string }> = {
   '/en/resources/permanent-disability-employment-2025': { href: '/en/resources', label: 'Resources' },
   '/en/resources/arraigo-two-years-spain': { href: '/en/resources', label: 'Resources' },
   '/en/resources/spanish-nationality-residence-period': { href: '/en/resources', label: 'Resources' },
-  '/en/legal-updates': { href: '/en', label: 'Legal updates' }
+  '/en/legal-updates': { href: '/en', label: 'Legal updates' },
+  '/en/legal-updates/employment-measures-aid-beneficiaries-2026': { href: '/en/legal-updates', label: 'Legal updates' },
+  '/en/legal-updates/employment-conditions-transparency-2026': { href: '/en/legal-updates', label: 'Legal updates' },
+  '/en/legal-updates/immigration-regulation-amendments-2026': { href: '/en/legal-updates', label: 'Legal updates' },
+  '/en/legal-updates/shortage-occupation-catalogue-q3-2026': { href: '/en/legal-updates', label: 'Legal updates' }
+};
+
+const breadcrumbLabels: Record<string, string> = {
+  '/laboral/despidos':'Despidos','/laboral/incapacidad-temporal':'Incapacidad temporal','/laboral/incapacidad-permanente':'Incapacidad permanente','/laboral/indemnizacion-despido':'Indemnización por despido','/laboral/reclamacion-salarios':'Reclamación de salarios','/laboral/accidentes-laborales':'Accidentes laborales','/laboral/penal-laboral':'Dimensión penal en el trabajo','/laboral/asesoramiento-empresas':'Asesoramiento a empresas',
+  '/extranjeria/arraigo':'Arraigo','/extranjeria/nacionalidad-espanola':'Nacionalidad española','/extranjeria/residencia':'Residencia','/extranjeria/reagrupacion-familiar':'Reagrupación familiar','/empresas/asesoramiento-laboral':'Asesoramiento laboral','/empresas/iguala-laboral':'Iguala laboral',
+  '/recursos/primeras-horas-despido':'Primeras horas tras un despido','/recursos/despido-20-dias-habiles':'20 días hábiles','/recursos/arraigo-dos-anos-2026':'Arraigo en 2026','/recursos/nacionalidad-espanola-plazos':'Plazos de nacionalidad','/recursos/incapacidad-permanente-ley-2025':'Incapacidad permanente','/actualidad-juridica':'Actualidad jurídica',
+  '/en/employment/temporary-sickness-leave':'Temporary sickness leave','/en/employment/permanent-disability':'Permanent disability','/en/employment-dismissal':'Dismissal','/en/employment-severance':'Severance','/en/employment-salary-claims':'Salary claims','/en/workplace-accidents':'Workplace accidents','/en/business/employment-advice':'Employment advice','/en/immigration/residency':'Residency','/en/immigration/regularisation':'Regularisation','/en/immigration/spanish-nationality':'Spanish nationality','/en/immigration/family-reunification':'Family reunification','/en/resources/first-hours-after-dismissal':'First hours after dismissal','/en/resources/dismissal-deadline-spain':'Dismissal deadline','/en/resources/permanent-disability-employment-2025':'Permanent disability','/en/resources/arraigo-two-years-spain':'Arraigo in Spain','/en/resources/spanish-nationality-residence-period':'Nationality residence period','/en/legal-updates':'Legal updates'
 };
 
 const parent = isEnglish ? englishParents[pathname] : parents[pathname];
 const breadcrumbItems = [
   { name: isEnglish ? 'Home' : 'Inicio', item: isEnglish ? '/en' : '/' },
   ...(parent ? [{ name: parent.label, item: parent.href }] : []),
-  { name: eyebrow, item: pathname }
+  { name: breadcrumbLabels[pathname] ?? eyebrow, item: pathname }
 ];
 
 const breadcrumbSchema = {

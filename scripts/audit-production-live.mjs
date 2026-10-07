@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 
 const domain='lopezmarquezabogados.com';
 const modern=['/','/sitemap.xml','/robots.txt','/contacto/','/laboral/despidos/','/extranjeria/arraigo/','/empresas/','/en/','/en/contact/'];
-const legacy=['/es/index.html','/es/servicios.html','/es/laboral.html','/es/contact.html'];
+const legacy=['/es/index.html','/es/servicios.html','/es/laboral.html','/es/contact.html','/es','/es/index','/es/about','/es/servicios','/es/laboral','/es/extranjeria','/es/civil','/es/penal','/es/administrativo','/es/contact','/es/faqs','/en/index_en','/en/about_en','/en/servicios_en','/en/laboral_en','/en/extranjeria_en','/en/civil_en','/en/penal_en','/en/administrativo_en','/en/contact_en','/en/faqs_en'];
 const errors=[];
 
 function request(url,{body=false}={}){
@@ -61,8 +61,14 @@ console.log('--- LEGACY URLS ---');
 for(const path of legacy){
   const {r,legacyMarker}=inspect(path);
   if(r.status===0) errors.push(`${path}: curl no obtuvo respuesta HTTP (exit ${r.exit}${r.stderr?`, ${r.stderr}`:''}).`);
-  else if(r.status===200 && legacyMarker) errors.push(`${path}: sirve página legacy en HTTP 200.`);
+  else if(r.status>=400) errors.push(`${path}: final HTTP ${r.status}; la ruta legacy necesita una redirección válida.`);
+  else if(legacyMarker) errors.push(`${path}: sirve contenido legacy detectable.`);
 }
+
+const www=request(`https://www.${domain}/`);
+console.log(`www canonical routing             -> ${www.status} final=${www.effective||'-'} redirects=${www.redirects}`);
+if(www.status===0) errors.push(`www: curl no obtuvo respuesta HTTP (exit ${www.exit}${www.stderr?`, ${www.stderr}`:''}).`);
+else if(www.status!==200||www.effective!==`https://${domain}/`) errors.push(`www: debe redirigir a https://${domain}/ y terminar en HTTP 200.`);
 
 if(errors.length){
   console.log(`\nProduction live errors: ${errors.length}`);

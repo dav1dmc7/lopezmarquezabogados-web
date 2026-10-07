@@ -2,26 +2,55 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { site } from '../../lib/site';
+const requestedArea = Astro.url.searchParams.get('area');
+const requestedOrigin = Astro.url.searchParams.get('origen') || '';
+const contactOrigin = /^\/(?!\/)[A-Za-z0-9/_-]{0,199}$/.test(requestedOrigin) ? requestedOrigin : Astro.url.pathname;
 ---
 <Layout title="Contact an Employment or Immigration Lawyer | Barcelona" description="Contact López Márquez Abogados in Barcelona, Spain. Share the area, relevant date and essential facts so the firm can review your enquiry.">
 <PageHero eyebrow="Contact" title="Need a lawyer in Barcelona? Start with the facts and the date that matters." description="You do not need legal terminology. Select the area closest to your situation, tell us the relevant date and explain briefly what happened and what you need to resolve." primaryLabel="Start enquiry" primaryHref="#consulta-form" secondaryLabel={site.phone} secondaryHref={site.phoneHref} note="For a first contact, do not send your passport, NIE, bank details or medical records." />
 <section class="section"><div class="container contact-grid"><div>
 <div class="contact-card contact-primary"><span class="eyebrow">What happens next</span><h3>We start with the facts, the relevant dates and the issue you need to resolve.</h3><p>Your first message helps us understand the matter, identify possible urgency and determine which documents may be useful to review later.</p><span class="eyebrow">Start here</span><h3>A clear first enquiry</h3><p>Area, relevant date, essential facts and what you need to resolve give the firm a practical starting point.</p><div class="lm-form-meta"><span>Minimum data</span><span>Direct website submission</span><span>No email app required</span></div></div>
-<div class="contact-card"><span class="eyebrow">What do you need to solve?</span><div class="scenario-links"><a href="#consulta-form" data-area="Employment">Employment issue →</a><a href="#consulta-form" data-area="Immigration">Immigration or residence →</a><a href="#consulta-form" data-area="Business">Business matter →</a><a href="#consulta-form" data-area="Other legal matters">Another legal issue →</a></div></div>
-<div class="contact-card"><span class="eyebrow">You can also</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Call the firm →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Write on WhatsApp →</a></div>
+<div class="contact-card"><span class="eyebrow">What do you need to solve?</span><div class="scenario-links">
+<a href="?area=Employment#consulta-form" data-area="Employment">Employment issue →</a>
+<a href="?area=Immigration#consulta-form" data-area="Immigration">Immigration or residence →</a>
+<a href="?area=Business#consulta-form" data-area="Business">Business matter →</a>
+<a href="?area=Other%20legal%20matters#consulta-form" data-area="Other legal matters">Another legal issue →</a>
+</div></div>
+<div class="contact-card"><span class="eyebrow">You can also</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Call the firm →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Write on WhatsApp →</a><p class="small">For an initial enquiry. Do not send sensitive documents by WhatsApp unless we specifically give you the appropriate channel.</p></div>
 <div class="contact-card"><span class="eyebrow">Barcelona office</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}, Spain</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">Open Google Maps →</a></div>
+<div class="contact-card contact-process">
+  <span class="eyebrow">What happens after you contact us</span>
+  <ol>
+    <li><strong>You tell us what happened.</strong> Facts, relevant date and what you need to resolve.</li>
+    <li><strong>We review the initial information.</strong> We organise the facts and any urgency.</li>
+    <li><strong>We tell you whether we can help.</strong> We assess the fit with the firm.</li>
+    <li><strong>We define scope and fees.</strong> Before starting the engagement.</li>
+    <li><strong>We start the work.</strong> Once the agreed action is defined.</li>
+  </ol>
+  <p class="small">Indicative response time: 48–72 business hours.</p>
 </div>
-<div class="contact-card lm-form-card"><span class="eyebrow">Online enquiry</span><h2>Tell us the essential facts</h2><p id="consulta-nota" class="small">A specific first message helps us understand the matter and any urgency. Do not send sensitive documents unless the firm asks for them.</p><div id="consulta-status" class="form-status" role="status" aria-live="polite" hidden></div>
+</div>
+<div class="contact-card lm-form-card"><span class="eyebrow">Online enquiry</span><h2>Tell us the essential facts</h2><p id="consulta-nota" class="small">A specific first message helps us understand the matter and any urgency. Do not send sensitive documents unless the firm asks for them.</p>
+<div class="privacy-first-layer" aria-labelledby="privacy-layer-title">
+  <h3 id="privacy-layer-title">Basic data protection information</h3>
+  <table><tbody>
+    <tr><th scope="row">Purpose</th><td>To receive, manage and answer your enquiry and, where appropriate, assess a possible engagement for legal services.</td></tr>
+    <tr><th scope="row">Legal basis</th><td>Consent given through this form and, where the enquiry requests steps towards a possible engagement, pre-contractual steps requested by the data subject.</td></tr>
+    <tr><th scope="row">Rights</th><td>Access, rectification, erasure, restriction, objection and portability where applicable. You may also withdraw consent and complain to the Spanish Data Protection Agency.</td></tr>
+  </tbody></table>
+  <p class="small">Full information is available in the <a href="/en/privacy">Privacy Policy</a>.</p>
+</div><div id="consulta-status" class="form-status" role="status" aria-live="polite" hidden></div>
 <p class="small email-fallback"><a href={site.emailHref} data-track="email_click">You can also email {site.email}</a></p>
-<form id="consulta-form" data-endpoint="/api/contact" data-locale="en" aria-describedby="consulta-nota" autocomplete="on">
+<form id="consulta-form" data-endpoint="/api/contact" data-locale="en" aria-describedby="consulta-nota" method="post" action="/api/contact" autocomplete="on">
+<input type="hidden" name="locale" value="en" /><input type="hidden" name="sourcePath" value={contactOrigin} />
 <div class="form-grid">
 <div class="field"><label for="nombre">Name</label><input id="nombre" name="nombre" autocomplete="name" maxlength="120" required placeholder="Your name" /></div>
 <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="Your email" /></div>
 <div class="field"><label for="telefono">Phone <span class="small">(optional)</span></label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="If you prefer a call" /></div>
-<div class="field"><label for="area">Area</label><select id="area" name="area" required><option value="">Select an area</option><option value="Employment">Employment</option><option value="Immigration">Immigration</option><option value="Business">Business</option><option value="Other legal matters">Other legal matters</option></select></div>
-<div class="field full"><label for="fecha">Relevant date <span class="small">(optional, but useful)</span></label><input id="fecha" name="fecha" maxlength="40" placeholder="For example, 25/09/2026" /></div>
+<div class="field"><label for="area">Area</label><select id="area" name="area" required><option value="">Select an area</option><option value="Employment" selected={requestedArea === 'Employment'}>Employment</option><option value="Immigration" selected={requestedArea === 'Immigration'}>Immigration</option><option value="Business" selected={requestedArea === 'Business'}>Business</option><option value="Other legal matters" selected={requestedArea === 'Other legal matters'}>Other legal matters</option></select></div>
+<div class="field full"><label for="fecha">Relevant date <span class="small">(optional, but useful)</span></label><input id="fecha" name="fecha" maxlength="40" placeholder="For example, DD/MM/YYYY" /></div>
 <div class="field full"><label for="mensaje">What happened and what do you need to resolve?</label><textarea id="mensaje" name="mensaje" minlength="20" maxlength="4000" required placeholder="Explain the main facts in your own words, in the order they happened."></textarea></div>
-<div class="field full honeypot-field"><label for="website">Website</label><input id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off" /></div>
+<div class="field full honeypot-field" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off" /></div>
 <div class="field full"><label class="checkbox"><input id="privacy" name="privacy" type="checkbox" required /><span>I have read the <a href="/en/privacy">privacy policy</a> and agree to the processing necessary to respond to my enquiry.</span></label></div>
 <div class="field full lm-submit-row"><button class="btn btn-dark" type="submit">Send enquiry</button><p class="small">The form is submitted directly from this website. It does not open your email application.</p></div>
 </div></form></div></div></section>

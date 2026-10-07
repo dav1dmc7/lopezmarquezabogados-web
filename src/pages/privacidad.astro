@@ -1,8 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import { site } from '../lib/site';
 ---
-<Layout title="Política de privacidad" description="Información sobre el tratamiento de datos personales del sitio web de López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Información legal" title="Política de privacidad" description="Cómo se tratarán los datos personales cuando utilices el sitio web o contactes con el despacho." />
-<section class="section"><div class="container prose"><h2>Qué debe explicar la versión definitiva</h2><p>La versión publicada debe identificar al responsable y detallar, para cada tratamiento real, la finalidad, base jurídica, conservación, destinatarios, posibles transferencias y derechos.</p><h2>Contacto desde la web</h2><p>El formulario de primera consulta transmite los datos mínimos necesarios para gestionar la solicitud y crea un registro interno de la consulta. La política definitiva debe identificar los proveedores utilizados para ese flujo y establecer el plazo de conservación aplicable.</p><h2>Qué no necesitas enviar para empezar</h2><p>No envíes contraseñas, datos bancarios, DNI, NIE, pasaporte ni otra información especialmente sensible salvo que el despacho te indique expresamente el canal y la documentación necesarios.</p><div class="notice">Bloqueo de lanzamiento: completar y validar los datos del responsable, la base jurídica, los proveedores y los plazos de conservación antes de producción.</div></div></section>
+<Layout title="Política de privacidad | López Márquez Abogados" noindex={true} description="Información ampliada sobre el tratamiento de datos personales en la web y en las consultas enviadas a López Márquez Abogados.">
+<PageHero eyebrow="Información legal" title="Política de privacidad" description="Qué datos se recogen, para qué se utilizan, durante cuánto tiempo y cómo puedes ejercer tus derechos." />
+<section class="section"><div class="container prose">
+  <h2>1. Responsable</h2>
+  <p>La identidad del responsable y sus datos legales deben confirmarse antes de publicar esta política.</p>
+  <h2>2. Datos tratados</h2>
+  <p>En una consulta web podemos tratar nombre, email, teléfono cuando lo facilitas, área jurídica, fecha relevante, página desde la que llegaste al contacto y la descripción de los hechos o necesidad que escribas en el formulario. No solicitamos DNI, NIE, pasaporte, datos bancarios ni informes médicos para iniciar el contacto.</p>
+  <h2>3. Finalidades</h2>
+  <p>Gestionar y responder la consulta, detectar posibles urgencias, valorar si el asunto encaja con el trabajo del despacho y, cuando corresponda, preparar una posible contratación de servicios jurídicos.</p>
+  <h2>4. Bases jurídicas</h2>
+  <p>El tratamiento necesario para gestionar el envío se apoya en el consentimiento prestado mediante el formulario. Cuando la consulta solicita pasos previos para una posible contratación, podrá aplicarse además la base de medidas precontractuales solicitadas por la persona interesada.</p>
+  <h2>5. Destinatarios y proveedores</h2>
+  <p>La relación de destinatarios y proveedores se completará cuando se confirme el flujo real de datos. Esta página permanece como borrador y no debe publicarse hasta cerrar esa revisión.</p>
+  <h2>6. Transferencias internacionales</h2>
+  <p>La existencia de transferencias internacionales y las garantías aplicables deben comprobarse según los proveedores y la configuración que se adopten antes de publicar esta política.</p>
+  <h2>7. Conservación</h2>
+  <p>Los plazos concretos de conservación y borrado deben definirse según la práctica real del despacho antes de publicar esta política. No se establece aquí un plazo que no haya sido confirmado.</p>
+  <h2>8. Derechos</h2>
+  <p>Puedes solicitar acceso, rectificación, supresión, limitación, oposición y portabilidad cuando proceda. También puedes retirar el consentimiento en cualquier momento. Para ejercer tus derechos, escribe a <a href={site.emailHref}>{site.email}</a> indicando el derecho que deseas ejercer.</p>
+  <p>Si consideras que el tratamiento no se ajusta a la normativa, puedes presentar una reclamación ante la <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+  <h2>9. Datos especialmente sensibles</h2>
+  <p>Los datos relativos a la salud son una categoría especial de datos. El formulario de primera consulta no los necesita; no los envíes salvo que el despacho te indique expresamente el canal y las condiciones adecuadas para hacerlo.</p>
+  <h2>10. Información por capas</h2>
+  <p>La información básica aparece junto al formulario de contacto. Esta página constituye la información ampliada para consulta y revisión.</p>
+</div></section>
 </Layout>

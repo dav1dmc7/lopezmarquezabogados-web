@@ -2,7 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 ---
-<Layout title="Cookie Policy | López Márquez Abogados" description="Cookie and device-storage information for the López Márquez Abogados website." noindex={true}>
-<PageHero eyebrow="Legal information" title="Cookie Policy" description="Current approach." />
-<section class="section"><div class="container prose"><p>The site is designed to operate without advertising technology and without a third-party analytics layer being required for navigation.</p><div class="notice">Launch gate: validate the final policy against the production Cloudflare configuration and any measurement tools that are actually enabled.</div></div></section>
+<Layout title="Cookie Policy | López Márquez Abogados" noindex={true} description="Information about cookies and storage/access technologies currently used by the López Márquez Abogados website.">
+<PageHero eyebrow="Legal information" title="Cookie Policy" description="Current cookies and device-storage approach." />
+<section class="section"><div class="container prose">
+  <h2>1. Current approach</h2>
+  <p>The website does not use advertising cookies or profiling for advertising purposes. The calculator, guidance tools and basic interactions run in the visitor’s browser.</p>
+  <h2>2. Measurement technology review</h2>
+  <p>The final measurement, storage and provider configuration must be checked before this policy is published. This version does not attribute privacy characteristics to a provider that has not been confirmed.</p>
+  <h2>3. Future changes</h2>
+  <p>If future tools such as analytics, advertising, embedded maps, video or other third-party services use cookies or equivalent technologies, this policy will be updated and the appropriate consent mechanism will be introduced before activation.</p>
+  <h2>4. Contact</h2>
+  <p>For privacy and technology questions, email <a href="mailto:lopezmarquezabogados@gmail.com">lopezmarquezabogados@gmail.com</a>.</p>
+</div></section>
 </Layout>

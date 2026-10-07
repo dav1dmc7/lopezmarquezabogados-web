@@ -1,13 +1,15 @@
 # Decisión de contacto
 
-El email `lopezmarquezabogados@gmail.com` pasa a ser el canal principal visible para iniciar una consulta.
+El formulario web es la vía recomendada para iniciar una consulta. Envía al Worker los datos mínimos que aparecen en el formulario; el Worker valida y guarda la consulta en D1 y trata de notificar al despacho por el binding de correo configurado. La dirección visible de contacto sigue siendo `lopezmarquezabogados@gmail.com`.
 
-El teléfono `+34 695 385 198` y WhatsApp permanecen disponibles como canales alternativos. La web no elimina WhatsApp: simplemente deja de convertirlo en la llamada a la acción dominante.
+Teléfono y WhatsApp están disponibles como alternativas. El email puede abrirse directamente desde los enlaces del sitio. Ninguna llamada a la acción debe sugerir que se envíen documentos sensibles por WhatsApp o email: el primer contacto sirve para conocer los hechos y las fechas, y el despacho debe indicar un canal adecuado si luego hacen falta documentos.
 
-La razón es de posicionamiento y UX: para una consulta jurídica queremos priorizar un canal que permita explicar el asunto con contexto y mantener un recorrido profesional hacia la posterior revisión y gestión documental.
+El remitente técnico de las notificaciones es `web@lopezmarquezabogados.com`, con la dirección facilitada por la persona como `Reply-To`. Deben comprobarse SPF, DKIM, DMARC, entrega y rebotes en DNS/proveedor; no se debe confundir ese remitente de sistema con una dirección pública de atención al cliente.
 
-El formulario genera el correo en el dispositivo del usuario y no introduce un backend propio para almacenar el contenido jurídico de la consulta.
-## Fase 11 — QA y email-first
+## Datos, conflictos y encargo
 
-El email se mantiene como canal principal del formulario y de los CTA genéricos. Teléfono y WhatsApp quedan como vías secundarias. La interfaz no envía datos automáticamente a sistemas externos: prepara un correo mediante `mailto:`.
+La consulta inicial no incluye una revisión automatizada de conflictos. Antes de aceptar el asunto, el despacho debe recopilar la información necesaria sobre las partes y realizar la comprobación profesional correspondiente. No pedir esos detalles ni documentación sensible en el formulario público.
 
+Las consultas quedan en D1 y las notificaciones en el buzón. El repositorio no implementa borrado automático ni establece un plazo de conservación; esa política y su ejecución deben ser confirmadas por el responsable del tratamiento.
+
+El contacto web no acepta automáticamente un encargo. El despacho confirma si puede atender el asunto y explica alcance y honorarios antes de iniciar el trabajo.

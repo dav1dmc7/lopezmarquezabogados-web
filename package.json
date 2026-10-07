@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "npm run generate-types && astro check",
+    "check": "npm run generate-types && astro check && tsc --noEmit",
     "audit": "node scripts/audit.mjs && node scripts/audit-production.mjs && node scripts/audit-lead-tools.mjs && node scripts/audit-quality.mjs && node scripts/audit-launch.mjs && node scripts/audit-international.mjs && node scripts/audit-intent.mjs && node scripts/audit-ux.mjs && node scripts/audit-contact-backend.mjs && node scripts/audit-360-current.mjs && node scripts/audit-content-360.mjs && node scripts/audit-accessibility-source.mjs && node scripts/audit-analytics.mjs",
     "verify": "npm run check && npm run audit && npm run build && npm run audit:live-integrity",
     "dev:worker": "npm run build && wrangler dev",

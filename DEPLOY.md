@@ -1,56 +1,31 @@
-# Despliegue de producción
+# Publicación y retirada del sitio antiguo
 
-## 1. GitHub
+## Objetivo
 
-Crear un repositorio nuevo y vacío llamado `lopezmarquezabogados-web`. No reutilizar `LMpruebas`: ese repositorio queda como histórico/backup del sitio Netlify.
+- `https://lopezmarquezabogados.com` es la única web pública e indexable.
+- `https://www.lopezmarquezabogados.com` redirige permanentemente al dominio raíz.
+- La web antigua y cualquier preview de despliegue no deben servir contenido público ni aparecer en buscadores.
+- El código antiguo se conserva como copia privada/local en el Mac y en el GitHub personal; no se borra.
+- No se cambian registros MX ni se eliminan bases de datos o repositorios.
 
-```bash
-unzip LopezMarquezAbogados-Astro-2026.zip
-cd lopezmarquezabogados-web
-git init
-git add .
-git commit -m "feat: launch Astro 2026 website"
-git branch -M main
-git remote add origin git@github.com:dav1dmc7/lopezmarquezabogados-web.git
-git push -u origin main
-```
+## Publicar esta versión
 
-## 2. Cloudflare Workers Builds
+1. Ejecutar `npm run verify` y revisar `git diff --check`.
+2. Confirmar que la rama `main` del repositorio personal contiene los cambios validados.
+3. En Cloudflare, comprobar que el Worker `lopezmarquezabogados` tiene asociados los Custom Domains `lopezmarquezabogados.com` y `www.lopezmarquezabogados.com`.
+4. Aplicar primero la migración D1 pendiente con `npx wrangler d1 migrations apply lopezmarquez-consultas --remote` y revisar que aparece como aplicada.
+5. Comprobar que D1 y Email Sending están enlazados al Worker y que el dominio remitente está autenticado.
+6. Desplegar con `npx wrangler deploy` desde este repositorio. No publicar previews como sitios indexables.
+7. Verificar la home, rutas principales, formulario, correo, redirección de `www`, rutas legacy, `robots.txt`, sitemap y cabeceras.
 
-En Cloudflare: Workers & Pages → Create application → Import a repository. Conectar el repositorio de GitHub.
+## Retirar el sitio anterior
 
-Build command:
+1. En el proveedor de hosting antiguo, desactivar el sitio público y los deploys automáticos. Mantener el repositorio/copia de código en el Mac y el GitHub personal.
+2. No borrar el dominio, el repositorio histórico ni la base de datos.
+3. En Cloudflare DNS, confirmar que raíz y `www` llegan al Worker nuevo; retirar solo los registros web antiguos que impidan asociar esos hostnames. No tocar MX, SPF, DKIM ni DMARC.
+4. Probar la URL pública antigua del proveedor: debe dejar de servir el contenido antiguo. Si el proveedor permite mantenerla activa, configurar una respuesta de retirada/noindex y una redirección al dominio canónico antes de despublicarla.
+5. En Google Search Console, usar la propiedad de dominio: enviar el sitemap actual, inspeccionar la home y las rutas actualizadas, y solicitar retirada temporal de URLs antiguas/staging que sigan apareciendo. Revisar cobertura hasta que el índice refleje el sitio nuevo.
 
-```text
-npm run verify
-```
+## Datos que siguen pendientes
 
-Node: use the version declared in `.nvmrc`. The repository also contains a GitHub Actions workflow that runs the same verification sequence on pushes and pull requests.
-
-Deploy command:
-
-```text
-npx wrangler deploy
-```
-
-La rama de producción debe ser `main`.
-
-## 3. Primera publicación
-
-La primera publicación debe ir únicamente a `workers.dev` para realizar QA. El proyecto marca las URLs `workers.dev` como `noindex` mediante `_headers`.
-
-## 4. Cutover de dominio
-
-Cuando QA esté verde, en el Worker: Settings → Domains & Routes → Add → Custom Domain. Añadir el dominio raíz y el hostname `www` según la configuración definitiva. Cloudflare crea los registros DNS y certificados necesarios para los Custom Domains.
-
-Antes de añadir un Custom Domain a `www`, eliminar el CNAME antiguo de Netlify porque Cloudflare no permite crear un Custom Domain en un hostname que ya tiene un CNAME.
-
-En el cutover, no modificar los MX de correo.
-
-## 5. Legacy / Netlify
-
-No borrar `LMpruebas`. Una vez que la nueva web esté en producción y las comprobaciones de DNS/HTTP/HTTPS/formularios hayan pasado, desconectar el deploy automático de Netlify y mantener el repositorio como backup histórico.
-
-## 6. QA de producción
-
-Comprobar: home, todas las rutas indexables, 301 legacy, `www`, HTTPS, sitemap, robots, schema, WhatsApp, teléfono, email, formulario, responsive, accesibilidad básica y ausencia de URLs de staging indexables.
+No publicar las páginas legales ni retirar su `noindex` hasta que el usuario confirme los datos del responsable, datos colegiales, proveedor real y conservación aplicable. No inventar esos datos.

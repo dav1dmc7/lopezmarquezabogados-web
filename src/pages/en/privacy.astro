@@ -1,8 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { site } from '../../lib/site';
 ---
-<Layout title="Privacy Policy | López Márquez Abogados" description="Privacy information for the López Márquez Abogados website and contact channels." noindex={true}>
-<PageHero eyebrow="Legal information" title="Privacy Policy" description="How personal data is handled when you use this website or contact the firm." />
-<section class="section"><div class="container prose"><h2>Website enquiries</h2><p>The contact form sends the minimum information needed to handle the enquiry and creates an internal record of the request. The final privacy notice must identify the providers used for that flow and the applicable retention period.</p><h2>What not to send at first contact</h2><p>Do not send passwords, bank details, passport/NIE information or medical records unless the firm expressly asks for them through an appropriate channel.</p><div class="notice">Launch gate: validate the final controller details, legal basis, providers and retention periods before production.</div></div></section>
+<Layout title="Privacy Policy | López Márquez Abogados" noindex={true} description="Detailed information about personal-data processing on the López Márquez Abogados website and enquiry channels.">
+<PageHero eyebrow="Legal information" title="Privacy Policy" description="What information is collected, why it is used, how long it is kept and how to exercise your rights." />
+<section class="section"><div class="container prose">
+  <h2>1. Controller</h2>
+  <p>The data controller’s identity and legal details must be confirmed before this policy is published.</p>
+  <h2>2. Data processed</h2>
+  <p>Website enquiries may include your name, email address, phone number when provided, legal area, relevant date, the page from which you reached the contact form and the description of the facts or issue you enter in the form. We do not request passport, NIE, bank details or medical records for first contact.</p>
+  <h2>3. Purposes</h2>
+  <p>To receive and answer your enquiry, identify possible urgency, assess whether the matter fits the firm’s work and, where appropriate, prepare a possible engagement for legal services.</p>
+  <h2>4. Legal bases</h2>
+  <p>The processing needed to handle the submission is based on the consent given through the form. Where the enquiry requests steps to assess a possible engagement, pre-contractual steps requested by the data subject may also apply.</p>
+  <h2>5. Recipients and providers</h2>
+  <p>The list of recipients and providers will be completed once the actual data flow is confirmed. This page remains a draft and must not be published until that review is complete.</p>
+  <h2>6. International transfers</h2>
+  <p>Whether international transfers take place and which safeguards apply must be checked against the providers and configuration selected before this policy is published.</p>
+  <h2>7. Retention</h2>
+  <p>Actual retention and deletion periods must be defined against the firm’s real practices before this policy is published. No unconfirmed period is stated here.</p>
+  <h2>8. Your rights</h2>
+  <p>You may request access, rectification, erasure, restriction, objection and portability where applicable. You may also withdraw consent at any time. To exercise your rights, email <a href={site.emailHref}>{site.email}</a> and state which right you wish to exercise.</p>
+  <p>You may also complain to the <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">Spanish Data Protection Agency (AEPD)</a>.</p>
+  <h2>9. Sensitive information</h2>
+  <p>Health data is a special category of personal data. The first-contact form does not need it; do not send it unless the firm expressly tells you which channel and conditions are appropriate.</p>
+  <h2>10. Layered information</h2>
+  <p>The basic information is displayed alongside the contact form. This page provides the extended notice for fuller review.</p>
+</div></section>
 </Layout>

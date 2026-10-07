@@ -6,15 +6,19 @@ const {
   title = isEnglish ? 'Need to discuss your situation?' : '¿Quieres hablar de tu caso?',
   text = isEnglish ? 'Tell us briefly what happened, when it happened and what you need to resolve.' : 'Cuéntanos brevemente qué ha ocurrido, cuándo ha ocurrido y qué necesitas resolver.',
   label = isEnglish ? 'Contact the firm' : 'Enviar consulta',
-  href = site.emailHref
+  href = isEnglish ? '/en/contact' : '/contacto'
 } = Astro.props;
 ---
 <section class="section tight" data-reveal>
   <div class="container">
     <div class="cta">
       <div><h2>{title}</h2><p>{text}</p></div>
-      <div class="hero-actions compact">
-        <a class="btn btn-dark" href={href} data-track={href.startsWith('mailto:') ? 'email_click' : 'cta_click'}>{label}</a>
+      <div class="cta-actions">
+        <a class="btn btn-dark" href={href} data-track="cta_click">{label}</a>
+        <div class="cta-alternatives" aria-label={isEnglish ? 'Other contact options' : 'Otras formas de contacto'}>
+          <a href={site.emailHref} data-track="email_click">Email</a>
+          <a href={site.phoneHref} data-track="phone_click">{isEnglish ? 'Call' : 'Llamar'}</a>
+        </div>
       </div>
     </div>
   </div>

@@ -28,7 +28,8 @@
     const [year, month, day] = value.split('-').map(Number);
     if (!year || !month || !day) return null;
     const date = new Date(Date.UTC(year, month - 1, day));
-    return Number.isNaN(date.getTime()) ? null : date;
+    if (Number.isNaN(date.getTime()) || date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return null;
+    return date;
   };
   const daysInMonth = (year, monthIndex) => new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
   const addMonths = (date, months) => {

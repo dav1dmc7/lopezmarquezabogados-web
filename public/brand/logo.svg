@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2155" height="724" aria-labelledby="title desc" viewBox="0 0 2155 724"><title>López Márquez Abogados</title><desc>Logotipo premium en dorado de López Márquez Abogados.</desc><image xlink:href="lopez_marquez_abogados_logo_premium.png" width="2155" height="724" href="lopez_marquez_abogados_logo_premium.png"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-labelledby="title desc">
+<title id="title">López Márquez Abogados</title>
+<desc id="desc">Logotipo de López Márquez Abogados con balanza de justicia y monograma LM en dorado.</desc>
+<g fill="none" stroke="#E8DCC8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="26" y="22" width="188" height="188" rx="2"/>
+  <path d="M120 55v104"/><circle cx="120" cy="42" r="10" fill="#E8DCC8" stroke="none"/>
+  <path d="M75 72c15 0 31-10 45-24 14 14 30 24 45 24"/>
+  <path d="M75 72l-25 55h50z"/><path d="M165 72l25 55h-50z"/>
+  <path d="M43 140h42M155 140h42M48 151h32M160 151h32"/><circle cx="120" cy="175" r="29"/>
+</g>
+<text x="120" y="187" text-anchor="middle" fill="#E8DCC8" font-family="Georgia,Times New Roman,serif" font-size="26">LM</text>
+<text x="247" y="105" fill="#E8DCC8" font-family="Georgia,Times New Roman,serif" font-size="48" letter-spacing="2">LÓPEZ MÁRQUEZ</text>
+<text x="247" y="152" fill="#E8DCC8" font-family="Georgia,Times New Roman,serif" font-size="31" letter-spacing="7">ABOGADOS</text>
+</svg>

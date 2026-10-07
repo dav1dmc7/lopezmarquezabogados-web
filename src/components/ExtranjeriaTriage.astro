@@ -59,7 +59,15 @@ const isEnglish = Astro.url.pathname.startsWith('/en');
           <label><input type="radio" name="familia" value="no" /> {isEnglish ? 'No' : 'No'}</label>
           <label><input type="radio" name="familia" value="ns" /> {isEnglish ? 'Not sure / I would rather review it' : 'No lo sé / prefiero revisarlo'}</label>
         </fieldset>
-        <button class="btn btn-dark" type="submit">{isEnglish ? 'Show my next step' : 'Orientar mi siguiente paso'}</button>
+        <div class="triage-step-controls" data-triage-controls hidden>
+          <p class="small" data-triage-progress role="status" aria-live="polite"></p>
+          <p class="small triage-step-error" data-triage-error role="alert" hidden></p>
+          <div class="hero-actions compact">
+            <button class="btn btn-outline" type="button" data-triage-back>{isEnglish ? '← Previous' : '← Anterior'}</button>
+            <button class="btn btn-dark" type="button" data-triage-next>{isEnglish ? 'Next →' : 'Siguiente →'}</button>
+          </div>
+        </div>
+        <button class="btn btn-dark" type="submit" data-triage-submit>{isEnglish ? 'Show my next step' : 'Orientar mi siguiente paso'}</button>
         <p class="small lm-tool-note">{isEnglish ? 'Do not enter your passport, NIE, case number or other identifiers.' : 'No introduzcas DNI, NIE, pasaporte, número de expediente ni otros identificadores.'}</p>
       </form>
       <div id="extranjeria-triage-result" class="lm-tool-result" hidden aria-live="polite"></div>

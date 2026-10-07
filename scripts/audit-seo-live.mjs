@@ -37,6 +37,11 @@ for(const path of paths){
   if(!ogDesc) warnings.push(`${path}: og:description not detected`);
 }
 
+const www=final(`https://www.${domain}/`);
+console.log(`${'www canonical host'.padEnd(28)} ${www.status} final=${www.effective} redirects=${www.redirects}`);
+if(www.status===0) errors.push(`www: curl failed (exit ${www.exit}) ${www.stderr}`);
+else if(www.status!==200||www.effective!==`https://${domain}/`) errors.push(`www must redirect to the canonical apex homepage; received ${www.status} at ${www.effective}`);
+
 const sitemap=curl(`https://${domain}/sitemap.xml`);
 if(sitemap.exit!==0) errors.push(`sitemap.xml: curl failed (exit ${sitemap.exit})`);
 else if(!/<(?:urlset|sitemapindex)\b/i.test(sitemap.body)) errors.push('sitemap.xml: XML sitemap root not detected');

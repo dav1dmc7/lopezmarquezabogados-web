@@ -79,8 +79,8 @@ for (const file of commercial) {
   }
 }
 
-if (!layout.includes('/brand/Logo_LM.png')) {
-  errors.push('Layout: official black-background logo not referenced');
+if (!layout.includes('/brand/logo.svg')) {
+  errors.push('Layout: current brand logo is not referenced');
 }
 if (!existsSync(join(root, 'public', 'brand', 'Logo_LM.png'))) {
   errors.push('public/brand/Logo_LM.png missing from working tree');

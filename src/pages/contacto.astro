@@ -2,26 +2,55 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site } from '../lib/site';
+const requestedArea = Astro.url.searchParams.get('area');
+const requestedOrigin = Astro.url.searchParams.get('origen') || '';
+const contactOrigin = /^\/(?!\/)[A-Za-z0-9/_-]{0,199}$/.test(requestedOrigin) ? requestedOrigin : Astro.url.pathname;
 ---
 <Layout title="Contacto | López Márquez Abogados" description="Contacta con López Márquez Abogados en Barcelona. Cuéntanos qué ha ocurrido, el área jurídica y la fecha relevante para una primera revisión.">
 <PageHero eyebrow="Contacto" title="Cuéntanos qué ha ocurrido. Empezaremos por lo esencial." description="No necesitas conocer la terminología jurídica. Selecciona el área que más se acerque a tu situación, indica la fecha relevante y explícanos brevemente qué necesitas resolver." primaryLabel="Empezar consulta" primaryHref="#consulta-form" secondaryLabel={site.phone} secondaryHref={site.phoneHref} note="Para el primer contacto no necesitamos DNI, NIE, pasaporte, datos bancarios ni documentación médica." />
 <section class="section"><div class="container contact-grid"><div>
 <div class="contact-card contact-primary"><span class="eyebrow">Qué ocurre después</span><h3>Recibimos la consulta, ordenamos los hechos y partimos de las fechas relevantes.</h3><p>La primera información debe servir para entender el asunto, detectar posibles urgencias y saber qué documentación puede ser útil revisar después.</p><span class="eyebrow">Empieza por aquí</span><h3>Una primera consulta clara</h3><p>Con estos datos podemos entender rápidamente el asunto y su posible urgencia: área, fecha relevante, hechos y qué necesitas resolver.</p><div class="lm-form-meta"><span>Datos mínimos</span><span>Envío directo desde la web</span><span>Sin abrir el correo</span></div></div>
-<div class="contact-card"><span class="eyebrow">¿Qué necesitas resolver?</span><div class="scenario-links"><a href="#consulta-form" data-area="Laboral">Problema laboral →</a><a href="#consulta-form" data-area="Extranjería">Extranjería o residencia →</a><a href="#consulta-form" data-area="Empresas">Asunto de empresa →</a><a href="#consulta-form" data-area="Otras áreas">Otra cuestión jurídica →</a></div></div>
+<div class="contact-card"><span class="eyebrow">¿Qué necesitas resolver?</span><div class="scenario-links">
+<a href="?area=Laboral#consulta-form" data-area="Laboral">Problema laboral →</a>
+<a href="?area=Extranjería#consulta-form" data-area="Extranjería">Extranjería o residencia →</a>
+<a href="?area=Empresas#consulta-form" data-area="Empresas">Asunto de empresa →</a>
+<a href="?area=Otras%20áreas#consulta-form" data-area="Otras áreas">Otra cuestión jurídica →</a>
+</div></div>
 <div class="contact-card"><span class="eyebrow">Email directo</span><h3>{site.email}</h3><p>El formulario es la vía recomendada. También puedes escribir directamente al despacho.</p><a class="link-arrow" href={site.emailHref} data-track="email_click">Enviar un email →</a></div>
-<div class="contact-card"><span class="eyebrow">También puedes</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Llamar al despacho →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Escribir por WhatsApp →</a></div>
+<div class="contact-card"><span class="eyebrow">También puedes</span><h3>{site.phone}</h3><a href={site.phoneHref} data-track="phone_click">Llamar al despacho →</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">Escribir por WhatsApp →</a><p class="small">Para el primer contacto. No envíes documentos sensibles por WhatsApp salvo que te indiquemos expresamente el canal adecuado.</p></div>
 <div class="contact-card"><span class="eyebrow">Barcelona</span><h3>{site.address.street}</h3><p>{site.address.postalCode} {site.address.locality}</p><a class="link-arrow" href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">Abrir Google Maps →</a></div>
+<div class="contact-card contact-process">
+  <span class="eyebrow">Qué ocurre cuando contactas</span>
+  <ol>
+    <li><strong>Nos cuentas el problema.</strong> Hechos, fecha relevante y qué necesitas resolver.</li>
+    <li><strong>Revisamos la información inicial.</strong> Ordenamos los datos y la posible urgencia.</li>
+    <li><strong>Te indicamos si podemos ayudarte.</strong> Valoramos el encaje con el despacho.</li>
+    <li><strong>Definimos alcance y honorarios.</strong> Antes de iniciar el encargo.</li>
+    <li><strong>Comenzamos el trabajo.</strong> Cuando la actuación quede acordada.</li>
+  </ol>
+  <p class="small">Plazo orientativo de respuesta: 48–72 horas laborables.</p>
 </div>
-<div class="contact-card lm-form-card"><span class="eyebrow">Consulta online</span><h2>Explícanos lo esencial</h2><p id="consulta-nota" class="small">Cuanto más concreta sea la primera explicación, más fácil será ordenar la cuestión. Evita enviar información sensible o documentos que no te hayamos solicitado.</p><div id="consulta-status" class="form-status" role="status" aria-live="polite" hidden></div>
-<form id="consulta-form" data-endpoint="/api/contact" data-locale="es" aria-describedby="consulta-nota" autocomplete="on">
+</div>
+<div class="contact-card lm-form-card"><span class="eyebrow">Consulta online</span><h2>Explícanos lo esencial</h2><p id="consulta-nota" class="small">Cuanto más concreta sea la primera explicación, más fácil será ordenar la cuestión. Evita enviar información sensible o documentos que no te hayamos solicitado.</p>
+<div class="privacy-first-layer" aria-labelledby="privacy-layer-title">
+  <h3 id="privacy-layer-title">Información básica sobre protección de datos</h3>
+  <table><tbody>
+    <tr><th scope="row">Finalidad</th><td>Recibir, gestionar y responder a tu consulta y, cuando proceda, valorar la posible contratación de servicios jurídicos.</td></tr>
+    <tr><th scope="row">Legitimación</th><td>Consentimiento mediante este formulario y, cuando la consulta solicite actuaciones previas a una posible contratación, medidas precontractuales solicitadas por la persona interesada.</td></tr>
+    <tr><th scope="row">Derechos</th><td>Acceso, rectificación, supresión, limitación, oposición y portabilidad cuando proceda. También puedes retirar el consentimiento y reclamar ante la AEPD.</td></tr>
+  </tbody></table>
+  <p class="small">Información ampliada en la <a href="/privacidad">Política de privacidad</a>.</p>
+</div><div id="consulta-status" class="form-status" role="status" aria-live="polite" hidden></div>
+<form id="consulta-form" data-endpoint="/api/contact" data-locale="es" aria-describedby="consulta-nota" method="post" action="/api/contact" autocomplete="on">
+<input type="hidden" name="locale" value="es" /><input type="hidden" name="sourcePath" value={contactOrigin} />
 <div class="form-grid">
 <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" maxlength="120" required placeholder="Tu nombre" /></div>
 <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required placeholder="Tu email" /></div>
 <div class="field"><label for="telefono">Teléfono <span class="small">(opcional)</span></label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="Si prefieres que te llamemos" /></div>
-<div class="field"><label for="area">Área</label><select id="area" name="area" required><option value="">Selecciona un área</option><option value="Laboral">Laboral</option><option value="Extranjería">Extranjería</option><option value="Empresas">Empresas</option><option value="Otras áreas">Otras áreas</option></select></div>
-<div class="field full"><label for="fecha">Fecha relevante <span class="small">(opcional, pero recomendable)</span></label><input id="fecha" name="fecha" maxlength="40" placeholder="Por ejemplo, 25/09/2026" /></div>
+<div class="field"><label for="area">Área</label><select id="area" name="area" required><option value="">Selecciona un área</option><option value="Laboral" selected={requestedArea === 'Laboral'}>Laboral</option><option value="Extranjería" selected={requestedArea === 'Extranjería'}>Extranjería</option><option value="Empresas" selected={requestedArea === 'Empresas'}>Empresas</option><option value="Otras áreas" selected={requestedArea === 'Otras áreas'}>Otras áreas</option></select></div>
+<div class="field full"><label for="fecha">Fecha relevante <span class="small">(opcional, pero recomendable)</span></label><input id="fecha" name="fecha" maxlength="40" placeholder="Por ejemplo, DD/MM/AAAA" /></div>
 <div class="field full"><label for="mensaje">¿Qué ha ocurrido y qué necesitas resolver?</label><textarea id="mensaje" name="mensaje" minlength="20" maxlength="4000" required placeholder="Cuéntanos los hechos principales, por orden y con tus propias palabras."></textarea></div>
-<div class="field full honeypot-field"><label for="website">Sitio web</label><input id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off" /></div>
+<div class="field full honeypot-field" aria-hidden="true"><label for="website">Sitio web</label><input id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off" /></div>
 <div class="field full"><label class="checkbox"><input id="privacy" name="privacy" type="checkbox" required /><span>He leído la <a href="/privacidad">política de privacidad</a> y acepto el tratamiento necesario para responder a mi consulta.</span></label></div>
 <div class="field full lm-submit-row"><button class="btn btn-dark" type="submit">Enviar consulta</button><p class="small">El formulario se envía directamente desde la web. No se abre tu aplicación de correo.</p></div>
 </div></form></div></div></section>

@@ -10,6 +10,7 @@ const isEnglish = Astro.props.lang === 'en' || Astro.url.pathname.startsWith('/e
         <h2 id="calculadora-titulo">{isEnglish ? 'Estimate dismissal severance compensation' : 'Calcula una estimación de indemnización por despido'}</h2>
         <p>{isEnglish ? 'Enter the employment dates and an annual gross salary reference. The tool compares two economic scenarios; it does not decide which legal regime applies to your case.' : 'Introduce las fechas y un salario bruto anual de referencia. La herramienta compara dos escenarios económicos; no decide cuál corresponde jurídicamente a tu caso.'}</p>
       </div>
+      <p class="calculator-empty-state">{isEnglish ? 'Complete the dates and salary, then calculate to see an estimate.' : 'Completa las fechas y el salario y pulsa calcular para obtener una estimación.'}</p>
       <form class="calculator-form" id="indemnizacion-calculadora" novalidate>
         <div class="calculator-grid">
           <div class="field"><label for="calc-inicio">{isEnglish ? 'Start date' : 'Fecha de inicio'}</label><input id="calc-inicio" name="inicio" type="date" required /><span class="field-help">{isEnglish ? 'Use the employment start date shown in the records.' : 'La fecha de inicio que figure para la relación laboral.'}</span></div>

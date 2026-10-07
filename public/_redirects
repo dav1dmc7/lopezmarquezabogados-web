@@ -1,3 +1,26 @@
+# Legacy extensionless variants (the former site exposed .html and extensionless URLs).
+/es / 301
+/es/index / 301
+/es/about /sobre-nosotros 301
+/es/servicios /otras-areas 301
+/es/laboral /laboral 301
+/es/extranjeria /extranjeria 301
+/es/civil /civil 301
+/es/penal /penal 301
+/es/administrativo /administrativo 301
+/es/contact /contacto 301
+/es/faqs /preguntas-frecuentes 301
+/en/index_en /en 301
+/en/about_en /en/about 301
+/en/servicios_en /en 301
+/en/laboral_en /en/employment 301
+/en/extranjeria_en /en/immigration 301
+/en/civil_en /en 301
+/en/penal_en /en 301
+/en/administrativo_en /en 301
+/en/contact_en /en/contact 301
+/en/faqs_en /en/faqs 301
+
 # Legacy Spanish URLs from the former Netlify site.
 /es/index.html / 301
 /es/about.html /sobre-nosotros 301

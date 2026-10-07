@@ -139,7 +139,7 @@ const webPageSchema = {
       <div class="scroll-progress" aria-hidden="true"></div>
       <header class="site-header">
         <div class="container nav-wrap">
-          <a class="brand" href={isEnglish ? '/en' : '/'} aria-label={isEnglish ? `${site.name} — home` : `${site.name} — inicio`} data-track="logo_click"><img class="brand-logo" src="/brand/Logo_LM.png" width="168" height="48" alt={site.name} decoding="async" /></a>
+          <a class="brand" href={isEnglish ? '/en' : '/'} aria-label={isEnglish ? `${site.name} — home` : `${site.name} — inicio`} data-track="logo_click"><img class="brand-logo" src="/brand/logo.svg" width="168" height="48" alt={site.name} decoding="async" /></a>
           <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label={isEnglish ? 'Open menu' : 'Abrir menú'}>{isEnglish ? 'Menu' : 'Menú'}</button>
           <nav id="main-nav" class="main-nav" aria-label={isEnglish ? 'Primary navigation' : 'Navegación principal'}>
             {isEnglish ? (
@@ -173,7 +173,7 @@ const webPageSchema = {
       <footer class="site-footer">
         <div class="container footer-grid">
           <div>
-            <img class="footer-logo" src="/brand/Logo_LM.png" width="170" height="60" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="footer-logo" src="/brand/logo.svg" width="170" height="60" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             <p class="footer-note">{isEnglish ? 'Employment · Immigration · Business · Barcelona' : 'Derecho Laboral · Extranjería · Empresas · Barcelona'}</p>
           </div>
           <div>
@@ -206,7 +206,11 @@ const webPageSchema = {
 
       <a class="floating-contact" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={isEnglish ? 'Message López Márquez Abogados on WhatsApp' : 'Escribir por WhatsApp a López Márquez Abogados'} data-track="whatsapp_click">{isEnglish ? 'WhatsApp us' : 'WhatsApp'}</a>
     </div>
-      <div class="mobile-conversion-bar" aria-label={isEnglish ? 'Quick contact' : 'Contacto rápido'}><a class="primary" href={isEnglish ? '/en/contact' : '/contacto'} data-track="mobile_primary_cta">{isEnglish ? 'Start an enquiry' : 'Enviar consulta'}</a></div>
+      <div class="mobile-conversion-bar" role="group" aria-label={isEnglish ? 'Quick contact' : 'Contacto rápido'}>
+  <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="mobile_whatsapp">WhatsApp</a>
+  <a href={site.phoneHref} data-track="mobile_phone">{isEnglish ? 'Call' : 'Llamar'}</a>
+  <a class="primary" href={isEnglish ? '/en/contact' : '/contacto'} data-track="mobile_primary_cta">{isEnglish ? 'Contact' : 'Consultar'}</a>
+</div>
 
     <script src="/site.js" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f6d617066f68494b9cb6908f20ba6764"}'></script>

@@ -26,7 +26,7 @@ Node: ver `.nvmrc`.
 
 ## Producción
 
-La web antigua de `LMpruebas` se mantiene como respaldo. Este repositorio es la nueva línea de producción.
+El sitio público sirve la versión actual desde Cloudflare. El código anterior se conserva únicamente como copia local en el Mac y en el GitHub personal; no debe seguir publicado en Netlify ni aparecer en Google.
 
 Flujo objetivo:
 

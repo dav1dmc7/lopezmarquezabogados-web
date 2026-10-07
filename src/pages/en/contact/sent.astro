@@ -2,10 +2,19 @@
 import Layout from '../../../layouts/Layout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import CTA from '../../../components/CTA.astro';
-import { site } from '../../../lib/site';
 ---
 <Layout title="Enquiry sent | López Márquez Abogados" description="Confirmation that your enquiry has been submitted to López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Enquiry received" title="Your enquiry has been received." description="The information has been registered successfully. We will contact you using the details provided." primaryLabel="Back to home" primaryHref="/en" secondaryLabel="WhatsApp" secondaryHref={site.whatsapp} note="Do not send additional sensitive documents unless the firm tells you which channel to use." />
-<section class="section"><div class="container prose"><h2>In the meantime</h2><p>Keep any letter, decision, contract or notification with an important date to hand. You do not need to send it now.</p><p><a href="/en/resources">Browse legal resources →</a></p></div></section>
+<PageHero eyebrow="Enquiry received" title="Your enquiry has been received." description="The information has been registered successfully. We will contact you using the details provided." primaryLabel="Back to home" primaryHref="/en" secondaryLabel="Back to contact" secondaryHref="/en/contact" note="Do not send sensitive documents by WhatsApp or email unless the firm gives you a suitable channel." />
+<section class="section"><div class="container">
+  <div class="number-list" aria-label="What happens when you contact us">
+    <div class="number-item"><span class="number">01</span><div><h3>You tell us what happened</h3><p>Share the essential facts, the relevant date and what you need to resolve.</p></div></div>
+    <div class="number-item"><span class="number">02</span><div><h3>We review the initial information</h3><p>We organise the information and identify what may need attention or later documentary review.</p></div></div>
+    <div class="number-item"><span class="number">03</span><div><h3>We tell you whether we can help</h3><p>We assess whether the enquiry fits the firm’s work and what the sensible next step is.</p></div></div>
+    <div class="number-item"><span class="number">04</span><div><h3>We define scope and fees</h3><p>We do not start an engagement without explaining its scope and fees first.</p></div></div>
+    <div class="number-item"><span class="number">05</span><div><h3>We start the work</h3><p>Once the engagement is defined, we begin the agreed work.</p></div></div>
+  </div>
+  <div class="callout"><strong>Indicative response time:</strong> 48–72 business hours. Timing may vary depending on the volume and nature of enquiries.</div>
+  <div class="prose"><p>Keep any letter, decision, contract or notification with an important date to hand. You do not need to send it now.</p><p><a href="/en/resources">Browse legal resources →</a></p></div>
+</div></section>
 <CTA title="Need to add anything else?" text="You can return to the contact page whenever you need to provide more information." label="Back to contact" href="/en/contact" />
 </Layout>
