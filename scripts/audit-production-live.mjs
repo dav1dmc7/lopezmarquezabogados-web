@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 
 const domain='lopezmarquezabogados.com';
 const modern=['/','/sitemap.xml','/robots.txt','/contacto/','/laboral/despidos/','/extranjeria/arraigo/','/empresas/','/en/','/en/contact/'];
-const legacy=['/es/index.html','/es/servicios.html','/es/laboral.html','/es/contact.html','/es','/es/index','/es/about','/es/servicios','/es/laboral','/es/extranjeria','/es/civil','/es/penal','/es/administrativo','/es/contact','/es/faqs','/en/index_en','/en/about_en','/en/servicios_en','/en/laboral_en','/en/extranjeria_en','/en/civil_en','/en/penal_en','/en/administrativo_en','/en/contact_en','/en/faqs_en'];
+const legacy=['/index.html','/en/index.html','/en/about.html','/en/laboral.html','/en/civil.html','/es/index.html','/es/servicios.html','/es/laboral.html','/es/contact.html','/es','/es/index','/es/about','/es/servicios','/es/laboral','/es/extranjeria','/es/civil','/es/penal','/es/administrativo','/es/contact','/es/faqs','/en/index_en','/en/about_en','/en/servicios_en','/en/laboral_en','/en/extranjeria_en','/en/civil_en','/en/penal_en','/en/administrativo_en','/en/contact_en','/en/faqs_en'];
 const errors=[];
 
 function request(url,{body=false}={}){
