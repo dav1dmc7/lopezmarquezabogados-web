@@ -1,4 +1,9 @@
 # Legacy extensionless variants (the former site exposed .html and extensionless URLs).
+/index.html / 301
+/en/index.html /en 301
+/en/about.html /en/about 301
+/en/laboral.html /en/employment 301
+/en/civil.html /en 301
 /es / 301
 /es/index / 301
 /es/about /sobre-nosotros 301

@@ -55,6 +55,11 @@ if (!packageSource.includes('audit-launch.mjs')) errors.push('package.json: fina
 const redirects = read('public/_redirects');
 
 const legacyRedirects = [
+  ['/index.html', '/'],
+  ['/en/index.html', '/en'],
+  ['/en/about.html', '/en/about'],
+  ['/en/laboral.html', '/en/employment'],
+  ['/en/civil.html', '/en'],
   ['/es/index.html', '/'],
   ['/es/about.html', '/sobre-nosotros'],
   ['/es/servicios.html', '/otras-areas'],

@@ -56,6 +56,7 @@ const AREAS_ES = new Set(['Laboral', 'Extranjería', 'Empresas', 'Otras áreas']
 const AREAS_EN = new Set(['Employment', 'Immigration', 'Business', 'Other legal matters']);
 
 const LEGACY_REDIRECTS = new Map<string, string>([
+  ['/index.html', '/'],
   ['/es', '/'], ['/es/index', '/'], ['/es/index.html', '/'],
   ['/es/about', '/sobre-nosotros'], ['/es/about.html', '/sobre-nosotros'],
   ['/es/servicios', '/otras-areas'], ['/es/servicios.html', '/otras-areas'],
@@ -67,6 +68,8 @@ const LEGACY_REDIRECTS = new Map<string, string>([
   ['/es/contact', '/contacto'], ['/es/contact.html', '/contacto'],
   ['/es/faqs', '/preguntas-frecuentes'], ['/es/faqs.html', '/preguntas-frecuentes'],
   ['/en/index_en', '/en'], ['/en/index_en.html', '/en'],
+  ['/en/index.html', '/en'], ['/en/about.html', '/en/about'],
+  ['/en/laboral.html', '/en/employment'], ['/en/civil.html', '/en'],
   ['/en/about_en', '/en/about'], ['/en/about_en.html', '/en/about'],
   ['/en/servicios_en', '/en'], ['/en/servicios_en.html', '/en'],
   ['/en/laboral_en', '/en/employment'], ['/en/laboral_en.html', '/en/employment'],
