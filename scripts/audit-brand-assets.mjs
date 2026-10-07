@@ -4,9 +4,11 @@ import { join } from 'node:path';
 
 const root = process.cwd();
 const candidates = [
-  'public/brand/lopez_marquez_abogados_logo_premium.png',
-  'public/brand/Logo_LM.png',
   'public/brand/logo.svg',
+];
+const referenceCandidates = [
+  'docs/brand-reference/lopez_marquez_abogados_logo_premium.png',
+  'docs/brand-reference/Logo_LM.png',
 ];
 
 function size(rel) {
@@ -29,7 +31,15 @@ function dimensions(rel) {
 }
 
 console.log('=== BRAND ASSET DIAGNOSTICS ===');
+console.log('Shipped brand assets:');
 for (const rel of candidates) {
+  const bytes = size(rel);
+  if (bytes == null) continue;
+  const dims = dimensions(rel) ?? 'dimensions unavailable';
+  console.log(`${rel}: ${bytes} bytes; ${dims}`);
+}
+console.log('Preserved source references (not shipped):');
+for (const rel of referenceCandidates) {
   const bytes = size(rel);
   if (bytes == null) continue;
   const dims = dimensions(rel) ?? 'dimensions unavailable';

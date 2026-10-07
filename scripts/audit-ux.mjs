@@ -82,9 +82,6 @@ for (const file of commercial) {
 if (!layout.includes('/brand/logo.svg')) {
   errors.push('Layout: current brand logo is not referenced');
 }
-if (!existsSync(join(root, 'public', 'brand', 'Logo_LM.png'))) {
-  errors.push('public/brand/Logo_LM.png missing from working tree');
-}
 if (!existsSync(join(root, 'public', 'brand', 'logo.svg'))) {
   errors.push('public/brand/logo.svg missing from working tree');
 }

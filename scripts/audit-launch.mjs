@@ -53,6 +53,7 @@ if (!packageSource.includes('audit-launch.mjs')) errors.push('package.json: fina
 
 
 const redirects = read('public/_redirects');
+const worker = read('worker.ts');
 
 const legacyRedirects = [
   ['/index.html', '/'],
@@ -86,6 +87,13 @@ for (const [legacy, destination] of legacyRedirects) {
   if (!redirects.includes(`${legacy} ${destination} 301`)) {
     errors.push(`_redirects: missing ${legacy} -> ${destination}`);
   }
+  if (!worker.includes(`['${legacy}', '${destination}']`)) {
+    errors.push(`worker.ts: redirect differs from _redirects for ${legacy} -> ${destination}`);
+  }
+}
+
+if (!read('src/pages/index.astro').includes('href="/empresas#revision-preventiva"')) {
+  errors.push('Home: preventive review CTA must point to /empresas#revision-preventiva');
 }
 
 const updates = read('src/data/legalUpdates.ts');

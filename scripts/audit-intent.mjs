@@ -101,7 +101,6 @@ const requiredFiles = [
   'src/pages/en/employment/temporary-sickness-leave.astro',
   'src/pages/en/employment/permanent-disability.astro',
   'src/pages/en/resources/permanent-disability-employment-2025.astro',
-  'public/brand/Logo_LM.png',
   'public/brand/logo.svg',
 ];
 for (const rel of requiredFiles) if (!fs.existsSync(path.join(root, rel))) errors.push(`Required asset/page missing: ${rel}`);
