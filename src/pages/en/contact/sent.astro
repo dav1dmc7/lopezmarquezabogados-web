@@ -3,9 +3,14 @@ import Layout from '../../../layouts/Layout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import CTA from '../../../components/CTA.astro';
 ---
-<Layout title="Enquiry sent | López Márquez Abogados" description="Confirmation that your enquiry has been submitted to López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Enquiry received" title="Your enquiry has been received." description="The information has been registered successfully. We will contact you using the details provided." primaryLabel="Back to home" primaryHref="/en" secondaryLabel="Back to contact" secondaryHref="/en/contact" note="Do not send sensitive documents by WhatsApp or email unless the firm gives you a suitable channel." />
+<Layout title="Enquiry status | López Márquez Abogados" description="Information about the status of an enquiry submitted to the firm." noindex={true}>
+<PageHero eyebrow="Enquiry status" title="Enquiry status"
+ description="This page confirms a submission only when the server returns a valid registration status."
+ primaryLabel="Back to home" primaryHref="/en" secondaryLabel="Back to contact" secondaryHref="/en/contact"
+ note="Do not send sensitive documents until the firm gives you the appropriate channel. Contact the firm directly if the matter is urgent." />
 <section class="section"><div class="container">
+  <p id="confirmation-email-status" class="callout" role="status" aria-live="polite">The status of a submitted enquiry appears here when the server response is confirmed. If you submitted the form without JavaScript, email the firm to check its status.</p>
+  <div id="confirmation-reference" class="callout" hidden><strong>Enquiry reference:</strong> <span></span></div>
   <div class="number-list" aria-label="What happens when you contact us">
     <div class="number-item"><span class="number">01</span><div><h3>You tell us what happened</h3><p>Share the essential facts, the relevant date and what you need to resolve.</p></div></div>
     <div class="number-item"><span class="number">02</span><div><h3>We review the initial information</h3><p>We organise the information and identify what may need attention or later documentary review.</p></div></div>
@@ -13,8 +18,7 @@ import CTA from '../../../components/CTA.astro';
     <div class="number-item"><span class="number">04</span><div><h3>We define scope and fees</h3><p>We do not start an engagement without explaining its scope and fees first.</p></div></div>
     <div class="number-item"><span class="number">05</span><div><h3>We start the work</h3><p>Once the engagement is defined, we begin the agreed work.</p></div></div>
   </div>
-  <div class="callout"><strong>Indicative response time:</strong> 48–72 business hours. Timing may vary depending on the volume and nature of enquiries.</div>
   <div class="prose"><p>Keep any letter, decision, contract or notification with an important date to hand. You do not need to send it now.</p><p><a href="/en/resources">Browse legal resources →</a></p></div>
 </div></section>
-<CTA title="Need to add anything else?" text="You can return to the contact page whenever you need to provide more information." label="Back to contact" href="/en/contact" />
+<CTA title="Need to add anything else?" text="Reply to the confirmation email to add or correct information, or return to the contact form." label="Back to contact" href="/en/contact" />
 </Layout>

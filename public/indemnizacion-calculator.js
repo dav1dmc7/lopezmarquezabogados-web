@@ -17,8 +17,8 @@
     missingDates: en ? 'Enter both dates to calculate the estimate.' : 'Introduce las dos fechas para realizar la estimación.',
     invalidDates: en ? 'The dismissal date cannot be earlier than the employment start date.' : 'La fecha de despido no puede ser anterior a la fecha de inicio.',
     invalidSalary: en ? 'Enter a valid annual gross salary.' : 'Introduce un salario bruto anual válido.',
-    months: (n) => en ? `${n} months` : `${n} meses`,
-    days: (n) => en ? `${n.toFixed(2).replace('.', ',')} days` : `${n.toFixed(2).replace('.', ',')} días`,
+    months: (n) => en ? `${n} ${n === 1 ? 'month' : 'months'}` : `${n} ${n === 1 ? 'mes' : 'meses'}`,
+    days: (n) => en ? `${n.toFixed(2)} days` : `${n.toFixed(2).replace('.', ',')} días`,
     cap: (n) => en ? `Cap: ${money(n)}` : money(n),
     legacy: en ? ' The historical tranche is calculated under the transitional unfair-dismissal rule; the file still requires professional review.' : ' El tramo histórico se calcula con la regla transitoria prevista para improcedencia; la revisión del expediente sigue siendo necesaria.'
   };
@@ -31,44 +31,36 @@
     if (Number.isNaN(date.getTime()) || date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return null;
     return date;
   };
-  const daysInMonth = (year, monthIndex) => new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
-  const addMonths = (date, months) => {
-    const serialMonth = date.getUTCFullYear() * 12 + date.getUTCMonth() + months;
-    const year = Math.floor(serialMonth / 12);
-    const month = serialMonth % 12;
-    const day = Math.min(date.getUTCDate(), daysInMonth(year, month));
-    return new Date(Date.UTC(year, month, day));
-  };
   const serviceMonths = (start, end) => {
     if (end < start) return 0;
-    let months = (end.getUTCFullYear() - start.getUTCFullYear()) * 12 + (end.getUTCMonth() - start.getUTCMonth());
-    if (addMonths(start, months) < end) months += 1;
-    if (months === 0) months = 1;
-    return months;
+    // Match the CGPJ's calendar-month rounding. A 365-day average miscounts
+    // short months and periods that cross the February 2012 transitional cut-off.
+    const wholeMonthDifference = (end.getUTCFullYear() - start.getUTCFullYear()) * 12
+      + end.getUTCMonth() - start.getUTCMonth();
+    const includesPartialMonth = end.getUTCDate() >= start.getUTCDate() ? 1 : 0;
+    return Math.max(1, wholeMonthDifference + includesPartialMonth);
   };
   const dailySalary = (annualSalary) => annualSalary / 365;
-  const monthlySalary = (annualSalary) => annualSalary / 12;
   const money = (value) => euro.format(Math.max(0, value));
-  const dispatch = (name, details = {}) => { window.dispatchEvent(new CustomEvent('lm:analytics', { detail: { name, ...details } })); };
+  const dispatch = (name, details = {}) => { window.dispatchEvent(new CustomEvent('lm:track', { detail: { name, ...details } })); };
 
   const calculateObjective = (start, end, annualSalary) => {
     const months = serviceMonths(start, end);
     const daily = dailySalary(annualSalary);
     const rawDays = months * (20 / 12);
-    const capAmount = monthlySalary(annualSalary) * 12;
+    const capAmount = daily * 360;
     const amount = Math.min(rawDays * daily, capAmount);
-    return { amount, days: amount / daily, months, cap: capAmount, summary: en ? `${months} months of service · 20 days of salary per year, capped at 12 monthly payments.` : `${months} meses de servicio · 20 días de salario por año, con un máximo de 12 mensualidades.`, legacy: false };
+    return { amount, days: amount / daily, months, cap: capAmount, summary: en ? `${t.months(months)} of service · 20 days of salary per year, capped at 12 monthly payments.` : `${t.months(months)} de servicio · 20 días de salario por año, con un máximo de 12 mensualidades.`, legacy: false };
   };
 
   const calculateUnfair = (start, end, annualSalary) => {
     const daily = dailySalary(annualSalary);
-    const monthly = monthlySalary(annualSalary);
     if (start >= cutoff) {
       const months = serviceMonths(start, end);
       const rawDays = months * (33 / 12);
-      const capAmount = monthly * 24;
+      const capAmount = daily * 720;
       const amount = Math.min(rawDays * daily, capAmount);
-      return { amount, days: amount / daily, months, cap: capAmount, summary: en ? `${months} months of service · 33 days of salary per year, capped at 24 monthly payments.` : `${months} meses de servicio · 33 días de salario por año, con un máximo de 24 mensualidades.`, legacy: false };
+      return { amount, days: amount / daily, months, cap: capAmount, summary: en ? `${t.months(months)} of service · 33 days of salary per year, capped at 24 monthly payments.` : `${t.months(months)} de servicio · 33 días de salario por año, con un máximo de 24 mensualidades.`, legacy: false };
     }
 
     const preEnd = end < cutoff ? end : new Date(cutoff.getTime() - 86400000);
@@ -78,11 +70,11 @@
     const postDays = postMonths * (33 / 12);
     const rawDays = preDays + postDays;
     const rawAmount = rawDays * daily;
-    const standardCap = monthly * 24;
-    const legacyCap = Math.min(preDays * daily, monthly * 42);
+    const standardCap = daily * 720;
+    const legacyCap = Math.min(preDays * daily, daily * 1260);
     const capAmount = preDays > 720 ? legacyCap : standardCap;
     const amount = Math.min(rawAmount, capAmount);
-    return { amount, days: amount / daily, months: preMonths + postMonths, cap: capAmount, summary: en ? `Contract signed before 12 February 2012 · ${preMonths} months at 45 days/year before the cutoff and ${postMonths} months at 33 days/year after it.` : `Contrato anterior al 12/02/2012 · ${preMonths} meses anteriores a 45 días/año y ${postMonths} meses posteriores a 33 días/año.`, legacy: true };
+    return { amount, days: amount / daily, months: serviceMonths(start, end), cap: capAmount, summary: en ? `Contract signed before 12 February 2012 · ${t.months(preMonths)} at 45 days/year before the cutoff and ${t.months(postMonths)} at 33 days/year after it.` : `Contrato anterior al 12/02/2012 · ${t.months(preMonths)} a 45 días/año antes del corte y ${t.months(postMonths)} a 33 días/año después.`, legacy: true };
   };
 
   form.addEventListener('submit', (event) => {

@@ -4,15 +4,10 @@
   const clean = (value, max = 100) => String(value ?? '').slice(0, max).replace(/[\r\n\t]+/g, ' ');
 
   const context = () => {
-    const url = new URL(window.location.href);
-    const p = url.searchParams;
     return {
       path: clean(location.pathname, 180),
       lang: clean(document.documentElement.lang || 'es', 10),
-      referrer_origin: (() => { try { return document.referrer ? new URL(document.referrer).origin : ''; } catch (_) { return ''; } })(),
-      utm_source: clean(p.get('utm_source') || ''),
-      utm_medium: clean(p.get('utm_medium') || ''),
-      utm_campaign: clean(p.get('utm_campaign') || '')
+      referrer_origin: (() => { try { return document.referrer ? new URL(document.referrer).origin : ''; } catch (_) { return ''; } })()
     };
   };
 
@@ -66,6 +61,25 @@
       }, { passive: true });
       form.addEventListener('submit', () => track('form_submit_intent', { form_id: clean(form.id || '', 60) }), { passive: true });
     });
+
+    const safeEventFields = new Set(['contact_area', 'reason', 'scenario', 'service_months', 'indemnity_days', 'route']);
+    const measurableEvents = new Set([
+      'contact_success', 'contact_error', 'calculator_complete', 'calculator_error',
+      'immigration_triage_start', 'immigration_triage_complete', 'immigration_triage_email_click',
+      'company_assessment_email_click'
+    ]);
+    window.addEventListener('lm:track', (event) => {
+      if (!consentGranted()) return;
+      const detail = event instanceof CustomEvent && event.detail && typeof event.detail === 'object' ? event.detail : {};
+      const name = clean(detail.name || '', 60);
+      if (!measurableEvents.has(name)) return;
+      const props = {};
+      for (const field of safeEventFields) {
+        const value = detail[field];
+        if (typeof value === 'string' || (typeof value === 'number' && Number.isFinite(value))) props[field] = clean(value, 80);
+      }
+      track(name, props);
+    }, { passive: true });
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });

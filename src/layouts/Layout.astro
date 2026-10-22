@@ -178,8 +178,9 @@ const webPageSchema = {
           </div>
           <div>
             <p class="footer-label">{isEnglish ? 'Office' : 'Despacho'}</p>
-            <a href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click">
-              {site.address.street}<br />{site.address.postalCode} {site.address.locality}, Spain
+            <a href={site.maps} target="_blank" rel="noopener noreferrer" data-track="maps_click" aria-label={`${site.address.street}, ${site.address.postalCode} ${site.address.locality}, Spain`}>
+              <span class="footer-address-line">{site.address.street}</span>
+              <span class="footer-address-line">{site.address.postalCode} {site.address.locality}, Spain</span>
             </a>
             <a href={site.phoneHref} data-track="phone_click">{site.phone}</a>
             <a href={site.emailHref} data-track="email_click">{site.email}</a>
@@ -204,13 +205,7 @@ const webPageSchema = {
         </div>
       </footer>
 
-      <a class="floating-contact" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label={isEnglish ? 'Message López Márquez Abogados on WhatsApp' : 'Escribir por WhatsApp a López Márquez Abogados'} data-track="whatsapp_click">{isEnglish ? 'WhatsApp us' : 'WhatsApp'}</a>
     </div>
-      <div class="mobile-conversion-bar" role="group" aria-label={isEnglish ? 'Quick contact' : 'Contacto rápido'}>
-  <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="mobile_whatsapp">WhatsApp</a>
-  <a href={site.phoneHref} data-track="mobile_phone">{isEnglish ? 'Call' : 'Llamar'}</a>
-  <a class="primary" href={isEnglish ? '/en/contact' : '/contacto'} data-track="mobile_primary_cta">{isEnglish ? 'Contact' : 'Consultar'}</a>
-</div>
 
     <script src="/site.js" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f6d617066f68494b9cb6908f20ba6764"}'></script>

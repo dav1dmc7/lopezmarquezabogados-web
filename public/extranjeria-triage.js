@@ -153,7 +153,7 @@
         `${t.otherFamily}: ${data.familia}`,
         '', t.close
       ].join('\n');
-      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'immigration_triage_email_click', page_path: window.location.pathname }); } catch (_) {}
+      window.dispatchEvent(new CustomEvent('lm:track', { detail: { name: 'immigration_triage_email_click' } }));
       window.location.href = `mailto:${email}?subject=${encodeURIComponent(en ? 'Immigration enquiry' : 'Consulta de Extranjería')}&body=${encodeURIComponent(body)}`;
     });
   });

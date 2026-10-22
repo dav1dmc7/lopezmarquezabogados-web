@@ -13,6 +13,7 @@ interface Props {
 }
 
 const { eyebrow = 'López Márquez Abogados', title, description, primaryLabel, primaryHref, secondaryLabel, secondaryHref, note } = Astro.props;
+const secondaryIsExternal = secondaryHref?.startsWith('https://wa.me/') ?? false;
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isEnglish = pathname.startsWith('/en');
 const isWorkersDev = Astro.url.hostname.endsWith('.workers.dev');
@@ -108,7 +109,7 @@ const breadcrumbSchema = {
     {(primaryLabel || secondaryLabel) && (
       <div class="hero-actions page-hero-actions">
         {primaryLabel && primaryHref && <a class="btn btn-dark" href={primaryHref} data-track="primary_cta_click">{primaryLabel}</a>}
-        {secondaryLabel && secondaryHref && <a class="btn btn-outline" href={secondaryHref} data-track="secondary_cta_click">{secondaryLabel}</a>}
+        {secondaryLabel && secondaryHref && <a class="btn btn-outline" href={secondaryHref} data-track="secondary_cta_click" target={secondaryIsExternal ? "_blank" : undefined} rel={secondaryIsExternal ? "noopener noreferrer" : undefined}>{secondaryLabel}</a>}
       </div>
     )}
     {note && <p class="hero-note-light">{note}</p>}

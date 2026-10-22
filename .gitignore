@@ -12,3 +12,5 @@ worker-configuration.d.ts
 
 # Local audit backups
 .audit360-*/
+.dev.vars
+.dev.vars.*

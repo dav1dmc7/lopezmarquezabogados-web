@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-10",
+  "baseUrl": "https://lopezmarquezabogados.com/",
+  "generatedAt": "2026-10-10T18:20:24.895Z",
+  "localScans": [
+    {
+      "kind": "analytics",
+      "name": "Cloudflare Web Analytics",
+      "found": [
+        "src/layouts/Layout.astro"
+      ]
+    },
+    {
+      "kind": "analytics",
+      "name": "Google Tag Manager",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Google Analytics / gtag",
+      "found": [
+        "src/layouts/Layout.astro",
+        "src/pages/en/employment/permanent-disability.astro",
+        "src/pages/laboral/incapacidad-permanente.astro",
+        "src/pages/laboral/incapacidad-temporal.astro",
+        "src/styles/global.css",
+        "wrangler.jsonc"
+      ]
+    },
+    {
+      "kind": "analytics",
+      "name": "Meta Pixel",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Microsoft Clarity",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Hotjar",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Plausible",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Umami",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Matomo",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "document.cookie",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "localStorage",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "sessionStorage",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "IndexedDB",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "Cache Storage API",
+      "found": []
+    },
+    {
+      "kind": "custom-tracking-events",
+      "found": [
+        "public/company-self-assessment.js",
+        "public/extranjeria-triage.js",
+        "public/indemnizacion-calculator.js",
+        "public/site.js"
+      ]
+    }
+  ],
+  "endpoints": [
+    {
+      "path": "/robots.txt",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)",
+      "body": ""
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)",
+      "body": ""
+    }
+  ],
+  "pages": [
+    {
+      "path": "/cookies",
+      "requested": "https://lopezmarquezabogados.com/cookies",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/privacidad",
+      "requested": "https://lopezmarquezabogados.com/privacidad",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/aviso-legal",
+      "requested": "https://lopezmarquezabogados.com/aviso-legal",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/cookies",
+      "requested": "https://lopezmarquezabogados.com/en/cookies",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/privacy",
+      "requested": "https://lopezmarquezabogados.com/en/privacy",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/legal-notice",
+      "requested": "https://lopezmarquezabogados.com/en/legal-notice",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/contacto",
+      "requested": "https://lopezmarquezabogados.com/contacto",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/contact",
+      "requested": "https://lopezmarquezabogados.com/en/contact",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/empresas",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/actualidad-juridica",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/contacto",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/business",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/contact",
+      "status": "ERR",
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/es/about.html",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/es/about.html",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/es/servicios",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/es/servicios",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/es/faqs.html",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/es/faqs.html",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/index_en",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/en/index_en",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/es/about",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/es/about",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/es/contact.html",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/es/contact.html",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/about_en.html",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/en/about_en.html",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    },
+    {
+      "path": "/en/faqs_en.html",
+      "status": "ERR",
+      "finalUrl": "https://lopezmarquezabogados.com/en/faqs_en.html",
+      "redirects": [],
+      "error": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "MEDIO",
+      "area": "CSP / Analytics",
+      "file": "public/_headers",
+      "detail": "La CSP restringe script-src a self; si Cloudflare inserta el beacon externo de Web Analytics en el edge, debe comprobarse que el navegador no lo bloquea. Los eventos dataLayer locales no prueban transmisión de datos."
+    },
+    {
+      "severity": "MEDIO",
+      "area": "Conectividad de auditoría",
+      "detail": "30 de 30 solicitudes fallaron antes de obtener una respuesta HTTP. Ejemplo: TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms). Comprueba conectividad con curl y repite la auditoría."
+    }
+  ],
+  "limitations": [
+    "La auditoría no envía consultas ni ejecuta JavaScript en un navegador real; no toca el backend de correo ni la base de datos.",
+    "El HTML recibido sí permite detectar scripts inyectados en la respuesta, pero no sustituye una revisión del panel de Cloudflare ni una prueba de cookies tras interacciones reales.",
+    "No se miden Lighthouse/Core Web Vitals de laboratorio en esta auditoría; esos datos requieren navegador/PSI o analítica real."
+  ],
+  "connectivity": {
+    "attemptedRequests": 30,
+    "networkFailures": 30,
+    "failureRate": 1,
+    "inconclusive": true,
+    "sampleError": "TypeError: fetch failed | code=UND_ERR_CONNECT_TIMEOUT | cause=Connect Timeout Error (attempted addresses: 188.114.96.5:443, 188.114.97.5:443, timeout: 10000ms)",
+    "note": "La mayoría de solicitudes fallaron a nivel de conexión desde el entorno que ejecuta Node. No se debe interpretar como caída de todas las páginas; comparar con curl y navegador."
+  },
+  "analyticsSummary": {
+    "sourceTrackers": [
+      {
+        "kind": "analytics",
+        "name": "Cloudflare Web Analytics",
+        "found": [
+          "src/layouts/Layout.astro"
+        ]
+      },
+      {
+        "kind": "analytics",
+        "name": "Google Analytics / gtag",
+        "found": [
+          "src/layouts/Layout.astro",
+          "src/pages/en/employment/permanent-disability.astro",
+          "src/pages/laboral/incapacidad-permanente.astro",
+          "src/pages/laboral/incapacidad-temporal.astro",
+          "src/styles/global.css",
+          "wrangler.jsonc"
+        ]
+      }
+    ],
+    "liveTrackers": [],
+    "customTrackingSourceFiles": [
+      "public/company-self-assessment.js",
+      "public/extranjeria-triage.js",
+      "public/indemnizacion-calculator.js",
+      "public/site.js"
+    ],
+    "note": "No se detectó el beacon de Cloudflare ni una etiqueta de analítica conocida en el HTML consultado. Eso no demuestra por sí solo que la analítica esté desactivada en el dashboard: comprobar la inyección edge y la consola de un navegador real."
+  },
+  "cookieSummary": {
+    "observedSetCookieHeaders": [],
+    "sourceStorageApis": [],
+    "note": "Set-Cookie solo refleja la respuesta HTTP inspeccionada; los scripts podrían añadir cookies después de ejecutar en navegador, por lo que debe hacerse una prueba limpia en Chrome/Firefox con DevTools."
+  },
+  "summary": {
+    "pagesChecked": 20,
+    "routesFromSitemap": 0,
+    "provisionalRoutesUsed": 12,
+    "sitemapVerified": false,
+    "high": 0,
+    "medium": 2,
+    "low": 0,
+    "status": "AUDITORIA INCONCLUSA: CONECTIVIDAD"
+  }
+}

@@ -52,3 +52,8 @@
 
 # New information architecture: keep the old duplicate labour-company URL but consolidate it.
 /laboral/asesoramiento-empresas /empresas/asesoramiento-laboral 301
+
+# Exact legacy paths reported by Google Search Console (permanent redirects).
+/en/ /en 301
+/index_en /en 301
+/index_en.html /en 301

@@ -1,0 +1,23 @@
+---
+interface Props {
+  locale: 'es' | 'en';
+}
+
+const { locale } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? '';
+---
+
+{siteKey && <div class="field full turnstile-field">
+  <div
+    id="contact-turnstile"
+    data-sitekey={siteKey}
+    data-locale={locale}
+    aria-label={locale === 'en' ? 'Security check' : 'Comprobación de seguridad'}
+  ></div>
+  <input type="hidden" name="cf-turnstile-response" value="" />
+  <p id="turnstile-status" class="small" role="status" aria-live="polite" hidden></p>
+  <button class="link-arrow turnstile-retry" type="button" hidden>
+    {locale === 'en' ? 'Retry the security check' : 'Reintentar la comprobación de seguridad'}
+  </button>
+  <script is:inline src="/contact-turnstile.js" defer></script>
+</div>}

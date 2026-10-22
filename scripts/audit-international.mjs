@@ -25,14 +25,14 @@ for (const needle of ["'/laboral': '/en/employment'", "'/extranjeria': '/en/immi
 }
 
 if (!layout.includes('href={isEnglish ? \'/en\' : \'/\'}')) errors.push('Layout: brand does not return to current language home');
-if (!layout.includes("{isEnglish ? 'WhatsApp us' : 'WhatsApp'}")) errors.push('Layout: floating WhatsApp labels are not localized');
-if (layout.includes('class="floating-contact"') && layout.includes('{isEnglish ? \'Email us\' : \'Email\'}')) errors.push('Layout: floating contact still says Email while opening WhatsApp');
+if (layout.includes('class="floating-contact"') || layout.includes('class="mobile-conversion-bar"')) errors.push('Layout: fixed contact controls can obscure mobile content');
 if (!layout.includes("isEnglish ? 'Primary navigation' : 'Navegación principal'")) errors.push('Layout: navigation language labels missing');
 if (!layout.includes("isEnglish ? 'Office' : 'Despacho'")) errors.push('Layout: footer office heading not localized');
 
 if (!calc.includes('lang="en"') && !calc.includes("lang?: 'es' | 'en'")) errors.push('calculator: English mode unavailable');
-if (!calcJs.includes('monthlySalary(annualSalary) * 12')) errors.push('calculator: objective cap not based on 12 monthly payments');
-if (!calcJs.includes('monthly * 24')) errors.push('calculator: unfair cap not based on 24 monthly payments');
+if (!calcJs.includes('const capAmount = daily * 360')) errors.push('calculator: objective cap not based on 360 daily salary units');
+if (!calcJs.includes('const capAmount = daily * 720')) errors.push('calculator: unfair cap not based on 720 daily salary units');
+if (!calcJs.includes('daily * 1260')) errors.push('calculator: legacy cap not based on 1,260 daily salary units');
 if (!triage.includes('data-locale')) errors.push('triage: locale missing');
 if (!triageJs.includes("form.dataset.locale") || !triageJs.includes("const en =")) errors.push('triage JS: locale-aware route selection missing');
 if (!company.includes('data-locale')) errors.push('company assessment: locale missing');

@@ -1,22 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import { site } from '../lib/site';
 ---
-<Layout title="Aviso legal | López Márquez Abogados" description="Información sobre identificación, contacto y condiciones de uso del sitio web de López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Información legal" title="Aviso legal" description="Identificación, contacto y condiciones de uso del sitio web." />
+<Layout title="Aviso legal | López Márquez Abogados" description="Información sobre el sitio web, canales de contacto y condiciones de uso." noindex={true}>
+<PageHero eyebrow="Información legal" title="Aviso legal" description="Información general y condiciones de uso de este sitio web." />
 <section class="section"><div class="container prose">
-  <h2>1. Titular del sitio</h2>
-  <p>La identificación del titular del sitio y sus datos legales deben confirmarse antes de publicar este aviso.</p>
-  <h2>2. Actividad profesional</h2>
-  <p>López Márquez Abogados presta servicios de asesoramiento jurídico. El ejercicio profesional está sujeto a la normativa aplicable y a las obligaciones deontológicas que correspondan al profesional o profesionales que intervengan en cada encargo.</p>
-  <h2>3. Condiciones de uso</h2>
-  <p>Los contenidos de este sitio tienen carácter informativo y no constituyen por sí mismos asesoramiento jurídico ni crean una relación profesional. La información puede quedar desactualizada cuando cambien la normativa, la jurisprudencia o las circunstancias de un caso.</p>
-  <p>No utilices este sitio para asumir que un plazo queda preservado por contactar mediante la web. Cuando exista un plazo, debe comprobarse con la documentación y la normativa aplicables.</p>
-  <h2>4. Propiedad intelectual</h2>
-  <p>Los textos, elementos gráficos, estructura y demás contenidos del sitio pertenecen a sus respectivos titulares y no podrán reproducirse o reutilizarse fuera de los límites legalmente permitidos sin la autorización correspondiente.</p>
-  <h2>5. Enlaces externos</h2>
-  <p>Cuando el sitio remite a fuentes oficiales, mapas, mensajería o terceros, el contenido del servicio enlazado se rige por sus propias condiciones.</p>
-  <h2>6. Protección de datos</h2>
-  <p>El tratamiento de los datos enviados mediante la web se explica en la <a href="/privacidad">Política de privacidad</a>.</p>
+  <h2>1. Sitio web y contacto</h2>
+  <p><strong>{site.name}</strong></p>
+  <p>Dirección de contacto: {site.address.street}, {site.address.postalCode} {site.address.locality}, {site.address.region}.</p>
+  <p>Email: <a href={site.emailHref}>{site.email}</a> · Teléfono: <a href={site.phoneHref}>{site.phone}</a>.</p>
+  <h2>2. Naturaleza de la información</h2>
+  <p>Los contenidos tienen carácter general e informativo. No sustituyen la valoración de documentos, fechas y circunstancias concretas ni constituyen por sí solos una aceptación de encargo profesional.</p>
+  <p>El envío de un formulario, correo o mensaje no suspende ni interrumpe por sí mismo ningún plazo legal. Si existe una fecha próxima, contacta por teléfono y verifica el cómputo con la documentación aplicable.</p>
+  <h2>3. Actualización de contenidos</h2>
+  <p>La normativa, los procedimientos y los criterios de aplicación pueden cambiar. Cuando se enlaza una fuente oficial, debe consultarse el texto vigente y comprobar si la regla resulta aplicable al caso concreto.</p>
+  <h2>4. Propiedad intelectual y enlaces</h2>
+  <p>Los contenidos y elementos del sitio se encuentran protegidos por las normas aplicables. Los enlaces a sitios de terceros se ofrecen como referencia; el contenido y las condiciones de esos servicios dependen de sus respectivos titulares.</p>
+  <h2>5. Protección de datos</h2>
+  <p>La información sobre el tratamiento de datos enviados desde esta web está disponible en la <a href="/privacidad">Política de privacidad</a> y la <a href="/cookies">Política de cookies</a>.</p>
 </div></section>
 </Layout>

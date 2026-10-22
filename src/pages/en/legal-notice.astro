@@ -1,22 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
+import { site } from '../../lib/site';
 ---
-<Layout title="Legal Notice | López Márquez Abogados" description="Website identification, contact information and terms of use for López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Legal information" title="Legal Notice" description="Identification, contact details and website terms." />
+<Layout title="Legal Notice | López Márquez Abogados" description="Website information, contact channels and terms of use." noindex={true}>
+<PageHero eyebrow="Legal information" title="Legal Notice" description="General information and terms governing use of this website." />
 <section class="section"><div class="container prose">
-  <h2>1. Website owner</h2>
-  <p>The website owner’s identity and legal details must be confirmed before this notice is published.</p>
-  <h2>2. Professional activity</h2>
-  <p>López Márquez Abogados provides legal advice. Professional practice is subject to applicable legislation and the professional rules relevant to the lawyers handling each engagement.</p>
-  <h2>3. Website use</h2>
-  <p>Website content is general information only. It is not, by itself, legal advice and does not create a professional relationship. Information may become outdated when legislation, case law or the circumstances of a matter change.</p>
-  <p>Do not use this website to assume that a deadline is preserved simply by contacting the firm online.</p>
-  <h2>4. Intellectual property</h2>
-  <p>Texts, graphics, structure and other website content belong to their respective rights holders and may not be reused outside applicable legal limits without the relevant authorisation.</p>
-  <h2>5. External links</h2>
-  <p>Links to official sources, maps, messaging services and other providers are subject to those services’ own terms.</p>
-  <h2>6. Privacy</h2>
-  <p>Personal data submitted through the website is described in the <a href="/en/privacy">Privacy Policy</a>.</p>
+  <h2>1. Website and contact</h2>
+  <p><strong>{site.name}</strong></p>
+  <p>Contact address: {site.address.street}, {site.address.postalCode} {site.address.locality}, {site.address.region}.</p>
+  <p>Email: <a href={site.emailHref}>{site.email}</a> · Phone: <a href={site.phoneHref}>{site.phone}</a>.</p>
+  <h2>2. Nature of the information</h2>
+  <p>Website content is general information. It does not replace the review of the documents, dates and circumstances of a particular matter and does not by itself constitute acceptance of a professional engagement.</p>
+  <p>Submitting a form, email or message does not by itself suspend or interrupt a legal deadline. If a deadline is approaching, call and verify the calculation against the relevant documents.</p>
+  <h2>3. Content updates</h2>
+  <p>Legislation, procedures and their application may change. Where an official source is linked, consult the current text and check whether the rule applies to the particular circumstances.</p>
+  <h2>4. Intellectual property and links</h2>
+  <p>Website content and elements are protected by applicable law. Links to third-party websites are provided as references; their content and terms are controlled by those providers.</p>
+  <h2>5. Privacy</h2>
+  <p>Information about personal data submitted through this website is available in the <a href="/en/privacy">Privacy Policy</a> and <a href="/en/cookies">Cookie Policy</a>.</p>
 </div></section>
 </Layout>

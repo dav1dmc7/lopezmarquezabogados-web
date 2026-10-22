@@ -3,12 +3,13 @@ import { site } from '../lib/site';
 const emailHref = site.emailHref;
 const isEnglish = Astro.url.pathname.startsWith('/en');
 ---
-<section class="section section-paper lm-tool" id="revision-preventiva" aria-labelledby="autodiagnostico-title">
+<section class="section section-paper lm-tool" id="autodiagnostico-empresa" aria-labelledby="autodiagnostico-title">
+  <span id="revision-preventiva" class="anchor-alias" aria-hidden="true"></span>
   <div class="container split">
     <div>
       <span class="eyebrow">{isEnglish ? 'Preventive review' : 'Revisión preventiva'}</span>
       <h2 id="autodiagnostico-title">{isEnglish ? 'Which employment decisions in your company are worth reviewing before you act?' : '¿Qué decisiones laborales de tu empresa merece la pena revisar antes de ejecutarlas?'}</h2>
-      <p class="small">{isEnglish ? 'Answer a few questions about how employment decisions are handled. There is no score: the result highlights where legal review may be useful.' : 'Responde unas preguntas sobre cómo se toman las decisiones laborales en tu empresa. No hay una puntuación: el resultado señala dónde puede ser útil una revisión jurídica.'}</p>
+      <p class="small">{isEnglish ? 'Answer a few questions about how employment decisions are handled. Workforce size adds context but is not a legal threshold; the result highlights where review may be useful.' : 'Responde unas preguntas sobre cómo se toman las decisiones laborales en tu empresa. El tamaño de la plantilla aporta contexto, pero no es un umbral legal; el resultado señala dónde puede ser útil revisar.'}</p>
     </div>
     <div class="lm-tool-card">
       <form id="empresa-autodiagnostico" data-email={site.email} data-mailto={emailHref} data-locale={isEnglish ? 'en' : 'es'}>

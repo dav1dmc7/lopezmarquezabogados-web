@@ -1,0 +1,3125 @@
+{
+  "date": "2026-10-19",
+  "baseUrl": "https://lopezmarquezabogados.com/",
+  "generatedAt": "2026-10-19T18:22:41.078Z",
+  "localScans": [
+    {
+      "kind": "analytics",
+      "name": "Cloudflare Web Analytics",
+      "found": [
+        "src/layouts/Layout.astro"
+      ]
+    },
+    {
+      "kind": "analytics",
+      "name": "Google Tag Manager",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Google Analytics / gtag",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Meta Pixel",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Microsoft Clarity",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Hotjar",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Plausible",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Umami",
+      "found": []
+    },
+    {
+      "kind": "analytics",
+      "name": "Matomo",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "document.cookie",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "localStorage",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "sessionStorage",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "IndexedDB",
+      "found": []
+    },
+    {
+      "kind": "storage-api",
+      "name": "Cache Storage API",
+      "found": []
+    },
+    {
+      "kind": "custom-tracking-events",
+      "found": [
+        "public/analytics.js",
+        "public/company-self-assessment.js",
+        "public/extranjeria-triage.js",
+        "public/indemnizacion-calculator.js",
+        "public/site.js"
+      ]
+    }
+  ],
+  "endpoints": [
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/robots.txt",
+      "contentType": "text/plain",
+      "error": "",
+      "redirectChain": [],
+      "body": "User-agent: *\nAllow: /\n\nSitemap: https://lopezmarquezabogados.com/sitemap.xml\n"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/sitemap.xml",
+      "contentType": "application/xml",
+      "error": "",
+      "redirectChain": [],
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://lopezmarquezabogados.com/recursos/primeras-horas-despido</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/actualidad-juridica</loc></url>\n  <url><loc>https://lopezmarquezabogados.com</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/despidos</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/indemnizacion-despido</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/reclamacion-salarios</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/accidentes-laborales</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/incapacidad-temporal</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/incapacidad-permanente</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/laboral/penal-laboral</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/extranjeria</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/extranjeria/arraigo</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/extranjeria/residencia</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/empresas</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/empresas/asesoramiento-laboral</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/empresas/iguala-laboral</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/otras-areas</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/civil</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/penal</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/administrativo</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/sobre-nosotros</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/preguntas-frecuentes</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/recursos</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/contacto</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment-dismissal</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment-severance</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment-salary-claims</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/workplace-accidents</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/employment/permanent-disability</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/immigration</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/immigration/residency</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/immigration/regularisation</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/immigration/spanish-nationality</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/immigration/family-reunification</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/business</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/business/retainer</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/about</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/faqs</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/legal-updates</loc></url>\n  <url><loc>https://lopezmarquezabogados.com/en/contact</loc></url>\n</urlset>"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/cookies",
+      "requested": "https://lopezmarquezabogados.com/cookies",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/cookies",
+      "redirectChain": [],
+      "title": "Política de cookies | López Márquez Abogados",
+      "description": "Información sobre cookies y tecnologías de almacenamiento o acceso utilizadas en la web de López Márquez Abogados.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/cookies",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Política de cookies",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/privacidad",
+      "requested": "https://lopezmarquezabogados.com/privacidad",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/privacidad",
+      "redirectChain": [],
+      "title": "Política de privacidad | López Márquez Abogados",
+      "description": "Información ampliada sobre el tratamiento de datos personales en la web y en las consultas enviadas a López Márquez Abogados.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/privacidad",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Política de privacidad",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/aviso-legal",
+      "requested": "https://lopezmarquezabogados.com/aviso-legal",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/aviso-legal",
+      "redirectChain": [],
+      "title": "Aviso legal | López Márquez Abogados",
+      "description": "Información sobre identificación, contacto y condiciones de uso del sitio web de López Márquez Abogados.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/aviso-legal",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Aviso legal",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/en/cookies",
+      "requested": "https://lopezmarquezabogados.com/en/cookies",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/cookies",
+      "redirectChain": [],
+      "title": "Cookie Policy | López Márquez Abogados",
+      "description": "Information about cookies and storage/access technologies currently used by the López Márquez Abogados website.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/en/cookies",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Cookie Policy",
+      "language": "en",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/en/privacy",
+      "requested": "https://lopezmarquezabogados.com/en/privacy",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/privacy",
+      "redirectChain": [],
+      "title": "Privacy Policy | López Márquez Abogados",
+      "description": "Detailed information about personal-data processing on the López Márquez Abogados website and enquiry channels.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/en/privacy",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Privacy Policy",
+      "language": "en",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/en/legal-notice",
+      "requested": "https://lopezmarquezabogados.com/en/legal-notice",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/legal-notice",
+      "redirectChain": [],
+      "title": "Legal Notice | López Márquez Abogados",
+      "description": "Website identification, contact information and terms of use for López Márquez Abogados.",
+      "robots": "noindex,follow",
+      "canonical": "https://lopezmarquezabogados.com/en/legal-notice",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Legal Notice",
+      "language": "en",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/contacto",
+      "requested": "https://lopezmarquezabogados.com/contacto",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/contacto",
+      "redirectChain": [],
+      "title": "Contacto | López Márquez Abogados",
+      "description": "Contacta con López Márquez Abogados en Barcelona. Cuéntanos qué ha ocurrido, el área jurídica y la fecha relevante para una primera revisión.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/contacto",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Cuéntanos qué ha ocurrido. Empezaremos por lo esencial.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "path": "/en/contact",
+      "requested": "https://lopezmarquezabogados.com/en/contact",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/contact",
+      "redirectChain": [],
+      "title": "Contact an Employment or Immigration Lawyer | Barcelona | López Márquez Abogados",
+      "description": "Contact López Márquez Abogados in Barcelona, Spain. Share the area, relevant date and essential facts so the firm can review your enquiry.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/contact",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Need a lawyer in Barcelona? Start with the facts and the date that matters.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido",
+      "redirectChain": [],
+      "title": "Qué hacer después de un despido | Primeras horas | López Márquez Abogados",
+      "description": "Qué hacer durante las primeras horas tras un despido: documentos, fechas, finiquito, indemnización y primeros pasos para revisar el caso.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Te acaban de despedir: esto es lo que conviene hacer primero.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/actualidad-juridica",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/actualidad-juridica",
+      "redirectChain": [],
+      "title": "Actualidad jurídica · Laboral y Extranjería | López Márquez Abogados",
+      "description": "Novedades jurídicas seleccionadas del BOE sobre Derecho Laboral, Extranjería y empresa, explicadas de forma práctica por López Márquez Abogados.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/actualidad-juridica",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Cambios jurídicos explicados para saber si pueden afectarte.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/actualidad-juridica"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/legal-updates"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/actualidad-juridica"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/",
+      "redirectChain": [],
+      "title": "Abogados en Barcelona | Laboral, Extranjería y Empresas | López Márquez Abogados",
+      "description": "López Márquez Abogados en Barcelona. Derecho Laboral, Extranjería y asesoramiento laboral a empresas. Explica tu situación y descubre qué conviene revisar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Derecho Laboral, Extranjería y Empresa en Barcelona. Claridad para decisiones que importan.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral",
+      "redirectChain": [],
+      "title": "Abogado laboralista en Barcelona | Despidos, salarios e incapacidad | López Márquez Abogados",
+      "description": "Abogado laboralista en Barcelona para trabajadores y empresas: despidos, indemnizaciones, salarios, accidentes e incapacidad. Revisa tu situación, documentos y plazos.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Te han despedido, te deben dinero o tienes un problema en el trabajo?",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/despidos",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/despidos",
+      "redirectChain": [],
+      "title": "Abogado para despidos en Barcelona | López Márquez Abogados",
+      "description": "Qué revisar ante un despido: carta, fecha de efectos, finiquito, indemnización y plazo de impugnación. Información general y contacto con López Márquez Abogados.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/despidos",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Te han despedido. Ahora importan los hechos y las fechas.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/despidos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-dismissal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/despidos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido",
+      "redirectChain": [],
+      "title": "Indemnización por despido: cálculo y revisión | Barcelona | López Márquez Abogados",
+      "description": "Calcula una estimación de indemnización por despido y descubre qué documentos y datos hay que revisar para saber si la cifra encaja con tu caso.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Haz una primera estimación. Después comprobamos si la cifra encaja con tu caso.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-severance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/indemnizacion-calculator.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios",
+      "redirectChain": [],
+      "title": "Reclamación de salarios en Barcelona | López Márquez Abogados",
+      "description": "Abogado laboralista para reclamar salarios, diferencias de nómina y otras cantidades pendientes. Revisión de documentación y plazos.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Te deben dinero de tu trabajo? Primero hay que saber exactamente cuánto y por qué.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-salary-claims"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/accidentes-laborales",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/accidentes-laborales",
+      "redirectChain": [],
+      "title": "Abogado para accidentes laborales en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento jurídico ante accidentes de trabajo: documentación, comunicaciones, responsabilidades y vías de actuación.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/accidentes-laborales",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Después de un accidente laboral, lo importante es saber qué ocurrió y qué puedes acreditar.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/accidentes-laborales"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/workplace-accidents"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/accidentes-laborales"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal",
+      "redirectChain": [],
+      "title": "Abogado por incapacidad temporal en Barcelona | Baja médica | López Márquez Abogados",
+      "description": "Asesoramiento laboral en Barcelona sobre incapacidad temporal y baja médica: duración, contingencia, documentación y problemas con la empresa o la Seguridad Social.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Estás de baja médica y necesitas saber qué puede pasar con tu trabajo?",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente",
+      "redirectChain": [],
+      "title": "Abogado por incapacidad permanente en Barcelona | INSS | López Márquez Abogados",
+      "description": "Asesoramiento en Barcelona sobre incapacidad permanente: grados, Seguridad Social, revisión de resoluciones y efectos sobre la relación laboral tras la reforma de 2025.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Tu salud ya no te permite trabajar como antes? Revisa la incapacidad permanente y sus efectos laborales.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment/permanent-disability"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/laboral/penal-laboral",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/laboral/penal-laboral",
+      "redirectChain": [],
+      "title": "Penal laboral en Barcelona | Accidentes y delitos | López Márquez Abogados",
+      "description": "Valoración de hechos laborales con posible dimensión penal, especialmente ante accidentes graves o conductas que puedan exigir una vía adicional.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/laboral/penal-laboral",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Algunos hechos relacionados con el trabajo pueden requerir revisar también la posible vía penal.",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/extranjeria",
+      "redirectChain": [],
+      "title": "Abogado de Extranjería en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento en Extranjería en Barcelona: arraigo, residencia, nacionalidad española y reagrupación familiar según la situación personal.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/extranjeria",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿No sabes qué trámite necesitas? Empieza por tu situación, no por el nombre del trámite.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/extranjeria-triage.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria/arraigo",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/extranjeria/arraigo",
+      "redirectChain": [],
+      "title": "Arraigo en España 2026 | Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento sobre arraigo en España en 2026: modalidad aplicable, permanencia, requisitos y documentación.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/extranjeria/arraigo",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Arraigo: dos años pueden ser el punto de partida, pero no son toda la respuesta.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/arraigo"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/regularisation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/arraigo"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola",
+      "redirectChain": [],
+      "title": "Nacionalidad española por residencia | Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento sobre nacionalidad española por residencia: plazo aplicable, residencia legal, documentación y requisitos del expediente.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Cuándo puedes solicitar la nacionalidad española?",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/spanish-nationality"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria/residencia",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/extranjeria/residencia",
+      "redirectChain": [],
+      "title": "Abogado de Extranjería y residencia en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento sobre autorizaciones de residencia, renovaciones, modificaciones y otras vías de Extranjería según la situación personal.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/extranjeria/residencia",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Necesitas una autorización de residencia y no sabes qué vía te corresponde?",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/residencia"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/residency"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/residencia"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar",
+      "redirectChain": [],
+      "title": "Reagrupación familiar en España | Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento para expedientes de reagrupación familiar: vínculo, residencia, documentación y requisitos que conviene comprobar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Quieres reunirte con tu familia. Primero hay que comprobar quién puede ser reagrupado y qué vía corresponde.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/family-reunification"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/empresas",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/empresas",
+      "redirectChain": [],
+      "title": "Abogados para empresas en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento laboral para empresas en Barcelona: contratación, conflictos, medidas disciplinarias, despidos y apoyo jurídico recurrente.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/empresas",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Tienes una decisión laboral sobre la mesa? Revísala antes de ejecutarla.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/empresas"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/business"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/empresas"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/company-self-assessment.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/empresas/asesoramiento-laboral",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/empresas/asesoramiento-laboral",
+      "redirectChain": [],
+      "title": "Asesoramiento laboral preventivo para empresas en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento laboral preventivo para empresas: contratos, medidas disciplinarias, conflictos, despidos y decisiones que conviene revisar antes de ejecutar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/empresas/asesoramiento-laboral",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "¿Tienes una decisión laboral sobre la mesa? Revísala antes de ejecutarla.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/empresas/asesoramiento-laboral"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/business/employment-advice"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/empresas/asesoramiento-laboral"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/empresas/iguala-laboral",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/empresas/iguala-laboral",
+      "redirectChain": [],
+      "title": "Iguala laboral para empresas en Barcelona | López Márquez Abogados",
+      "description": "Asesoramiento laboral recurrente para empresas que necesitan un canal estable para consultas, prevención y decisiones sensibles.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/empresas/iguala-laboral",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Un canal jurídico estable para las decisiones laborales del día a día.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/empresas/iguala-laboral"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/business/retainer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/empresas/iguala-laboral"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/otras-areas",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/otras-areas",
+      "redirectChain": [],
+      "title": "Otras áreas jurídicas en Barcelona | López Márquez Abogados",
+      "description": "Orientación inicial en Civil, Penal y Administrativo en Barcelona, con revisión de documentos, fechas y encaje del asunto.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/otras-areas",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "También podemos orientarte cuando tu problema no es Laboral ni Extranjería.",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/civil",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/civil",
+      "redirectChain": [],
+      "title": "Orientación sobre asuntos civiles en Barcelona | López Márquez Abogados",
+      "description": "Valoración inicial de contratos, reclamaciones e incumplimientos para comprobar el encaje de la consulta y los pasos que conviene revisar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/civil",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Orientación en asuntos civiles concretos",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/penal",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/penal",
+      "redirectChain": [],
+      "title": "Orientación sobre asuntos penales en Barcelona | López Márquez Abogados",
+      "description": "Valoración inicial de hechos con posible relevancia penal y del encaje de la consulta con la práctica del despacho.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/penal",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Orientación sobre asuntos con posible dimensión penal",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/administrativo",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/administrativo",
+      "redirectChain": [],
+      "title": "Orientación sobre procedimientos administrativos en Barcelona | López Márquez Abogados",
+      "description": "Valoración inicial de resoluciones y requerimientos, con atención a la fecha de notificación y al encaje de la consulta.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/administrativo",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Orientación sobre resoluciones y procedimientos administrativos",
+      "language": "es",
+      "hreflangs": [],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/sobre-nosotros",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/sobre-nosotros",
+      "redirectChain": [],
+      "title": "El despacho | López Márquez Abogados",
+      "description": "Conoce López Márquez Abogados en Barcelona: criterio jurídico, atención directa y una forma de trabajar centrada en hechos, documentos y decisiones.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/sobre-nosotros",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Un despacho donde puedas explicar tu problema tal como lo estás viviendo.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/sobre-nosotros"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/about"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/sobre-nosotros"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/preguntas-frecuentes",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/preguntas-frecuentes",
+      "redirectChain": [],
+      "title": "Preguntas frecuentes | López Márquez Abogados",
+      "description": "Respuestas a dudas frecuentes sobre despidos, Extranjería, empresas y el primer contacto con López Márquez Abogados.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/preguntas-frecuentes",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Antes de decidir, estas son algunas de las preguntas más habituales.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/preguntas-frecuentes"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/faqs"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/preguntas-frecuentes"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos",
+      "redirectChain": [],
+      "title": "Guías jurídicas para tomar decisiones con más claridad | López Márquez Abogados",
+      "description": "Guías prácticas de López Márquez Abogados para entender despidos, Extranjería y otros asuntos antes de decidir qué hacer.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Cuando necesitas saber qué hacer, empieza por la información correcta.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles",
+      "redirectChain": [],
+      "title": "Despido: plazo de 20 días hábiles | Barcelona | López Márquez Abogados",
+      "description": "Guía práctica sobre el plazo de 20 días hábiles para reclamar frente a un despido en España y las fechas que conviene comprobar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Despido: la fecha puede ser tan importante como la carta.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026",
+      "redirectChain": [],
+      "title": "Arraigo en España: requisito de dos años en 2026 | López Márquez Abogados",
+      "description": "Guía general sobre el requisito de permanencia en el arraigo en 2026, las principales modalidades y los puntos que conviene revisar antes de presentar una solicitud.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Arraigo: dos años es una regla general, no una respuesta automática.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos",
+      "redirectChain": [],
+      "title": "Nacionalidad española: plazos de residencia | López Márquez Abogados",
+      "description": "Guía general sobre los plazos de residencia para solicitar la nacionalidad española por residencia y los datos que conviene revisar antes de presentar.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Nacionalidad por residencia: el plazo depende de tu situación jurídica.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025",
+      "redirectChain": [],
+      "title": "Incapacidad permanente y trabajo: cambios de la Ley 2/2025 | López Márquez Abogados",
+      "description": "Guía práctica sobre incapacidad permanente y trabajo tras la Ley 2/2025: adaptación del puesto, cambio de puesto, plazos y revisión de la resolución.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Incapacidad permanente y trabajo: qué cambió con la Ley 2/2025",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/contacto",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/contacto",
+      "redirectChain": [],
+      "title": "Contacto | López Márquez Abogados",
+      "description": "Contacta con López Márquez Abogados en Barcelona. Cuéntanos qué ha ocurrido, el área jurídica y la fecha relevante para una primera revisión.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/contacto",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Cuéntanos qué ha ocurrido. Empezaremos por lo esencial.",
+      "language": "es",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirectChain": [],
+      "title": "Employment &amp; Immigration Lawyers in Barcelona | Spain | López Márquez Abogados",
+      "description": "Employment and immigration lawyers in Barcelona advising individuals and businesses across Spain. English-language enquiries welcome.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Legal advice that helps you understand what to do next.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment",
+      "redirectChain": [],
+      "title": "Employment Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Employment law advice in Barcelona and Spain for dismissals, severance, salary claims, workplace accidents and companies. English-language enquiries welcome.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Employment lawyer in Barcelona: start with the problem you need to solve.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment-dismissal",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment-dismissal",
+      "redirectChain": [],
+      "title": "Employment Dismissal Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Employment dismissal advice in Barcelona and Spain. Review the dismissal letter, notification date, settlement, severance and next steps with an English-speaking legal team.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment-dismissal",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Dismissed in Barcelona? Start with the letter and the exact date.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/despidos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-dismissal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/despidos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment-severance",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment-severance",
+      "redirectChain": [],
+      "title": "Dismissal Severance Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Review dismissal severance and compensation in Barcelona and Spain. Check service length, salary, termination type and the documents behind the figure offered by your employer.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment-severance",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Is the dismissal compensation figure correct? Start with the underlying facts.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-severance"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/indemnizacion-despido"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/indemnizacion-calculator.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment-salary-claims",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment-salary-claims",
+      "redirectChain": [],
+      "title": "Unpaid Salary Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Employment advice for unpaid salary and wage claims in Barcelona and Spain. Review payslips, outstanding amounts, employment documents and the next step.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment-salary-claims",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "If you have not been paid everything you are owed, start with the records.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment-salary-claims"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/reclamacion-salarios"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/workplace-accidents",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/workplace-accidents",
+      "redirectChain": [],
+      "title": "Workplace Accident Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Legal guidance after a workplace accident in Barcelona and Spain. Preserve the facts, employment documents and medical records and understand what should be reviewed.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/workplace-accidents",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "After a workplace accident, preserve the facts before they disappear.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/accidentes-laborales"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/workplace-accidents"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/accidentes-laborales"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave",
+      "redirectChain": [],
+      "title": "Temporary Sickness Leave Lawyer | Barcelona, Spain | López Márquez Abogados",
+      "description": "English-language legal advice in Barcelona about temporary sickness leave in Spain: duration, employment issues, contingencies and key documents.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "On temporary sickness leave in Spain? Start with the date, the cause and the employment issue you need to solve.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment/temporary-sickness-leave"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-temporal"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/employment/permanent-disability",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment/permanent-disability",
+      "redirectChain": [],
+      "title": "Permanent Disability Lawyer | Barcelona, Spain | López Márquez Abogados",
+      "description": "English-language legal advice in Barcelona on permanent disability and incapacity in Spain: Social Security grades, INSS decisions and employment consequences after the 2025 reform.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/employment/permanent-disability",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Permanent disability in Spain can affect both your benefit and your job. Review both.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/employment/permanent-disability"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/laboral/incapacidad-permanente"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/immigration",
+      "redirectChain": [],
+      "title": "Immigration Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Immigration lawyer in Barcelona for residence, Spanish nationality, family reunification and regularisation in Spain. English-language enquiries welcome.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/immigration",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Immigration lawyer in Barcelona: start with the route that fits your situation.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/extranjeria-triage.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration/residency",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/immigration/residency",
+      "redirectChain": [],
+      "title": "Residence Lawyer in Barcelona | Spain Immigration | López Márquez Abogados",
+      "description": "Residence lawyer in Barcelona helping international clients with Spanish residence permits, renewals, modifications and immigration routes.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/immigration/residency",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Spain residence lawyer: which permit or route fits your situation?",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/residencia"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/residency"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/residencia"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration/regularisation",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/immigration/regularisation",
+      "redirectChain": [],
+      "title": "Regularisation &amp; Arraigo in Spain | Barcelona Immigration Lawyer | López Márquez Abogados",
+      "description": "Legal advice on regularisation and arraigo in Spain from a Barcelona immigration law firm. Review the relevant route, residence history, evidence and current rules.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/immigration/regularisation",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Regularisation in Spain starts with the right route, not only with the time you have been here.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/arraigo"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/regularisation"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/arraigo"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration/spanish-nationality",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/immigration/spanish-nationality",
+      "redirectChain": [],
+      "title": "Spanish Nationality by Residence Lawyer | Barcelona | López Márquez Abogados",
+      "description": "Legal advice on Spanish nationality by residence in Barcelona. Review eligibility, residence history, documents and the application route.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/immigration/spanish-nationality",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Spanish nationality by residence is a separate procedure from residence itself.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/spanish-nationality"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/nacionalidad-espanola"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/immigration/family-reunification",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/immigration/family-reunification",
+      "redirectChain": [],
+      "title": "Family Reunification Lawyer in Barcelona | Spain | López Márquez Abogados",
+      "description": "Family reunification legal advice in Barcelona and Spain. Review the family relationship, the status of the person in Spain and the supporting evidence required.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/immigration/family-reunification",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Family reunification in Spain depends on the family relationship and the status of the person already here.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/immigration/family-reunification"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/extranjeria/reagrupacion-familiar"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/business",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/business",
+      "redirectChain": [],
+      "title": "Employment Lawyers for Companies in Barcelona | Spain | López Márquez Abogados",
+      "description": "Employment law advice for companies in Barcelona and across Spain: contracts, discipline, dismissals, workplace disputes and recurring preventive support.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/business",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Employment advice for companies before a sensitive decision becomes a dispute.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/empresas"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/business"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/empresas"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/company-self-assessment.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/business/retainer",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/business/retainer",
+      "redirectChain": [],
+      "title": "Ongoing Employment Legal Support for Companies | Barcelona | López Márquez Abogados",
+      "description": "Ongoing employment law support for companies in Barcelona and Spain. A recurring legal channel for employment questions, sensitive decisions and preventive review.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/business/retainer",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "A recurring legal channel for companies that handle employment decisions throughout the year.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/empresas/iguala-laboral"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/business/retainer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/empresas/iguala-laboral"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/about",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/about",
+      "redirectChain": [],
+      "title": "About López Márquez Abogados | Barcelona",
+      "description": "Learn how López Márquez Abogados works with individuals and businesses from its Barcelona office, in person and online across Spain.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/about",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "A Barcelona law firm where you can explain the problem in your own words.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/sobre-nosotros"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/about"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/sobre-nosotros"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/faqs",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/faqs",
+      "redirectChain": [],
+      "title": "FAQs | López Márquez Abogados Barcelona",
+      "description": "Frequently asked questions about employment and immigration legal matters, first contact and the López Márquez Abogados office in Barcelona.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/faqs",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Questions people often ask before contacting a lawyer in Spain.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/preguntas-frecuentes"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/faqs"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/preguntas-frecuentes"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources",
+      "redirectChain": [],
+      "title": "Legal Resources | López Márquez Abogados Barcelona",
+      "description": "Practical legal resources in English about dismissal, immigration, Spanish nationality, permanent disability and other high-intent legal questions for clients in Barcelona and Spain.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Practical legal guides for the questions that usually need an answer first.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal",
+      "redirectChain": [],
+      "title": "First Steps After a Dismissal in Spain | López Márquez Abogados",
+      "description": "First steps after dismissal in Spain: preserve the letter, note the exact date, keep the settlement and prepare the documents for an employment lawyer.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "What to Do in the First Hours After a Dismissal",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/first-hours-after-dismissal"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/primeras-horas-despido"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain",
+      "redirectChain": [],
+      "title": "Dismissal Deadline in Spain | López Márquez Abogados",
+      "description": "General information about the time limit for challenging a dismissal in Spain and why the exact notification date matters.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "How Long Do You Have to Challenge a Dismissal in Spain?",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/dismissal-deadline-spain"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/despido-20-dias-habiles"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025",
+      "redirectChain": [],
+      "title": "Permanent Disability and Employment in Spain | 2025 Reform | López Márquez Abogados",
+      "description": "Practical guide to the Spanish 2025 reform on permanent disability, workplace adjustments, alternative roles and employment termination.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Permanent disability and employment in Spain: what changed in 2025?",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/permanent-disability-employment-2025"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/incapacidad-permanente-ley-2025"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain",
+      "redirectChain": [],
+      "title": "Arraigo in Spain: Two-Year Rule | López Márquez Abogados",
+      "description": "Current high-level information on the residence threshold relevant to some forms of arraigo and why the exact route still needs individual review.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Does Arraigo in Spain Still Require Three Years?",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/arraigo-two-years-spain"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/arraigo-dos-anos-2026"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period",
+      "redirectChain": [],
+      "title": "Spanish Nationality by Residence | López Márquez Abogados",
+      "description": "A practical guide to the residence periods relevant to Spanish nationality by residence and the information to check before applying.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "How Long Do You Need to Live in Spain Before Spanish Nationality?",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/resources/spanish-nationality-residence-period"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/recursos/nacionalidad-espanola-plazos"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/legal-updates",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/legal-updates",
+      "redirectChain": [],
+      "title": "Legal Updates in Spain | Employment &amp; Immigration | Barcelona | López Márquez Abogados",
+      "description": "Selected Spanish legal updates affecting employment and immigration matters, with links to official sources. López Márquez Abogados is based in Barcelona.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/legal-updates",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Selected legal changes in Spain, with the official source beside them.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/actualidad-juridica"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/legal-updates"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/actualidad-juridica"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    },
+    {
+      "requested": "https://lopezmarquezabogados.com/en/contact",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/contact",
+      "redirectChain": [],
+      "title": "Contact an Employment or Immigration Lawyer | Barcelona | López Márquez Abogados",
+      "description": "Contact López Márquez Abogados in Barcelona, Spain. Share the area, relevant date and essential facts so the firm can review your enquiry.",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "canonical": "https://lopezmarquezabogados.com/en/contact",
+      "canonicalMismatch": false,
+      "h1Count": 1,
+      "h1": "Need a lawyer in Barcelona? Start with the facts and the date that matters.",
+      "language": "en",
+      "hreflangs": [
+        {
+          "lang": "es",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        },
+        {
+          "lang": "en",
+          "href": "https://lopezmarquezabogados.com/en/contact"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://lopezmarquezabogados.com/contacto"
+        }
+      ],
+      "scripts": [
+        "/analytics.js",
+        "/site.js",
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "externalScripts": [
+        "https://static.cloudflareinsights.com/beacon.min.js"
+      ],
+      "trackers": [
+        "Cloudflare Web Analytics"
+      ],
+      "dataLayerFound": false,
+      "customEventsFound": false,
+      "setCookieHeaders": [],
+      "csp": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests",
+      "contentType": "text/html",
+      "error": ""
+    }
+  ],
+  "redirects": [
+    {
+      "path": "/es/about.html",
+      "requested": "https://lopezmarquezabogados.com/es/about.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/sobre-nosotros",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/es/about.html",
+          "to": "https://lopezmarquezabogados.com/sobre-nosotros"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/es/servicios",
+      "requested": "https://lopezmarquezabogados.com/es/servicios",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/otras-areas",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/es/servicios",
+          "to": "https://lopezmarquezabogados.com/otras-areas"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/es/faqs.html",
+      "requested": "https://lopezmarquezabogados.com/es/faqs.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/preguntas-frecuentes",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/es/faqs.html",
+          "to": "https://lopezmarquezabogados.com/preguntas-frecuentes"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/index_en",
+      "requested": "https://lopezmarquezabogados.com/en/index_en",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/index_en",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/es/about",
+      "requested": "https://lopezmarquezabogados.com/es/about",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/sobre-nosotros",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/es/about",
+          "to": "https://lopezmarquezabogados.com/sobre-nosotros"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/es/contact.html",
+      "requested": "https://lopezmarquezabogados.com/es/contact.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/contacto",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/es/contact.html",
+          "to": "https://lopezmarquezabogados.com/contacto"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/about_en.html",
+      "requested": "https://lopezmarquezabogados.com/en/about_en.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/about",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/about_en.html",
+          "to": "https://lopezmarquezabogados.com/en/about"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/faqs_en.html",
+      "requested": "https://lopezmarquezabogados.com/en/faqs_en.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/faqs",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/faqs_en.html",
+          "to": "https://lopezmarquezabogados.com/en/faqs"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/",
+      "requested": "https://lopezmarquezabogados.com/en/",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 307,
+          "from": "https://lopezmarquezabogados.com/en/",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/index.html",
+      "requested": "https://lopezmarquezabogados.com/en/index.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/index.html",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/index_en",
+      "requested": "https://lopezmarquezabogados.com/index_en",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/index_en",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/index_en.html",
+      "requested": "https://lopezmarquezabogados.com/index_en.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/index_en.html",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/laboral.html",
+      "requested": "https://lopezmarquezabogados.com/en/laboral.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/employment",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/laboral.html",
+          "to": "https://lopezmarquezabogados.com/en/employment"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/civil.html",
+      "requested": "https://lopezmarquezabogados.com/en/civil.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/civil.html",
+          "to": "https://lopezmarquezabogados.com/en"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "path": "/en/about.html",
+      "requested": "https://lopezmarquezabogados.com/en/about.html",
+      "status": 200,
+      "finalUrl": "https://lopezmarquezabogados.com/en/about",
+      "redirects": [
+        {
+          "status": 301,
+          "from": "https://lopezmarquezabogados.com/en/about.html",
+          "to": "https://lopezmarquezabogados.com/en/about"
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "La auditoría no envía consultas ni ejecuta JavaScript en un navegador real; no toca el backend de correo ni la base de datos.",
+    "El HTML recibido sí permite detectar scripts inyectados en la respuesta, pero no sustituye una revisión del panel de Cloudflare ni una prueba de cookies tras interacciones reales.",
+    "No se miden Lighthouse/Core Web Vitals de laboratorio en esta auditoría; esos datos requieren navegador/PSI o analítica real."
+  ],
+  "connectivity": {
+    "attemptedRequests": 81,
+    "networkFailures": 0,
+    "failureRate": 0,
+    "inconclusive": false,
+    "sampleError": "",
+    "note": "No se ha detectado un fallo global de conectividad según el umbral de esta auditoría."
+  },
+  "analyticsSummary": {
+    "sourceTrackers": [
+      {
+        "kind": "analytics",
+        "name": "Cloudflare Web Analytics",
+        "found": [
+          "src/layouts/Layout.astro"
+        ]
+      }
+    ],
+    "liveTrackers": [
+      "Cloudflare Web Analytics"
+    ],
+    "customTrackingSourceFiles": [
+      "public/analytics.js",
+      "public/company-self-assessment.js",
+      "public/extranjeria-triage.js",
+      "public/indemnizacion-calculator.js",
+      "public/site.js"
+    ],
+    "note": "Cloudflare Web Analytics aparece en el HTML entregado al navegador; revisar en dashboard si incluye tráfico UE y validar CSP."
+  },
+  "cookieSummary": {
+    "observedSetCookieHeaders": [],
+    "sourceStorageApis": [],
+    "note": "Set-Cookie solo refleja la respuesta HTTP inspeccionada; los scripts podrían añadir cookies después de ejecutar en navegador, por lo que debe hacerse una prueba limpia en Chrome/Firefox con DevTools."
+  },
+  "summary": {
+    "pagesChecked": 64,
+    "routesFromSitemap": 56,
+    "provisionalRoutesUsed": 0,
+    "sitemapVerified": true,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "status": "SIN ERRORES DETECTADOS EN ESTA AUDITORIA"
+  }
+}

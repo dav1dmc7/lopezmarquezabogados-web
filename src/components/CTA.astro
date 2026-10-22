@@ -16,8 +16,8 @@ const {
       <div class="cta-actions">
         <a class="btn btn-dark" href={href} data-track="cta_click">{label}</a>
         <div class="cta-alternatives" aria-label={isEnglish ? 'Other contact options' : 'Otras formas de contacto'}>
+          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" data-track="whatsapp_click">WhatsApp</a>
           <a href={site.emailHref} data-track="email_click">Email</a>
-          <a href={site.phoneHref} data-track="phone_click">{isEnglish ? 'Call' : 'Llamar'}</a>
         </div>
       </div>
     </div>

@@ -3,29 +3,25 @@ import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { site } from '../../lib/site';
 ---
-<Layout title="Privacy Policy | López Márquez Abogados" noindex={true} description="Detailed information about personal-data processing on the López Márquez Abogados website and enquiry channels.">
-<PageHero eyebrow="Legal information" title="Privacy Policy" description="What information is collected, why it is used, how long it is kept and how to exercise your rights." />
+<Layout title="Privacy Policy | López Márquez Abogados" description="Information about personal data processing and enquiries submitted through this website." noindex={true}>
+<PageHero eyebrow="Legal information" title="Privacy Policy" description="How data submitted through this website is handled and how to exercise your rights." />
 <section class="section"><div class="container prose">
-  <h2>1. Controller</h2>
-  <p>The data controller’s identity and legal details must be confirmed before this policy is published.</p>
+  <h2>1. Enquiries and contact</h2>
+  <p>The public contact channel is identified as <strong>{site.name}</strong>. For privacy-related communications, email <a href={site.emailHref}>{site.email}</a>.</p>
   <h2>2. Data processed</h2>
-  <p>Website enquiries may include your name, email address, phone number when provided, legal area, relevant date, the page from which you reached the contact form and the description of the facts or issue you enter in the form. We do not request passport, NIE, bank details or medical records for first contact.</p>
-  <h2>3. Purposes</h2>
-  <p>To receive and answer your enquiry, identify possible urgency, assess whether the matter fits the firm’s work and, where appropriate, prepare a possible engagement for legal services.</p>
-  <h2>4. Legal bases</h2>
-  <p>The processing needed to handle the submission is based on the consent given through the form. Where the enquiry requests steps to assess a possible engagement, pre-contractual steps requested by the data subject may also apply.</p>
-  <h2>5. Recipients and providers</h2>
-  <p>The list of recipients and providers will be completed once the actual data flow is confirmed. This page remains a draft and must not be published until that review is complete.</p>
-  <h2>6. International transfers</h2>
-  <p>Whether international transfers take place and which safeguards apply must be checked against the providers and configuration selected before this policy is published.</p>
-  <h2>7. Retention</h2>
-  <p>Actual retention and deletion periods must be defined against the firm’s real practices before this policy is published. No unconfirmed period is stated here.</p>
-  <h2>8. Your rights</h2>
-  <p>You may request access, rectification, erasure, restriction, objection and portability where applicable. You may also withdraw consent at any time. To exercise your rights, email <a href={site.emailHref}>{site.email}</a> and state which right you wish to exercise.</p>
-  <p>You may also complain to the <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">Spanish Data Protection Agency (AEPD)</a>.</p>
-  <h2>9. Sensitive information</h2>
-  <p>Health data is a special category of personal data. The first-contact form does not need it; do not send it unless the firm expressly tells you which channel and conditions are appropriate.</p>
-  <h2>10. Layered information</h2>
-  <p>The basic information is displayed alongside the contact form. This page provides the extended notice for fuller review.</p>
+  <p>Depending on your enquiry, data may include your name, email address, phone number if provided, legal area, relevant date, message, source page and technical data required to protect the service. Do not send ID documents, passport details, bank information or medical information in the first contact.</p>
+  <h2>3. Purposes and legal bases</h2>
+  <p>Data is used to receive and answer enquiries, understand the issue and any urgency, assess whether it fits the services offered, manage a possible professional relationship and protect the form. The legal basis depends on the processing concerned and may include consent provided when submitting the form and pre-contractual steps requested by the data subject.</p>
+  <h2>4. Recipients</h2>
+  <p>Access is limited to those who need to handle the enquiry and to providers supplying hosting, web infrastructure, storage, security and communications delivery. Those providers must process data according to the functions and safeguards applicable to each service.</p>
+  <h2>5. International transfers</h2>
+  <p>Technology providers may operate in different countries. Where processing involves an international transfer, the mechanisms and safeguards required by applicable data-protection law must apply to that transfer.</p>
+  <h2>6. Retention</h2>
+  <p>Data is retained for as long as needed to handle the enquiry and any requested follow-up. It is then deleted or removed from ordinary use when no longer necessary, without prejudice to periods required for legal obligations or potential claims.</p>
+  <h2>7. Your rights</h2>
+  <p>You may request access, rectification, erasure, restriction, objection and portability where applicable, and withdraw consent where processing is based on it. Email <a href={site.emailHref}>{site.email}</a> and state which right you wish to exercise.</p>
+  <p>You may also complain to the <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">Spanish Data Protection Agency</a>.</p>
+  <h2>8. Security and sensitive data</h2>
+  <p>The website applies technical and organisational measures proportionate to handling enquiries. The initial form does not require documents or special categories of data. If documents need to be reviewed, an appropriate channel will be indicated.</p>
 </div></section>
 </Layout>

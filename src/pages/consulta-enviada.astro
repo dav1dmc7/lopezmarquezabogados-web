@@ -3,9 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import CTA from '../components/CTA.astro';
 ---
-<Layout title="Consulta enviada | López Márquez Abogados" description="Confirmación del envío de tu consulta a López Márquez Abogados." noindex={true}>
-<PageHero eyebrow="Consulta recibida" title="Hemos recibido tu consulta." description="La información se ha registrado correctamente. Te contactaremos utilizando los datos que has indicado." primaryLabel="Volver al inicio" primaryHref="/" secondaryLabel="Volver a contacto" secondaryHref="/contacto" note="No envíes documentos sensibles por WhatsApp o email salvo que el despacho te indique un canal adecuado." />
+<Layout title="Estado de tu consulta | López Márquez Abogados" description="Información sobre el estado de una consulta enviada al despacho." noindex={true}>
+<PageHero eyebrow="Estado de consulta" title="Estado de tu consulta"
+ description="Esta página confirma un envío cuando el servidor devuelve un estado de registro válido."
+ primaryLabel="Volver al inicio" primaryHref="/" secondaryLabel="Volver a contacto" secondaryHref="/contacto"
+ note="No envíes documentos sensibles hasta que el despacho te indique el canal adecuado. Si el asunto es urgente, contacta directamente con el despacho." />
 <section class="section"><div class="container">
+  <p id="confirmation-email-status" class="callout" role="status" aria-live="polite">El estado de una consulta enviada aparece aquí cuando se confirma la respuesta del servidor. Si enviaste el formulario sin JavaScript, escribe al email de contacto para comprobar el estado.</p>
+  <div id="confirmation-reference" class="callout" hidden><strong>Referencia de consulta:</strong> <span></span></div>
   <div class="number-list" aria-label="Qué ocurre cuando contactas">
     <div class="number-item"><span class="number">01</span><div><h3>Nos cuentas el problema</h3><p>Explícanos los hechos, la fecha relevante y qué necesitas resolver.</p></div></div>
     <div class="number-item"><span class="number">02</span><div><h3>Revisamos la información inicial</h3><p>Ordenamos los datos para detectar qué merece atención y qué documentación puede ser útil después.</p></div></div>
@@ -13,8 +18,7 @@ import CTA from '../components/CTA.astro';
     <div class="number-item"><span class="number">04</span><div><h3>Definimos alcance y honorarios</h3><p>No iniciamos un encargo sin explicarte previamente su alcance y honorarios.</p></div></div>
     <div class="number-item"><span class="number">05</span><div><h3>Comenzamos el trabajo</h3><p>Cuando el encargo queda definido, iniciamos la actuación acordada.</p></div></div>
   </div>
-  <div class="callout"><strong>Plazo orientativo de respuesta:</strong> 48–72 horas laborables. Puede variar según el volumen y la naturaleza de las consultas.</div>
   <div class="prose"><p>Ten a mano cualquier carta, resolución, contrato o comunicación con una fecha relevante. No necesitas enviarlos ahora.</p><p><a href="/recursos">Consultar recursos jurídicos →</a></p></div>
 </div></section>
-<CTA title="¿Necesitas añadir algo más?" text="Puedes volver a la página de contacto cuando necesites ampliar la información." label="Volver a contacto" href="/contacto" />
+<CTA title="¿Necesitas añadir algo más?" text="Puedes responder al correo de confirmación para ampliar o corregir la información, o volver al formulario de contacto." label="Volver a contacto" href="/contacto" />
 </Layout>

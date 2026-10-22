@@ -18,9 +18,16 @@
     if (data.necesidad === 'contratacion') priorities.push(en ? 'hiring, changes and contract documentation' : 'contratación, cambios y documentación contractual');
     if (data.necesidad === 'prevencion' || data.modelo !== 'puntual' || data.frecuencia !== 'ocasional') priorities.push(en ? 'a recurring legal channel and prevention' : 'canal jurídico recurrente y prevención');
     if (!priorities.length) priorities.push(en ? 'review of the employment processes that recur most often' : 'revisión de los procesos laborales que más se repiten');
+    const workforcePriority = {
+      '1-5': en ? 'clear ownership for employment decisions and records in a small team' : 'definir quién gestiona las decisiones y la documentación laboral en un equipo pequeño',
+      '6-15': en ? 'consistent handling of employment changes and records as the team grows' : 'mantener un criterio común para cambios y documentos laborales a medida que crece el equipo',
+      '16-49': en ? 'consistent employment processes across the company’s teams' : 'aplicar criterios laborales coherentes entre los distintos equipos',
+      '50+': en ? 'coordination of employment decisions and records across teams and managers' : 'coordinar decisiones y documentación laboral entre equipos y responsables'
+    }[data.plantilla];
+    if (workforcePriority) priorities.unshift(workforcePriority);
 
     const title = en ? 'These are the priorities suggested by your answers' : 'Estas son las prioridades que aparecen en tus respuestas';
-    const next = en ? 'The next step is to turn this general picture into a concrete situation: company activity, workforce, documents and the decision on the table.' : 'El siguiente paso es llevar esta foto general a una situación concreta: actividad, plantilla, documentación y decisión que esté sobre la mesa.';
+    const next = en ? 'The workforce size is context, not a legal threshold. The next step is to look at the company activity, documents and the decision on the table.' : 'El tamaño de la plantilla aporta contexto, pero no determina por sí solo las obligaciones legales. El siguiente paso es revisar la actividad, los documentos y la decisión concreta.';
     const emailLabel = en ? 'Email the summary to the firm' : 'Enviar resumen al despacho';
     const note = en ? 'The button opens a draft in your email app. Nothing is sent automatically.' : 'El botón abre tu aplicación de correo con un borrador. No se envía nada automáticamente.';
 
@@ -42,7 +49,7 @@
         `${en ? 'Preferred model' : 'Modelo buscado'}: ${data.modelo}`,
         '', en ? 'I would like to know the appropriate next step.' : 'Quedo pendiente de indicaciones sobre el siguiente paso.'
       ].join('\n');
-      try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'company_assessment_email_click', page_path: window.location.pathname }); } catch (_) {}
+      window.dispatchEvent(new CustomEvent('lm:track', { detail: { name: 'company_assessment_email_click' } }));
       mailto(email, en ? 'Employment legal enquiry for a company' : 'Consulta jurídica laboral para empresa', body);
     });
   });

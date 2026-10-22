@@ -15,13 +15,13 @@ const extranjeria = read('src/pages/extranjeria/index.astro');
 const about = read('src/pages/sobre-nosotros.astro');
 
 if (!site.includes("emailHref:")) errors.push('site.ts: emailHref missing');
-if (!cta.includes('emailHref') || cta.includes('site.whatsapp')) errors.push('CTA.astro: must be email-first and must not embed WhatsApp');
+if (!cta.includes('emailHref') || !cta.includes('site.whatsapp')) errors.push('CTA.astro: expected WhatsApp and direct email as secondary contact paths');
 if (!empresas.includes('CompanySelfAssessment')) errors.push('empresas/index.astro: CompanySelfAssessment missing');
 if (!extranjeria.includes('ExtranjeriaTriage')) errors.push('extranjeria/index.astro: ExtranjeriaTriage missing');
-if (!layout.includes('floating-contact')) errors.push('Layout.astro: floating contact missing');
-if (!layout.includes('href={site.whatsapp}')) errors.push('Layout.astro: floating WhatsApp contact missing');
-if (!layout.includes('data-track="whatsapp_click"')) errors.push('Layout.astro: floating WhatsApp tracking missing');
-if (layout.includes('class="floating-wa"')) errors.push('Layout.astro: obsolete floating-wa class remains');
+if (!layout.includes('class="nav-cta"')) errors.push('Layout.astro: primary contact path missing from navigation');
+if (!layout.includes('href={site.whatsapp}')) errors.push('Layout.astro: WhatsApp alternative missing');
+if (!layout.includes('data-track="whatsapp_click"')) errors.push('Layout.astro: WhatsApp tracking missing');
+if (layout.includes('class="floating-wa"') || layout.includes('class="floating-contact"')) errors.push('Layout.astro: fixed contact action can obscure mobile content');
 if (home.includes('Escribir por WhatsApp')) errors.push('index.astro: WhatsApp still used as primary home CTA');
 if (contact.includes('Continuar por WhatsApp')) errors.push('contacto.astro: WhatsApp still used as primary form action');
 if (/firma pequeñ?a|nueva web/i.test(home + '\n' + about)) errors.push('positioning: unwanted small-firm/new-website language remains');
@@ -38,6 +38,6 @@ const enBusiness = read('src/pages/en/business/index.astro');
 if (!enHome.includes('/en/contact')) errors.push('English home: contact route missing');
 if (!enImmigration.includes('ExtranjeriaTriage')) errors.push('English immigration: route finder missing');
 if (!enBusiness.includes('CompanySelfAssessment')) errors.push('English business: self-assessment missing');
-if (layout.includes("{isEnglish ? 'Email us' : 'Email'}")) errors.push('Layout: WhatsApp floating label mismatch');
+if (layout.includes("{isEnglish ? 'Email us' : 'Email'}")) errors.push('Layout: obsolete floating WhatsApp label remains');
 
 console.log(`English lead checks: ${errors.length ? 'ERROR' : 'OK'}`);

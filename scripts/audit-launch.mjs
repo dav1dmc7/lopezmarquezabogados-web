@@ -92,8 +92,8 @@ for (const [legacy, destination] of legacyRedirects) {
   }
 }
 
-if (!read('src/pages/index.astro').includes('href="/empresas#revision-preventiva"')) {
-  errors.push('Home: preventive review CTA must point to /empresas#revision-preventiva');
+if (!read('src/pages/index.astro').includes('href="/empresas#autodiagnostico-empresa"')) {
+  errors.push('Home: preventive review CTA must point to /empresas#autodiagnostico-empresa');
 }
 
 const updates = read('src/data/legalUpdates.ts');
@@ -111,8 +111,11 @@ for (const reference of requiredOfficialUpdates) {
 }
 
 const actualidad = read('src/pages/actualidad-juridica.astro');
-if (!actualidad.includes('Revisión actual: 6 de octubre de 2026')) {
-  errors.push('actualidad: review date must match the latest editorial source check');
+if ((actualidad.match(/Revisado: 20 de octubre de 2026/g) || []).length < 2) {
+  errors.push('actualidad: Spanish review date must match the latest editorial source check');
+}
+if (!read('src/pages/en/legal-updates.astro').includes('Reviewed: 20 October 2026')) {
+  errors.push('legal-updates: English review date must match the latest editorial source check');
 }
 if (!actualidad.includes('La publicación oficial prevalece sobre este resumen.')) {
   errors.push('actualidad: official source notice missing');

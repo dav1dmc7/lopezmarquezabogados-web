@@ -1,6 +1,8 @@
 /// <reference path="./worker-configuration.d.ts" />
 
+import { buildCustomerContactEmail, buildInternalContactEmail, type ContactEmailData, type ContactEmailMessage } from './src/lib/email';
 import { site } from './src/lib/site';
+import { verifyTurnstileToken } from './src/lib/turnstile';
 
 const json = (body: Record<string, unknown>, status = 200) => new Response(JSON.stringify(body), {
   status,
@@ -48,9 +50,55 @@ async function readBoundedBody(request: Request): Promise<string> {
   return new TextDecoder('utf-8', { fatal: true }).decode(body);
 }
 
-const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({
-  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-})[char] ?? char);
+
+
+const RESEND_TIMEOUT_MS = 8000;
+async function sendViaResend(apiKey: string, message: ContactEmailMessage, recipient: string, replyTo?: string): Promise<void> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), RESEND_TIMEOUT_MS);
+  try {
+    const payload: Record<string, unknown> = { from: site.emailFrom, to: [recipient], subject: message.subject, html: message.html, text: message.text };
+    if (replyTo) payload.reply_to = replyTo;
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload), signal: controller.signal,
+    });
+    const result = await response.json().catch(() => ({} as Record<string, unknown>)) as Record<string, unknown>;
+    if (!response.ok || typeof result.id !== 'string' || !result.id) {
+      const code = typeof result.name === 'string' ? result.name : `http_${response.status}`;
+      throw new Error(`resend_${code}`);
+    }
+  } finally { clearTimeout(timeout); }
+}
+async function sendViaCloudflare(env: Env, message: ContactEmailMessage, recipient: string, replyTo: string): Promise<void> {
+  const result = await env.EMAIL.send({ from: 'web@lopezmarquezabogados.com', to: recipient, replyTo, subject: message.subject, text: message.text, html: message.html });
+  if (!result?.messageId) throw new Error('cloudflare_email_missing_id');
+}
+type DeliveryStatus = 'sent' | 'pending' | 'failed';
+type ProviderStatus = 'resend' | 'cloudflare_fallback' | 'mixed' | 'none';
+async function sendContactMessages(env: Env, internalMessage: ContactEmailMessage, customerMessage: ContactEmailMessage, customerEmail: string): Promise<{ internal: DeliveryStatus; customer: DeliveryStatus; provider: ProviderStatus }> {
+  const apiKey = String((env as Env & { RESEND_API_KEY?: string }).RESEND_API_KEY ?? '').trim();
+  if (apiKey) {
+    const [internalResult, customerResult] = await Promise.allSettled([
+      sendViaResend(apiKey, internalMessage, site.email, customerEmail),
+      sendViaResend(apiKey, customerMessage, customerEmail, site.email),
+    ]);
+    let internal: DeliveryStatus = internalResult.status === 'fulfilled' ? 'sent' : 'failed';
+    const customer: DeliveryStatus = customerResult.status === 'fulfilled' ? 'sent' : 'failed';
+    let provider: ProviderStatus = 'resend';
+    if (internalResult.status === 'rejected') {
+      console.warn('Resend internal notification failed; attempting Cloudflare fallback.');
+      provider = 'mixed';
+      try { await sendViaCloudflare(env, internalMessage, site.email, customerEmail); internal = 'sent'; }
+      catch (_) { internal = 'failed'; }
+    }
+    if (customerResult.status === 'rejected') console.warn('Resend customer confirmation failed; remains pending.');
+    return { internal, customer, provider };
+  }
+  console.warn('RESEND_API_KEY missing; only attempting internal Cloudflare fallback.');
+  try { await sendViaCloudflare(env, internalMessage, site.email, customerEmail); return { internal: 'sent', customer: 'pending', provider: 'cloudflare_fallback' }; }
+  catch (_) { return { internal: 'failed', customer: 'pending', provider: 'cloudflare_fallback' }; }
+}
 
 const AREAS_ES = new Set(['Laboral', 'Extranjería', 'Empresas', 'Otras áreas']);
 const AREAS_EN = new Set(['Employment', 'Immigration', 'Business', 'Other legal matters']);
@@ -80,6 +128,21 @@ const LEGACY_REDIRECTS = new Map<string, string>([
   ['/en/contact_en', '/en/contact'], ['/en/contact_en.html', '/en/contact'],
   ['/en/faqs_en', '/en/faqs'], ['/en/faqs_en.html', '/en/faqs']
 ]);
+
+// Search Console legacy URLs verified on 2026-10-10.
+const SEARCH_CONSOLE_LEGACY_REDIRECTS: Array<[string, string]> = [
+  ['/en/', '/en'],
+  ['/en/index.html', '/en'],
+  ['/index_en', '/en'],
+  ['/index_en.html', '/en'],
+  ['/en/laboral.html', '/en/employment'],
+  ['/en/civil.html', '/en'],
+  ['/en/about.html', '/en/about'],
+];
+for (const [legacyPath, destination] of SEARCH_CONSOLE_LEGACY_REDIRECTS) {
+  LEGACY_REDIRECTS.set(legacyPath, destination);
+}
+
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -112,10 +175,21 @@ export default {
       const nativeForm = mediaType === 'application/x-www-form-urlencoded';
       const jsonRequest = mediaType === 'application/json';
       const requestedLocale = referer?.includes('/en/') ? 'en' : 'es';
-      const nativeFailure = (status: number) => new Response(
-        `<!doctype html><html lang="${requestedLocale}"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${requestedLocale === 'en' ? 'Enquiry not sent' : 'Consulta no enviada'}</title><main><h1>${requestedLocale === 'en' ? 'We could not send your enquiry' : 'No hemos podido enviar tu consulta'}</h1><p>${requestedLocale === 'en' ? 'The message could not be processed. Shorten it or return to the form and try again.' : 'No se ha podido procesar el mensaje. Acórtalo o vuelve al formulario e inténtalo de nuevo.'}</p><p><a href="${requestedLocale === 'en' ? '/en/contact' : '/contacto'}#consulta-form">${requestedLocale === 'en' ? 'Return to contact form' : 'Volver al formulario de contacto'}</a></p></main></html>`,
+      const nativeFailure = (status: number, error = 'request_failed') => {
+        const messages: Record<string, { es: string; en: string }> = {
+          turnstile_missing: { es: 'Completa la comprobación de seguridad y vuelve a enviar el formulario.', en: 'Complete the security check and submit the form again.' },
+          turnstile_invalid: { es: 'No se ha podido validar la comprobación de seguridad. Complétala de nuevo e inténtalo otra vez.', en: 'The security check could not be verified. Complete it again and retry.' },
+          turnstile_expired: { es: 'La comprobación de seguridad ha caducado o ya se utilizó. Complétala de nuevo.', en: 'The security check expired or was already used. Complete it again.' },
+          turnstile_unavailable: { es: 'La comprobación de seguridad no está disponible ahora. Escríbenos por email o WhatsApp; el formulario no se ha enviado.', en: 'The security check is unavailable right now. Contact us by email or WhatsApp; the form has not been sent.' }
+        };
+        const message = messages[error]?.[requestedLocale] ?? (requestedLocale === 'en'
+          ? 'The message could not be processed. Return to the form and try again.'
+          : 'No se ha podido procesar el mensaje. Vuelve al formulario e inténtalo de nuevo.');
+        return new Response(
+        `<!doctype html><html lang="${requestedLocale}"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${requestedLocale === 'en' ? 'Enquiry not sent' : 'Consulta no enviada'}</title><main><h1>${requestedLocale === 'en' ? 'We could not send your enquiry' : 'No hemos podido enviar tu consulta'}</h1><p>${message}</p><p><a href="${requestedLocale === 'en' ? '/en/contact' : '/contacto'}#consulta-form">${requestedLocale === 'en' ? 'Return to contact form' : 'Volver al formulario de contacto'}</a></p></main></html>`,
         { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex', 'X-Content-Type-Options': 'nosniff' } }
       );
+      };
       if (!nativeForm && !jsonRequest) return json({ ok: false, error: 'invalid_content_type' }, 415);
 
       let bodyText: string;
@@ -139,7 +213,7 @@ export default {
           locale: fields.get('locale'), name: fields.get('nombre'), email: fields.get('email'),
           phone: fields.get('telefono'), area: fields.get('area'), relevantDate: fields.get('fecha'),
           message: fields.get('mensaje'), privacy: fields.get('privacy'), website: fields.get('website'),
-          sourcePath: fields.get('sourcePath')
+          sourcePath: fields.get('sourcePath'), turnstileToken: fields.get('cf-turnstile-response')
         };
       } else {
         return json({ ok: false, error: 'invalid_content_type' }, 415);
@@ -147,7 +221,7 @@ export default {
 
       const locale = clean(input.locale, 2) === 'en' ? 'en' : 'es';
       const formError = (error: string, status: number) => nativeForm
-        ? nativeFailure(status)
+        ? nativeFailure(status, error)
         : json({ ok: false, error }, status);
 
       // Honeypot: acknowledge bots without storing or notifying.
@@ -174,6 +248,24 @@ export default {
       if (message.length < 20) return formError('invalid_message', 422);
       if (!consent) return formError('consent_required', 422);
 
+      const turnstileEnv = env as Env & { TURNSTILE_SECRET_KEY?: string; TURNSTILE_REQUIRED?: string; TURNSTILE_TEST_MODE?: string };
+      const turnstileSecret = String(turnstileEnv.TURNSTILE_SECRET_KEY ?? '').trim();
+      const turnstileRequired = String(turnstileEnv.TURNSTILE_REQUIRED ?? '').toLowerCase() === 'true';
+      const turnstileTestMode = String(turnstileEnv.TURNSTILE_TEST_MODE ?? '').toLowerCase() === 'true'
+        && ['localhost', '127.0.0.1'].includes(url.hostname.toLowerCase());
+      const turnstileToken = clean(input.turnstileToken, 2049);
+      if (turnstileRequired || turnstileSecret || turnstileToken) {
+        if (!turnstileSecret) return formError('turnstile_unavailable', 503);
+        const validation = await verifyTurnstileToken({
+          token: turnstileToken,
+          secret: turnstileSecret,
+          hostname: canonicalHost,
+          remoteIp: request.headers.get('CF-Connecting-IP') ?? undefined,
+          testMode: turnstileTestMode,
+        });
+        if (!validation.ok) return formError(validation.error, validation.error === 'turnstile_unavailable' ? 503 : 422);
+      }
+
       const recent = await env.lopezmarquez_consultas
         .prepare("SELECT COUNT(*) AS count FROM consultations WHERE email = ? AND datetime(created_at) >= datetime('now', '-15 minutes')")
         .bind(email)
@@ -181,6 +273,7 @@ export default {
       if (Number(recent?.count ?? 0) >= 3) return formError('rate_limited', 429);
 
       const id = crypto.randomUUID();
+      const reference = `LM-${id.slice(0, 8).toUpperCase()}`;
       const now = new Date().toISOString();
       await env.lopezmarquez_consultas
         .prepare(`INSERT INTO consultations
@@ -189,32 +282,32 @@ export default {
         .bind(id, now, locale, area, name, email, phone, relevantDate, message, now, sourcePath)
         .run();
 
-      let notification = 'stored';
+      const emailData: ContactEmailData = { id, reference, locale, name, email, phone, area, relevantDate, message, sourcePath };
+      const internalMessage = buildInternalContactEmail(emailData);
+      const customerMessage = buildCustomerContactEmail(emailData);
+      const delivery = await sendContactMessages(env, internalMessage, customerMessage, email);
+      const aggregateStatus =
+        delivery.internal === 'sent' && delivery.customer === 'sent' ? 'notified' :
+        delivery.internal === 'sent' ? 'notified_customer_pending' :
+        delivery.customer === 'sent' ? 'customer_notified_internal_pending' :
+        'stored_pending_notification';
+
       try {
-        const heading = locale === 'en' ? 'New website enquiry' : 'Nueva consulta desde la web';
-        const situation = locale === 'en' ? 'Situation' : 'Situación';
-        const result = await env.EMAIL.send({
-          from: 'web@lopezmarquezabogados.com',
-          to: site.email,
-          replyTo: email,
-          subject: `${heading} · ${area}`,
-          text: `${heading}\nReference: ${id}\nArea: ${area}\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nRelevant date: ${relevantDate || 'Not specified'}\nSource: ${sourcePath}\n\n${situation}:\n${message}`,
-          html: `<h2>${heading}</h2><p><strong>Reference:</strong> ${escapeHtml(id)}</p><p><strong>Area:</strong> ${escapeHtml(area)}</p><p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Phone:</strong> ${escapeHtml(phone || 'Not provided')}</p><p><strong>Relevant date:</strong> ${escapeHtml(relevantDate || 'Not specified')}</p><p><strong>Source:</strong> ${escapeHtml(sourcePath)}</p><hr><p><strong>${situation}:</strong></p><p>${escapeHtml(message).replaceAll('\n', '<br>')}</p>`,
-        });
-        if (!result?.messageId) throw new Error('notification_failed');
-        notification = 'sent';
+        await env.lopezmarquez_consultas
+          .prepare(`UPDATE consultations
+            SET status = ?, internal_notification_status = ?, customer_confirmation_status = ?, notification_provider = ?
+            WHERE id = ?`)
+          .bind(aggregateStatus, delivery.internal, delivery.customer, delivery.provider, id)
+          .run();
       } catch (_) {
-        notification = 'stored_pending_notification';
+        console.error('Could not persist contact email delivery status.');
       }
 
-      await env.lopezmarquez_consultas
-        .prepare('UPDATE consultations SET status = ? WHERE id = ?')
-        .bind(notification === 'sent' ? 'notified' : 'stored_pending_notification', id)
-        .run();
-
-      // The enquiry remains stored even if email delivery has a transient failure.
-      if (nativeForm) return Response.redirect(new URL(locale === 'en' ? '/en/contact/sent' : '/consulta-enviada', url), 303);
-      return json({ ok: true, reference: id, notification });
+      const destination = new URL(locale === 'en' ? '/en/contact/sent' : '/consulta-enviada', url);
+      destination.searchParams.set('confirmation', delivery.customer === 'sent' ? 'sent' : 'pending');
+      destination.searchParams.set('reference', reference);
+      if (nativeForm) return Response.redirect(destination, 303);
+      return json({ ok: true, reference, notification: delivery.internal, confirmation: delivery.customer });
     }
 
     return env.ASSETS.fetch(request);

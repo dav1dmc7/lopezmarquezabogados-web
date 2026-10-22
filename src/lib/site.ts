@@ -8,6 +8,7 @@ export const site = {
   phoneHref: 'tel:+34695385198',
   whatsapp: 'https://wa.me/34695385198',
   email: 'lopezmarquezabogados@gmail.com',
+  emailFrom: 'López Márquez Abogados <web@lopezmarquezabogados.com>',
   emailHref: 'mailto:lopezmarquezabogados@gmail.com',
   address: {
     street: 'Carrer dels Madrazo, 6',
@@ -104,6 +105,10 @@ export const localizedPathMap: Record<string, string> = {
 export const indexableRoutes = [
   '/recursos/primeras-horas-despido',
   '/actualidad-juridica',
+  '/actualidad/medidas-laborales-ayudas-2026',
+  '/actualidad/ocupaciones-dificil-cobertura-t3-2026',
+  '/actualidad/reglamento-extranjeria-2026',
+  '/actualidad/transparencia-condiciones-trabajo-2026',
   '/', '/laboral', '/laboral/despidos', '/laboral/indemnizacion-despido', '/laboral/reclamacion-salarios',
   '/laboral/accidentes-laborales', '/laboral/incapacidad-temporal', '/laboral/incapacidad-permanente', '/laboral/penal-laboral', '/extranjeria', '/extranjeria/arraigo',
   '/extranjeria/nacionalidad-espanola', '/extranjeria/residencia', '/extranjeria/reagrupacion-familiar',
@@ -113,7 +118,12 @@ export const indexableRoutes = [
   '/en', '/en/employment', '/en/employment-dismissal', '/en/employment-severance', '/en/employment-salary-claims',
   '/en/workplace-accidents', '/en/employment/temporary-sickness-leave', '/en/employment/permanent-disability', '/en/immigration', '/en/immigration/residency', '/en/immigration/regularisation',
   '/en/immigration/spanish-nationality', '/en/immigration/family-reunification', '/en/business',
-  '/en/business/retainer', '/en/about', '/en/faqs', '/en/resources', '/en/resources/first-hours-after-dismissal',
+  '/en/business/retainer', '/en/business/employment-advice', '/en/about', '/en/faqs', '/en/resources', '/en/resources/first-hours-after-dismissal',
   '/en/resources/dismissal-deadline-spain', '/en/resources/permanent-disability-employment-2025', '/en/resources/arraigo-two-years-spain', '/en/resources/spanish-nationality-residence-period',
-  '/en/legal-updates', '/en/contact'
+  '/en/legal-updates',
+  '/en/legal-updates/employment-conditions-transparency-2026',
+  '/en/legal-updates/employment-measures-aid-beneficiaries-2026',
+  '/en/legal-updates/immigration-regulation-amendments-2026',
+  '/en/legal-updates/shortage-occupation-catalogue-q3-2026',
+  '/en/contact'
 ] as const;

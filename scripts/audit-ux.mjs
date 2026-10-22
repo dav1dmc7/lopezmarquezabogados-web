@@ -35,15 +35,15 @@ const commercial = pages.filter((file) => {
     !p.endsWith('/sitemap.xml');
 });
 
-// Conversion paths available site-wide through Layout.astro.
+// Contact paths available site-wide through navigation and footer links.
 const globalContact =
-  layout.includes('class="floating-contact"') &&
+  layout.includes('class="nav-cta"') &&
   layout.includes('site.whatsapp') &&
   layout.includes('site.emailHref') &&
   layout.includes('site.phoneHref');
 
 if (!globalContact) {
-  errors.push('Layout: expected site-wide WhatsApp, email and phone conversion paths');
+  errors.push('Layout: expected navigation CTA plus WhatsApp, email and phone contact paths');
 }
 
 for (const file of commercial) {
